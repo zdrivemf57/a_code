@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>jQueryの利用</h1>
+  <h2>jQueryの読込</h2>
+  <p id="x">まずは、jQuery本体を読み込みます</p>
+  <p id="y">次にjQueryを含むJSを記述します</p>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      $("h1").css("color", "red");
+
+      $("#x").text("こんにちは");
+
+      const elm = document.getElementById("y");
+      elm.innerText = "さようなら";
+
+    });
+  </script>
+</body>
+</html>

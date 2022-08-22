@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>関数</h1>
+  <script>
+    // 関数（メソッド）の定義
+    function getBmi(height, weight) {
+      let bmi = weight / (height * height);
+      return bmi;
+    }
+    // 関数の利用
+    const mybmi = getBmi(1.7, 70);
+    console.log(mybmi);
+  </script>
+</body>
+</html>

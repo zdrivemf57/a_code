@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      background: pink;
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+<div>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum a rem eveniet eos! Facilis, nisi? Iste facilis voluptatem laboriosam, dolores ab nesciunt quae odit accusantium at ut obcaecati qui dignissimos?
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  // ウィンドウの大きさ
+  const w = $(window).width();
+  const h = $(window).height();
+  console.log(w, h);
+
+  // divの大きさ
+  const dw = $("div").width();
+  const dh = $("div").height();
+  console.log(dw, dh);
+
+  // divの大きさを設定
+  // css()でも同じことができる
+  $("div").width("100px");
+  $("div").height("200px");
+});
+</script>
+</body>
+</html>

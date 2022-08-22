@@ -1,0 +1,125 @@
+<!DOCTxPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1 id="logo">株式会社ABC</h1>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  let x = "こんにちは";
+  console.log(x);
+  
+  x = 10 / 4;
+  console.log(x);
+  
+  x = [100, 200, 300];
+  console.log(x[1]);
+  x[1] = 500;
+  console.log(x[1]);
+  x.unshift(50);
+  x.push(400);
+  console.log(x[0]);
+  console.log(x[x.length-1]);
+  for(let i = 0; i < x.length; i++) {
+    console.log(x[i] + " ");
+  }
+  for(let n of x) {
+    console.log(n + " ");
+  }
+  x.forEach(n => console.log(n));
+
+  x = 100;
+  y = "100";
+  console.log(x == y);
+  console.log(x === y);
+
+  // 関数
+  function getBmi(h, w) {
+    return w / (h * h);
+  }
+  console.log(getBmi(1.7, 68.5));
+
+  // 無名関数
+  getBmi = function(h, w){
+    return w / (h * h);
+  };
+  console.log(getBmi(1.57, 57));
+  
+  // アロー関数1
+  getBmi = (h, w) => {
+    return w / (h * h);
+  };
+  console.log(getBmi(1.57, 57));
+
+  // アロー関数2
+  getBmi = (h, w) => w / (h * h);
+  console.log(getBmi(1.57, 57));
+
+  // オブジェクト
+  const info1 = '山田太郎物語';
+  const info2 = 1994;
+  const info3 = 'コメディ';
+  // ↓ 上記のように情報を持つのは不便
+  // 配列
+  info = ['山田太郎物語', 1994, 'コメディ'];
+  console.log(info[1]);
+  // まだ取り出し方が不便
+  // オブジェクト
+  info = {
+    title: '山田太郎物語',
+    year: 1994,
+    genre: 'コメディ',
+    company: {
+      name: '東映',
+      president: '鈴木次郎'
+    }
+  };
+  console.log(info.company.name);
+
+  // JSON
+  // {
+  //   "name": "山田太郎",
+  //   "age": 25,
+  //   "company": {}
+  // }
+
+  function showInfo() {
+    console.log('8月8日です。');
+  }
+  setTimeout(showInfo, 3000);
+
+  // 無名関数
+  // 第1引数: 一定時間後の処理 コールバック関数
+  // 第2引数: 時間
+  setTimeout(function(){
+    console.log('8日です。')
+  }, 3000);
+
+  // アロー関数
+  setTimeout(() => {
+    console.log('8日です')
+  }, 3000);
+
+  // js
+  const elm = document.getElementById('logo');
+  elm.addEventListener('click', e => {
+    alert(e.target.innerText + 'へようこそ');
+  });
+
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('#logo').click(function(){
+      alert($(this).text() + 'へようこそ2');
+    });    
+  });
+</script>
+  
+</body>
+</html>

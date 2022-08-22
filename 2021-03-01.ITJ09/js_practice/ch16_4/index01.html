@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>タイマー処理</h1>
+  <button>ストップ</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const id1 = setTimeout(function () {
+        $("h1").css("color", "red");
+      }, 3000);
+
+      const id2 = setTimeout(function () {
+        $("h1").css("font-size", "100px");
+      }, 5000);
+
+      // タイマー処理を止める
+      $("button").click(function () {
+        clearTimeout(id1);
+        clearTimeout(id2);
+      });
+    });
+  </script>
+</body>
+</html>

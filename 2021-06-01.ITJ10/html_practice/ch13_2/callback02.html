@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // こんにちは と表示する関数
+    function hello() {
+      console.log("こんにちは");
+      console.log("元気ですか？");
+    }
+
+    // さようなら と表示する関数
+    const goodbye = function () {
+      console.log("さようなら");
+      console.log("また明日");
+    }
+
+    // 高階関数
+    // ある関数を2回実行する
+    function twice(arukansu) {
+      console.log("1回目");
+      arukansu();
+      console.log("2回目");
+      arukansu();
+    }
+
+    // twice() の利用
+    // 引数⇒関数名()は入れない
+    twice(hello);
+    twice(goodbye);
+    // 引数⇒無名関数
+    twice(function () {
+      const list = [10, 20, 30];
+      let total = 0;
+      for (let num of list) {
+        total += num;
+      }
+      console.log(total);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>コールバック関数</h1>
+  <p>引数として渡される関数のこと</p>
+
+  <script>
+    // ある処理(関数)をx回繰り返す関数
+    function repeat(x, arushori) {
+      for (let i = 1; i <= x; i++) {
+        arushori();
+      }
+    }
+
+    // repeatの利用
+    // 第二引数を無名関数として渡した
+    repeat(3, function () {
+      console.log("こんにちは");
+    });
+
+
+  </script>
+</body>
+</html>

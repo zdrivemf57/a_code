@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    section {
+      border: 1px solid #000;
+      height: 1200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ページ内リンク</h1>
+  <p><a href="#about">会社概要</a></p>
+  <section>
+    <h2>社長あいさつ</h2>
+  </section>
+  <section>
+    <h2>アクセス</h2>
+  </section>
+  <section id="about">
+    <h2>会社概要</h2>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const position =
+        $("#about").offset().top;
+      console.log(position);
+
+      $("a").click(function () {
+        $("html, body").animate({
+          scrollTop: position
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>

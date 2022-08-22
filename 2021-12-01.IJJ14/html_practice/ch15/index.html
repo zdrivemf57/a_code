@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .info {
+      color: blue;
+      background: lightblue;
+      font-size: 32px;
+    }
+  </style>
+</head>
+<body>
+<h1>こんにちは</h1>
+<h2>ありがとう</h2>
+<h3>さようなら</h3>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("h1").css("color", "#f00");
+  $("h1").css("background-color", "pink");
+
+  $("h2").css({
+    color: "green",
+    backgroundColor: "#0f0",
+    fontSize: "32px"
+  });
+
+  $("h3").addClass("info");
+
+  $("h3").click(function(){
+    $("h3").toggleClass("info");
+  });
+}); //ready()
+</script>
+</body>
+</html>

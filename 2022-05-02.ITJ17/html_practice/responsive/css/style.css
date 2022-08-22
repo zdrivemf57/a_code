@@ -1,0 +1,13 @@
+div {
+  background: pink;
+}
+@media screen and (min-width: 480px) {
+  div {
+    width: 75%;
+  }
+@media screen and (min-width: 768px) {
+  div {
+    width: 50%;
+  }
+}
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>天気予報</h1>
+  <select id="area">
+    <option value="130010">東京</option>
+    <option value="180010">福井</option>
+    <option value="340010">広島</option>
+  </select>
+  <div id="result"></div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#area").change(function (e) {
+        const areaId = $(this).val();
+        $.ajax({
+          url: "https://weather.tsukumijima.net/api/forecast",
+          data: { city: areaId },
+          type: "get",
+          dataType: "json"
+        })
+          .done(function (res) {
+            console.log(res.forecasts);
+            const info = res.forecasts;
+            let tag = "<table>";
+            for (let i = 0; i < info.length; i++) {
+              // trの生成
+              tag += "<tr>";
+              tag += `<th>${info[i].dateLabel}</th>`;
+              tag += `<td>${info[i].telop}<br>`;
+              tag += `<img src="${info[i].image.url}"></td>`;
+            }
+            tag += "</table>";
+            $("#result").html(tag);
+          })
+          .fail(function () {
+            $("#result").html("<p>通信に失敗しました</p>");
+          });
+      });
+    });
+  </script>
+</body>
+</html>

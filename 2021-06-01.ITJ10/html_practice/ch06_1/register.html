@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>登録フォーム</h1>
+  <form action="process.php" method="post">
+    <table border="1">
+      <tr>
+        <th>お名前</th>
+        <td>
+          <input type="text" name="user" size="5" maxlength="3" placeholder="例)山田太郎" value="佐藤" required>
+        </td>
+      </tr>
+      <tr>
+        <th><label for="age">年齢</label></th>
+        <td>
+          <input type="number" name="age" id="age">
+        </td>
+      </tr>
+      <tr>
+        <th>メルマガ</th>
+        <td>
+          <label><input type="radio" name="mm" value="1" checked>希望する</label>
+          <label><input type="radio" name="mm" value="2">希望しない</label>
+          <label><input type="radio" name="mm" value="3">後で決定する</label>
+        </td>
+      </tr>
+      <tr>
+        <th>趣味</th>
+        <td>
+          <label><input type="checkbox" name="hobby" value="1" checked>スポーツ</label>
+          <label><input type="checkbox" name="hobby" value="2" checked>音楽鑑賞</label>
+          <label><input type="checkbox" name="hobby" value="3">映画鑑賞</label>
+          <label><input type="checkbox" name="hobby" value="4">読書</label>
+        </td>
+      </tr>
+      <tr>
+        <th>個人情報の扱い</th>
+        <td>
+          <input type="checkbox" name="privacy" required>同意する
+        </td>
+      </tr>
+      <tr>
+        <th>サービス利用希望日</th>
+        <td>
+          <input type="date">
+        </td>
+      </tr>
+      <tr>
+        <th><label for="note">備考</label></th>
+        <td>
+          <textarea name="note" cols="30" rows="5" id="note">こんにちは</textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>行ってみたい地域</th>
+        <td>
+          <select name="area">
+            <option value="1">アジア</option>
+            <option value="2">ヨーロッパ</option>
+            <option value="3" selected>アフリカ</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <input type="submit" value="登録する">
+  </form>
+</body>
+</html>

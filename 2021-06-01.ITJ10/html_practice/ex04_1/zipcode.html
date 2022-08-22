@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>登録フォーム</h1>
+  <div id="error"></div>
+  <p>
+  郵便番号:
+  <input type="text" id="zip">
+  <button>住所を自動入力</button>
+</p>
+  <p>
+  住所:
+  <input type="text" id="address">
+</p>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("button").click(function () {
+        // 郵便番号を取得
+        const zip = $("#zip").val();
+
+        // Ajax通信
+        $.ajax({
+          url: "https://zipcloud.ibsnet.co.jp/api/search?zipcode=" + zip,
+          type: "GET",
+          dataType: "JSONP"
+        })
+          .done(function (res) {
+            // 通信がうまくいった場合の処理
+            console.log(res);
+
+            if (res.status == 200) {
+              let address = res.results[0].address1;
+              address += res.results[0].address2;
+              address += res.results[0].address3;
+              $("#address").val(address);
+              // エラーメッセージの消去
+              $("#error").text("");
+            }
+            else {
+              // 郵便番号が不正
+              // 住所の入力欄を空に
+              $("#address").val("");
+              // エラーメッセージ
+              $("#error").text(res.message);
+            }
+          })
+          .fail(function () {
+            // 通信に失敗した場合
+            console.log("通信失敗");
+          });
+      }); //click
+
+    }); //ready
+  </script>
+</body>
+</html>

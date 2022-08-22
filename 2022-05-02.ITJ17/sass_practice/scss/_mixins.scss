@@ -1,0 +1,11 @@
+@mixin mystyle {
+  width: 300px;
+  height: 200px;
+}
+
+@mixin boxstyle($w, $c) {
+  width: $w;
+  height: 100px;
+  background: $c;
+}
+

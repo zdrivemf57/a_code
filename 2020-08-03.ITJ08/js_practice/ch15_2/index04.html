@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    article {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="news">
+    <h1>今日のニュース</h1>
+    <p>今日のニュースをお届けします</p>
+  </div>
+  <button id="btn1">ニュース1</button>
+  <button id="btn2">ニュース2</button>
+  <article id="n1">
+    <h1>最高気温40度超え</h1>
+    <p>最高気温が40を超えました</p>
+  </article>
+  <article id="n2">
+    <h1>サッカー勝利</h1>
+    <p>日本代表が勝ちました</p>
+  </article>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#btn1").click(function (e) {
+        e.preventDefault();
+        // article内の要素を取得
+        let n1 = $("#n1").html();
+        // #news内にセット
+        $("#news").html(n1);
+      });
+      $("#btn2").click(function (e) {
+        e.preventDefault();
+        // article内の要素を取得
+        let n2 = $("#n2").html();
+        // #news内にセット
+        $("#news").html(n2);
+      });
+    });
+  </script>
+</body>
+</html>

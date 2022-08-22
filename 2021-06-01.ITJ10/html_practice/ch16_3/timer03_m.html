@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="images/animal1.jpg">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      let num = 1;
+
+      setInterval(function () {
+        // 番号が増える仕組み
+        num++;
+        if (num == 10) {
+          num = 1;
+        }
+
+        // 番号と画像パスの紐づけ
+        const path = `images/animal${num}.jpg`;
+
+        // imgタグのsrc属性に設定
+        $("img").attr("src", path);
+      }, 1000); //interval
+
+    }); //ready
+  </script>
+</body>
+</html>

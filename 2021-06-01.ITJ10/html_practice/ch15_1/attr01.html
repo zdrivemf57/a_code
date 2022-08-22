@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>属性値の取得</h1>
+  <a href="index.html">
+    <img src="../images/flower/flower1.jpg" alt="花" width="400" height="300">
+  </a>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      const x = $("a").attr("href");
+      console.log(x);
+
+      const y = $("img").attr("src");
+      console.log(y);
+
+    }); //ready
+  </script>
+</body>
+</html>

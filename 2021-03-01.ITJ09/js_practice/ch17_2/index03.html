@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    section {
+      height: 800px;
+    }
+
+    #about {
+      background: pink;
+    }
+
+    #shop {
+      background: lightblue;
+    }
+
+    #contact {
+      background: lightgreen;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#about">会社概要</a></li>
+    <li><a href="#shop">店舗情報</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+  </ul>
+
+  <section id="about">
+    <h2>会社概要</h2>
+    <p>弊社は1995年に...</p>
+  </section>
+
+  <section id="shop">
+    <h2>店舗情報</h2>
+    <p>新大久保に第一号店を...</p>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <p>お気軽にお問い合わせください。...</p>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("a").click(function (e) {
+        // クリックされたaのhrefを取得
+        const selector = $(this).attr("href");
+
+        // 位置情報を取得
+        const pos = $(selector).offset().top;
+
+        $("html, body").animate({
+          scrollTop: pos
+        }, 1000);
+        return false;
+      });
+    });
+  </script>
+</body>
+</html>

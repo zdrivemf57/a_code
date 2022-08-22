@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .mono {
+      filter: grayscale(100%);
+    }
+  </style>
+</head>
+<body>
+<div>
+  <img class="mono" src="/images/animals/animal1.jpg" alt="">
+  <button>カラー</button>
+</div>
+<div>
+  <img class="mono" src="/images/animals/animal2.jpg" alt="">
+  <button>カラー</button>
+</div>
+<div>
+  <img class="mono" src="/images/animals/animal3.jpg" alt="">
+  <button>カラー</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    const label = $(this).text();
+    if(label === "カラー") {
+      $(this).text("モノクロ");
+    }
+    else {
+      $(this).text("カラー");
+    }
+    $(this).prev().toggleClass("mono");
+  });
+});
+</script>
+</body>
+</html>

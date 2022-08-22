@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ページ内リンクのスクロール移動</title>
+  <style>
+    section {
+      border: 1px solid #000;
+      height: 1000px;
+    }
+  </style>
+</head>
+<body id="top">
+<header>
+  <h1>株式会社ABC</h1>
+  <ul>
+    <li><a href="#company">会社概要</a></li>
+    <li><a href="#products">商品情報</a></li>
+    <li><a href="#contact">問い合わせ</a></li>
+  </ul>
+</header>
+<main>
+  <section id="company">
+    <h2>会社概要</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere aut necessitatibus! Facere, aspernatur esse ad placeat reiciendis, dolores architecto quo eum aut impedit doloribus, ducimus doloremque. Exercitationem, odit nobis.</p>
+  </section>
+  <section id="products">
+    <h2>商品情報</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere aut necessitatibus! Facere, aspernatur esse ad placeat reiciendis, dolores architecto quo eum aut impedit doloribus, ducimus doloremque. Exercitationem, odit nobis.</p>
+  </section>
+  <section id="contact">
+    <h2>問い合わせ</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere aut necessitatibus! Facere, aspernatur esse ad placeat reiciendis, dolores architecto quo eum aut impedit doloribus, ducimus doloremque. Exercitationem, odit nobis.</p>
+  </section>
+</main>
+<footer>
+  <p><a href="#top">トップ</a></p>
+  <p>&copy; ABC Inc.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  
+  // href属性の値が#で始まるもの
+  $("a[href^='#']").click(function(){
+    //クリックされたa要素のhref属性の値を取得
+    const id = $(this).attr("href");
+    //移動目標となる位置情報の取得
+    const target = $(id).offset();
+    //スムーズスクロール
+    $("html, body").animate({
+      scrollTop: target.top
+    }, 800);
+  });
+
+}); //ready()
+</script>
+</body>
+</html>

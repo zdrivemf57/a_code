@@ -1,0 +1,75 @@
+@charset "UTF-8";
+.box1 {
+  color: #0f0;
+  width: 500px;
+  border: 1px solid #0f0;
+}
+
+.box2 {
+  color: #f00;
+  width: 80%;
+  border: 1px solid #f00;
+}
+
+.weather {
+  border: 1px solid #ff0;
+  background: #00f;
+  width: 500px;
+}
+
+div {
+  color: #ff0;
+  background: #0000cc;
+  border: 1px solid #ff0;
+  width: 245px;
+}
+
+/* h1に変数の色を適用 */
+h1 {
+  color: #ff0;
+}
+
+h1 span {
+  font-size: 20px;
+}
+
+.tenki {
+  border: 1px solid #ff0;
+}
+
+.tenki h1 {
+  color: #ff0;
+}
+
+.tenki h1 a {
+  text-decoration: none;
+}
+
+.tenki h2 {
+  background: #ff0;
+}
+
+.tenki h2 a {
+  text-decoration: none;
+}
+
+a {
+  color: #f00;
+}
+
+a:hover {
+  background: #ff0;
+}
+
+h1 a {
+  color: #00f;
+}
+
+.btn-primary_active {
+  background: #f00;
+}
+
+.btn-primary_disabled {
+  background: #0f0;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  let msg;
+  msg = "こんにちは";
+  console.log(msg);
+
+// const, let, varの違い
+const x = 100;
+// x = 200; 再代入不可
+const y = [10, 20, 30];
+y[0] = 100;
+console.log(y);
+
+let z = 100;
+z = 200; //再代入可
+
+var a = 100;
+a = 300; //再代入可
+var a = 200; //再定義可
+
+console.log(`変数の中身は${a}です`);
+
+</script>
+</body>
+</html>

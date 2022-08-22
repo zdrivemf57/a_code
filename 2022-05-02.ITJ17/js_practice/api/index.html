@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  郵便番号:
+  <input type="text" id="zip">
+  <button id="btn">検索</button>
+  <table border="1">
+    <tr>
+      <th>郵便番号</th>
+      <th>住所</th>
+    </tr>
+  </table>
+
+  <template id="row">
+    <tr>
+      <td class="zipcode"></td>
+      <td class="address">
+        <ruby>
+          <!-- 住所漢字 -->
+          <rt><!-- カナ --></rt>
+        </ruby>
+      </td>
+    </tr>
+  </template>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  // テーブル行の挿入関数
+  function insertRow(zipcode, address, kana) {
+    // テーブル行のテンプレートを複製
+    const clone = $($('#row').html());
+
+    // テンプレート内にデータを追加
+    clone.find('.zipcode').append(zipcode);
+    clone.find('ruby').prepend(address);
+    clone.find('rt').append(kana);
+
+    // テンプレートをテーブルに挿入
+    $('table').append(clone);
+  }
+
+  $(document).ready(function(){
+    $('#btn').click(function(){
+      // 入力値の取得
+      const zip = $('#zip').val();
+
+      // リクエストの送信先URL
+      const endpoint = "https://zipcloud.ibsnet.co.jp/api/search?zipcode=" + zip;
+
+      // AJAX通信
+      $.ajax({
+        url: endpoint,
+        type: 'GET',
+        dataType: 'JSONP'
+      })
+      .done(function(res){ // resの中にAjax通信の結果が入ってくる
+        console.log(res);
+        if(res.status != 200) {
+          alert(res.message);
+        }
+        else {
+          const r = res.results[0];
+          const address = r.address1 + r.address2 + r.address3;
+          const kana = r.kana1 + r.kana2 + r.kana3;
+          insertRow(zip, address, kana);
+        }
+      })
+      .fail(function(){
+        alert('通信失敗');
+      });
+    });
+  });
+  </script>
+</body>
+</html>

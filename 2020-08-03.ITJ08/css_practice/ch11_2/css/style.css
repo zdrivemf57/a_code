@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* ボックスを可視化
+   ⇒ あとで削除   */
+header, .sidebar, main, footer {
+  outline: 1px solid #79d6e2;
+}
+
+.wrap {
+  border-left: 3px solid #333;
+  border-right: 3px solid #333;
+  width: 80%;
+  min-width: 800px;
+  margin: 0 auto;
+}
+
+.flexbox {
+  display: flex; /* 横並び */
+  flex-wrap: wrap; /*折り返す*/
+  justify-content: space-between;
+}
+
+/* サイドバーの設定 */
+.sidebar {
+  width: 200px;
+  order: 10;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar a {
+  color: #fff;
+  background: orange;
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  opacity: 0.8;
+}
+
+/* メイン領域の設定 */
+main {
+  background: lightgreen;
+  width: calc(100% - 200px);
+  order: 3;
+}
+
+.item {
+  border: 1px solid #333;
+  width: 120px;
+}
+
+.item img {
+  width: 80%;
+}

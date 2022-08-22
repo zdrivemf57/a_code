@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <p>いくつ購入しますか？</p>
+    <input id="unit" type="number">
+    <p>合計: <span id="result">0</span>円
+      <input type="submit" value="購入">
+    </p>
+  </form>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#unit").change(function (e) {
+        e.preventDefault();
+        const u = $(this).val();
+        const total = 100 * u;
+        console.log(total);
+        $("#result").text(total);
+      });
+
+      $("form").submit(function (e) {
+        e.preventDefault();
+        const result = confirm("購入処理に進みます");
+        if (result == true) {
+          alert("ありがとうございます。");
+        } else {
+          return false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

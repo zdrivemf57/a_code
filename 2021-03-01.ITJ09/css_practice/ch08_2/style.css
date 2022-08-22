@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/* タイプセレクタ */
+h1 {
+  color: red;
+  background: pink;
+}
+
+p {
+  color: lightgreen;
+}
+
+/* Idセレクタ */
+#p1 {
+  color: blue;
+}
+
+#p2 {
+  color: green;
+}
+
+/* クラスセレクタ */
+.foo {
+  color: yellow;
+}
+
+.bar {
+  background: lightgreen;
+}
+
+.buzz {
+  text-decoration: underline;
+}

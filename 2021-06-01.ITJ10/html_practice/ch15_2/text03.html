@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    [id$="_weather"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>天気予報</h1>
+  <div id="result"></div>
+  <button id="kanto">関東</button>
+  <button id="kansai">関西</button>
+
+  <div id="kanto_weather">
+    <h2>関東の天気</h2>
+    <p>今日は雨です</p>
+  </div>
+
+  <div id="kansai_weather">
+    <h2>関西の天気</h2>
+    <p>今日は晴れです</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("button").click(function () {
+        // クリックされたボタンのidを取得
+        const btnId = $(this).attr("id");
+        console.log(btnId);
+
+        // セレクタを生成
+        const sel = `#${btnId}_weather`;
+        console.log(sel);
+
+        // 1.div#〇〇_weather内の
+        // HTML情報を取得
+        const tx = $(sel).html();
+
+        // 2.div#resultに
+        // 取得したHTMLの情報をセット
+        $("#result").html(tx);
+      }); //click
+
+    }); //ready
+  </script>
+</body>
+</html>

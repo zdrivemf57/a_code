@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.kanto {
+  background: lightblue;
+}
+
+.kansai {
+  background: lightgreen;
+}
+
+.weather {
+  color: pink;
+  font-weight: bold;
+  font-size: 24px;
+}

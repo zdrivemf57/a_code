@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+body {
+  font-family: Meiryo, 'メイリオ', Osaka, sans-serif;
+  color: #333333;
+  line-height: 1.4;
+}
+
+#ichioshi h1 {
+  text-align: center;
+}
+
+#ichioshi h2 {
+  color: #ea1111;
+}
+
+#ichioshi .price {
+  color: #45aa0f;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+}

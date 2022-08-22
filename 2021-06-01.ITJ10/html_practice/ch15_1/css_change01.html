@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>CSSの変更</h1>
+  <p>この文字の色を変更します</p>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      const c = "pink";
+      $("h1").css("color", c);
+      $("h1").css("font-size", "100px");
+
+      const setting = {
+        color: "red",
+        backgroundColor: "pink",
+        fontSize: "80px";
+      };
+      $("p").css(setting);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .news {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>ニュース1</h1>
+  <div class="news">
+    <h2>お花見</h2>
+    <p>花見客で新宿御苑が賑わっています</p>
+  </div>
+  <div>
+    <button>見る</button>
+    <button class="news">隠す</button>
+  </div>
+
+  <h1>ニュース2</h1>
+  <div class="news">
+    <h2>花粉症</h2>
+    <p>花粉は少し落ち着いてきたみたいです</p>
+  </div>
+  <div>
+    <button>見る</button>
+    <button class="news">隠す</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 見るボタン
+      $("button:nth-child(1)").click(function () {
+        $(this).parent()
+          .prev()
+          .removeClass("news");
+        // 隠すボタン表示
+        $(this).next()
+          .removeClass("news");
+        // 見るボタン非表示
+        $(this).addClass("news");
+      });
+
+      // 隠すボタン
+      $("button:nth-child(2)").click(function () {
+        $(this).parent()
+          .prev()
+          .addClass("news");
+        // 見るボタンを表示
+        $(this).prev()
+          .removeClass("news");
+        // 隠すボタンを非表示
+        $(this).addClass("news");
+      });
+
+    });
+  </script>
+</body>
+</html>

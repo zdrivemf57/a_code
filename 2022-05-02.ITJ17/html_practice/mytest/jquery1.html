@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .mark {
+      color: aquamarine;
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>今日の天気</h1>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('body').append('<h1>今日の天気</h1>')
+        .append('<h2>関東地方</h2>')
+        .append('<p>関東地方は晴れるでしょう</p>')
+        .append('<img src="../images/animal1.jpg">')
+        .append('<h2>関西地方</h2>')
+        .append('<p>関西地方は午後から雨になりそうです</p>');
+      $('h1').css('color', '#f00').css('background', '#00f');
+      $('h1').fadeOut();
+      $('h1').fadeIn();
+
+
+      // css の取得と設定
+      console.log($('h1').css('color'));
+      console.log($('h1').css('background'));
+      console.log($('h1').css('border'));
+      $('h2').css({
+        color: '#fff',
+        background: '#000',
+        fontSize: '40px'
+      });
+      const st = {
+        color: '#ff0',
+        background: '#f00',
+        fontSize: '30px'
+      };
+      $('h2:nth-of-type(2)').css(st);
+
+      // attr の取得と設定
+      console.log($('img').attr('src'));
+      $('img').attr('src', '../images/animal2.jpg');
+
+      // class の付加／削除／トグル
+      $('h2:nth-of-type(2)').addClass('mark'); // css(st)に負ける
+      $('p').addClass('mark');
+
+      // 内容 の取得と設定
+      console.log($('div').html());
+      console.log($('div').text());
+      $('div').html('<h1>タイトル変更</h1>');
+      $('div h1').text(''); // テキストを''にすると高さが0になる
+
+      // 幅と高さの取得
+      console.log($('div').width());
+      console.log($('div').height());
+      console.log($(window).width());
+      console.log($(window).height());
+   });
+  </script>
+</body>
+
+</html>

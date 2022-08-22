@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>配列</h1>
+  <script>
+    const items = ["りんご", "みかん", "バナナ"]
+
+    console.log(items);
+    console.log(items[0]); // りんご
+
+    items[1] = 100;
+    console.log(items);
+
+    // データの先頭追加
+    items.unshift("オレンジ");
+
+    // データの末尾追加
+    items.push("メロン");
+    console.log(items);
+
+    // 中身の数
+    console.log(items.length);
+
+  </script>
+</body>
+</html>

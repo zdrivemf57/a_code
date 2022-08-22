@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.wrap {
+  background: pink;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.kanto {
+  background: lightblue;
+  width: 45%;
+  float: left;
+}
+
+.kansai {
+  background: lightgreen;
+  width: 45%;
+  float: right;
+}
+
+.rainy {
+  color: blue;
+  font-size: 24px;
+  font-weight: bold;
+}

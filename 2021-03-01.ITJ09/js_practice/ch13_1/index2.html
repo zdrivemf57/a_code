@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 変数
+    let x = 100; //〇
+    const y = 200; //◎堅牢
+    var z = 300; //古い
+
+    // 再代入
+    x = 500; //OK
+    y = 500; //NG(再代入不可)
+    z = 500; //OK
+
+    // 再定義
+    let x = 1000; //NG
+    const y = 1000; //NG
+    var z = 1000; //OK
+
+  </script>
+</body>
+</html>

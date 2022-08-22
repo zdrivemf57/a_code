@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>練習</title>
+</head>
+<body>
+    <p>
+問題１：
+青枠内の要素を情報１～情報３のボタン以外は非表示にしてください。<br>また、これらのボタンをクリックしたときに、その下にあるdivの中の要素（点線枠内）を取得して、div#content（赤枠）内に表示させてください。
+</p>
+    <div id="content" style="border:1px solid red; padding: 20px; max-width: 500px; margin-bottom: 20px;">
+        ここに表示
+    </div>
+    <div id="buttons" style="border:1px solid blue; padding: 20px; display: inline-block;">
+        <button>情報１</button>
+        <div style="border: 2px dotted blue; margin-bottom: 10px;">
+            <h2>情報１：福井駅前</h2>
+            <p>恐竜で有名な福井県には、駅前にリアルな恐竜がいる。子どもたちに大人気だ。</p>
+            <img src="images/fukui1.jpg" width="300">
+        </div>
+        <button>情報２</button>
+        <div style="border: 2px dotted blue; margin-bottom: 10px;">
+            <h2>情報２：歴史</h2>
+            <p>越前の城下町をはじめ、情緒ある街並みを楽しむことができる。蕎麦も絶品。</p>
+            <img src="images/fukui2.jpg" width="300">
+        </div>
+        <button>情報３</button>
+        <div style="border: 2px dotted blue; margin-bottom: 10px;">
+            <h2>情報３：博物館</h2>
+            <p>勝山には世界屈指の恐竜博物館がある。子どもだけでなく、大人も楽しめる。</p>
+            <img src="images/fukui3.jpg" width="300">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 問題１
+            $("#buttons div").css("display", "none");
+
+            $("#buttons button").click(function (e) {
+                e.preventDefault();
+                const html = $(this).next().html();
+                $("#content").html(html);
+            });
+        });
+    </script>
+</body>
+</html>

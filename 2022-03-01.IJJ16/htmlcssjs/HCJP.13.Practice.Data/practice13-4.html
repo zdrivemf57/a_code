@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習</title>
+<style>
+*{margin: 0; padding: 0;}
+</style>
+</head>
+<body>
+<p>問題１：
+windowの幅と高さを取得し、console.logで表示してください。</p>
+<p>問題２：
+    問題１で取得した幅と高さを以下の画像に適用し、画面が画像で覆われるようにしてください。<br>その際、問題文は非表示にしてください。</p>
+<img src="images/cat.jpg">
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    // 問題1
+    const width = $(window).width();
+    const height = $(window).height();
+    console.log(width);
+    console.log(height);
+
+    // 問題1
+    $("p").css("display", "none");
+
+    $("img").attr("width", width);
+    $("img").attr("height", height);
+});
+</script>
+</body>
+</html>

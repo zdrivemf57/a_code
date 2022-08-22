@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AGAA,AAAA,GAAG,CAAC;EDCA,KAAK,EDDL,IAAI;ECEJ,KAAK,EDDL,KAAK;CECR",
+    "sources": [
+        "../scss/main.scss",
+        "../scss/_variables.scss",
+        "../scss/_mixins.scss",
+        "../scss/_design.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .current {
+      border: 2px solid #f00;
+    }
+  </style>
+</head>
+<body>
+  <h1>ギャラリー</h1>
+  <div id="stage">
+    <img src="../images/animals/animal1.jpg">
+  </div>
+  <div id="thumb">
+    <img class="current" src="../images/animals/animal1.jpg" width="100">
+    <img src="../images/animals/animal2.jpg" width="100">
+    <img src="../images/animals/animal3.jpg" width="100">
+    <img src="../images/animals/animal4.jpg" width="100">
+    <img src="../images/animals/animal5.jpg" width="100">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("#thumb img").click(function () {
+        // 1.クリックされた画像の
+        //   src属性の値の取得
+        const s = $(this).attr("src");
+
+        // 2.#stage内のimgに
+        //   src属性値のセット
+        $("#stage img").attr("src", s);
+        $(".current").removeClass("current");
+        $(this).addClass("current");
+      }); //click
+
+    }); //ready
+  </script>
+</body>
+</html>

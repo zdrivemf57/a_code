@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>オブジェクト</h1>
+  <h2>配列</h2>
+  <p>複数のあたいをまとめることができる</p>
+  <h2>オブジェクト</h2>
+  <p>複数の値と関数(機能)をまとめることができる</p>
+
+  <script>
+    // オブジェクトの作成
+    const user = {
+      name: "山田太郎",
+      age: 25,
+      address: "東京都",
+      showInfo: function () {
+        console.log(`${this.name}です`)
+        console.log(`${this.age}才です`)
+        console.log(`${this.address}に住んでいます`)
+      }
+    };
+
+    // オブジェクトの利用
+    user.age = 30;
+    // オブジェクトに情報を追加
+    user.money = 10000;
+    user.showMoney = function () {
+      console.log(`${this.money}円です`)
+    };
+
+    // オブジェクトを利用
+    user.showInfo();
+    user.showMoney();
+  </script>
+</body>
+</html>

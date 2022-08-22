@@ -1,0 +1,86 @@
+// 変数
+$c: #ff0;
+$x: #00f;
+$boxWidth: 500px;
+
+// ミックスインの定義
+@mixin mybox {
+	background: $x;
+	width: $boxWidth;
+}
+
+//柔軟なミックスインの定義
+@mixin mybox2($mycolor, $w: 500px) {
+	color: $mycolor;
+	width: $w;
+	border: 1px solid $mycolor;
+}
+
+// ミックスインの適用
+.box1 {
+	@include mybox2(#0f0);
+}
+
+.box2 {
+	@include mybox2(#f00, 80%);
+}
+
+.weather {
+	border: 1px solid $c;
+	@include mybox;
+}
+
+div {
+	color: $c;
+	background: darken($x, 10%);
+	border: 1px solid $c;
+	width: ($boxWidth - 10) / 2;
+}
+
+/* h1に変数の色を適用 */
+h1 {
+	color: $c;
+	span {
+		font-size: 20px;
+	}
+}
+
+.tenki {
+	border: 1px solid $c;
+	h1 {
+		color: $c;
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+
+.tenki h2 {
+	background: $c;
+	a {
+		text-decoration: none;
+	}
+}
+
+// 親参照
+a {
+	color: #f00;
+	&:hover {
+		background: $c;
+	}
+	h1 & {
+		color: #00f;
+	}
+}
+
+.btn {
+	&-primary {
+		&_active {
+			background: #f00;
+		}
+		&_disabled {
+			background: #0f0;
+		}
+	}
+}

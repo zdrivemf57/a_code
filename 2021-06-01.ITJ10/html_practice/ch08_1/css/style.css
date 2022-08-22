@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* h1 を装飾 */
+h1 {
+  color: #f00;
+  font-size: 60px;
+}
+
+p {
+  color: #00f;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  border: 1px solid #000;
+}

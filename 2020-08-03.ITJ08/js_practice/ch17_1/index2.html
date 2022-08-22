@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>画像の切り替え</h1>
+  <button id="btn1">切替（瞬時）</button>
+  <button id="btn2">切替（fade誤り）</button>
+  <button id="btn3">切替（fade正しい）</button>
+  <hr>
+  <img src="images/animal1.jpg" width="400" alt="">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#btn1").click(function (e) {
+        e.preventDefault();
+        $("img").attr("src", "images/animal9.jpg");
+      });
+
+      $("#btn2").click(function (e) {
+        $("img").fadeOut(1000);
+        $("img").attr("src", "images/animal9.jpg");
+        $("img").fadeIn(1000);
+      });
+
+      $("#btn3").click(function (e) {
+        $("img").fadeOut(1000, "swing", function () {
+          $("img").attr("src", "images/animal9.jpg");
+          $("img").fadeIn(1000);
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>

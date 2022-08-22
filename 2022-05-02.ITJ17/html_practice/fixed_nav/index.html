@@ -1,0 +1,98 @@
+<html>
+<head>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body id="top">
+<header>
+<h1><img src="images/logo.png" id="logo"></h1>
+</header>
+
+<nav>
+<div class="zindex_fix">
+<div class="nav_inner">
+<a href="#top"><img src="images/logo_min.png" height="40"></a>
+<ul>
+	<li><a href="#orange">ORANGE</a></li>
+	<li><a href="#grape">GRAPE</a></li>
+	<li><a href="#peach">PEACH</a></li>
+	<li><a href="#apple">APPLE</a></li>
+	<li><a href="#melon">MELON</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<main>
+<section id="orange" class="scroll_point">
+<div class="inner">
+	<h1>SECTION1</h1>
+</div>
+</section>
+<section id="grape" class="scroll_point">
+<div class="inner">
+	<h1>SECTION2</h1>
+</div>
+</section>
+<section id="peach" class="scroll_point">
+<div class="inner">
+	<h1>SECTION3</h1>
+</div>
+</section>
+<section id="apple" class="scroll_point">
+<div class="inner">
+	<h1>SECTION4</h1>
+</div>
+</section>
+<section id="melon" class="scroll_point">
+<div class="inner">
+	<h1>SECTION5</h1>
+</div>
+</section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+	//　変数の設定
+	let headerHeight = $("header").height(); // ヘッダの高さ
+	let navHeight = $("nav").height(); // ナビの高さ
+	let scrollSpeed = 1000; // 1秒あたりのスクロール量
+
+	// スクロール量に応じたアクション
+	$(window).scroll(function(){
+		// ナビゲーションの固定
+		if($(window).scrollTop() >= headerHeight) {
+			$("nav").addClass("fixed"); // header分スクロールしたら、fixedクラスを付与
+			$("#orange").css("margin-top", navHeight); // navが固定されると後ろの要素に認識されなくなり、ズレが生じてしまうのを解消
+		}
+		else {
+			$("nav").removeClass("fixed"); // header部分までスクロールしたら、fixedクラスを外す
+			$("#orange").css("margin-top", 0);
+		}
+
+		// 現在地の表示
+		let currentPosition =  $(window).scrollTop(); // 現在のスクロール位置
+		let currentSection;
+		$(".scroll_point").each(function(){ // scroll_pointクラスのセクションを順番に処理
+			if(currentPosition >= $(this).offset().top - navHeight) {
+				currentSection = $(this).attr("id"); // 現在地のセクションのＩＤ名を取得
+			}
+		});
+		$(".current").removeClass("current");
+		$('a[href="#' + currentSection + '"]').parent().addClass('current'); // セクション名を元に、該当のa要素の親にcurrentクラスを付与
+	});
+
+	// スムーズスクロール
+	$("nav a").click(function(){
+		let currentPosition = $(window).scrollTop(); // 現在のスクロール位置
+		let destination = $($(this).attr("href")).offset().top - navHeight; // 目的地のスクロール
+		let t = Math.floor(Math.abs(currentPosition - destination) / scrollSpeed * 1000); // 到達にかかる時間
+		$("html, body").animate({scrollTop: destination}, t); // スクロールのアニメーション
+		return false; // a要素クリックでページが再読み込みされるのを防ぐ
+	});
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img id="photo1" src="/travel/fukui1.jpg" alt="">
+  <img id="photo2" src="/travel/nikko1.jpg" alt="">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#photo1").hover(function () {
+        $("#photo1").attr("src", "/travel/fukui2.jpg");
+      }, function () {
+        $("#photo1").attr("src", "/travel/fukui1.jpg");
+      }
+      );
+
+      $("#photo2").hover(function () {
+        $("#photo2").attr("src", "/travel/nikko2.jpg");
+      }, function () {
+        $("#photo2").attr("src", "/travel/nikko1.jpg");
+      }
+      );
+
+    });
+  </script>
+</body>
+</html>

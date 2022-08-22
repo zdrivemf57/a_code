@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>オブジェクト</title>
+</head>
+<body>
+  <script>
+    var person = {
+      name: '山田太郎', // nameプロパティ
+      age: 20, // ageプロパティ
+      hello: function () { // hello()メソッド
+        console.log('こんにちは');
+      }
+    };
+    console.log(person);
+    alert('ここで止める');
+    console.log(person.address);
+    console.log(person.name);
+    person.hello();
+
+    person.address = '東京都';
+    console.log(person);
+  </script>
+</body>
+</html>

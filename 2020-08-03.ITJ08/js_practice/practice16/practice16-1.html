@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>練習</title>
+</head>
+<body>
+    <p>
+問題１：
+以下のボタンをクリックしたときにalertで「ボタンをクリックしました」と表示させてください。
+</p>
+    <div id="q1"><button>ボタン</button></div>
+    <p>
+問題２：
+以下のサムネイル画像をクリックしたときに、alt属性に設定されている文字をconsole.logで表示してください。
+</p>
+    <div id="thumb">
+        <img src="images/fukui1.jpg" alt="駅前の恐竜" width="100">
+        <img src="images/fukui2.jpg" alt="越前の街並み" width="100">
+        <img src="images/fukui3.jpg" alt="恐竜博物館" width="100">
+    </div>
+    <p>
+問題３：
+上のサムネイル画像にマウスオーバーしたときに、その画像と同じ画像が以下のネコの画像から切り替わって表示されるようにしてください。<br>マウスアウトしたときは、ネコの画像に戻ります。
+</p>
+    <div id="stage" style="border:1px dotted #000; width: 420px; text-align: center;">
+        div#stage<br>
+        <img src="images/cat.jpg" width="400">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 問題１
+            $("#q1").click(function (e) {
+                e.preventDefault();
+                alert("ボタンをクリックしました");
+            });
+
+            // 問題２
+            $("#thumb img").click(function (e) {
+                e.preventDefault();
+                const alt = $(this).attr("alt");
+                console.log(alt);
+            });
+
+            // 問題３
+            $("#thumb img").hover(function () {
+                // over
+                const src = $(this).attr("src");
+                $("#stage img").attr("src", src);
+            }, function () {
+                // out
+                $("#stage img").attr("src", "images/cat.jpg");
+            }
+            );
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div id="original">
+  <h1>こんにちは</h1>
+  <p>元気ですか?</p>
+</div>
+
+<div id="copy1"></div>
+<div id="copy2"></div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  // #originalの中身を取得
+  const c1 = $("#original").html();
+  const c2 = $("#original").text();
+  console.log(c1);
+  console.log(c2);
+
+  // #copy1, #copy2の中身をセット
+  $("#copy1").html(c1);
+  $("#copy2").text(c1);
+
+}); //ready()
+</script>
+</body>
+</html>

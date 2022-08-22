@@ -1,0 +1,57 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>健康チェック</title>
+</head>
+<body>
+
+身長：<input id="height">メートル
+<br>
+体重：<input id="weight">キログラム
+<br>
+<button>診断</button>
+
+<p>診断結果</p>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  
+<script>
+$("button").click(function(){
+	// 確認用
+	alert("診断を開始します");
+	
+	// ①入力(身長、体重)⇒記憶
+	const h = $("#height").val();
+	const w = $("#weight").val();
+	
+	// 確認
+	console.log(h);
+	console.log(w);
+	
+	// ②記憶⇒演算(BMI値の計算)
+	// ③計算結果が出力⇒入力⇒記憶
+	const bmi = w / (h * h);
+	
+	// 確認
+	console.log(bmi);
+	
+	// ④記憶(BMI値)⇒演算(判断)
+	// ⑤判断結果を出力(画面出力)
+	if(bmi < 18.5){
+		$("p").text("痩せ気味です");
+	}
+	else if(bmi < 25){
+		$("p").text("適正な体重です");
+	}
+	else {
+		$("p").text("肥満傾向です");
+	}
+	
+});
+</script>
+
+</body>
+</html>

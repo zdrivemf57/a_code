@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #news {
+      display: none;
+    }
+
+    #box {
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <h1>ニュース</h1>
+  <button type="">読む</button>
+  <div id="news">
+    <h2>桜満開</h2>
+    <p>東京の桜が満開になった</p>
+  </div>
+  <div id="stage"></div>
+  <div id="box">ボックス</div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      console.log($(window).width());
+      console.log($(window).height());
+      console.log($("#stage").width());
+      console.log($("#stage").height());
+
+      $("button").click(function (e) {
+        // #newsの中身を取得
+        const tx = $("#news").html();
+        console.log(tx);
+
+        // #stageに取得したものをセット
+        $("#stage").html(tx);
+
+        console.log($(window).width());
+        console.log($(window).height());
+        console.log($("#stage").width());
+        console.log($("#stage").height());
+
+        $("#box").width("50%");
+        $("#box").height("200px");
+
+      });
+    });
+  </script>
+</body>
+</html>

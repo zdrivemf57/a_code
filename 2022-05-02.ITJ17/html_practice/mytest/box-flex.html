@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      height: 600px;
+      background-color: rgba(236, 164, 204, 0.89);
+      padding: 50px;
+    }
+    .box2 {
+      background-color: aquamarine;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      padding: 50px;
+      width: 50%;
+      height: 50%;
+      /* margin: 50px; */
+    }
+    .flexbox3 {
+      padding-left: 0;
+      list-style-type: none;
+      display: flex;
+    }
+    .flexbox3 li {
+      /* display: inline-block; */
+      /* flex-basis: 200px; */
+    }
+    .flexbox3 a {
+      display: block;
+      background: rgba(97, 193, 238, 0.932);
+      border: 1px solid #fff;
+      padding: 10px;
+      width: 100px;
+      text-align: center;
+    }
+    .flexbox3 a:hover {
+      background: rgba(33, 134, 180, 0.932);
+      border: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">
+    <div class="box2">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, cupiditate!
+    </div>
+  </div>
+  <ul class="flexbox3">
+    <li><a href="*">item1</a></li>
+    <li><a href="*">item2</a></li>
+    <li><a href="*">item3</a></li>
+    <li><a href="*">item4</a></li>
+  </ul>
+</body>
+</html>

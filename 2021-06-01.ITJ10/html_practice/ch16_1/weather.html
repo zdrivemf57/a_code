@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .area {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>天気予報</h1>
+  <div class="area">
+    <h2>関東</h2>
+    <p>関東は雨です</p>
+  </div>
+  <div class="btn">
+    <button class="show">表示</button>
+    <button class="hide">非表示</button>
+  </div>
+
+  <div class="area">
+    <h2>関西</h2>
+    <p>関西は晴れです</p>
+  </div>
+  <div class="btn">
+    <button class="show">表示</button>
+    <button class="hide">非表示</button>
+  </div>
+
+  <div class="area">
+    <h2>九州</h2>
+    <p>九州は曇りです</p>
+  </div>
+  <div class="btn">
+    <button class="show">表示</button>
+    <button class="hide">非表示</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $(".show").click(function () {
+        $(this).parent().prev().css("display", "block");
+        $(this).css("display", "none");
+        $(this).next().css("display", "inline-block");
+      });
+
+      $(".hide").click(function () {
+        $(this).parent().prev().css("display", "none");
+        $(this).prev().css("display", "inline-block");
+        $(this).css("display", "none");
+      });
+
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Javaでの記述</h1>
+  <pre>
+public class Member() {
+  // フィールド
+  public String name;
+  public int age;
+
+  // コンストラクタ
+  public Member(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // メソッド
+  public void showInfo() {
+    System.out.println(name +  "[" + age + "]");
+  }
+}
+
+-----
+クラスの利用
+Member m = new Member("山田", 25);
+m.showInfo(); // 山田[25] と表示
+</pre>
+
+  <script>
+    // コンストラクタ
+    // newを前提とした関数
+    function Member(name, age) {
+      this.name = name;
+      this.age = age;
+      // showInfoメソッドの定義
+      this.showInfo = function () {
+        console.log(this.name + "[" + this.age + "]");
+      };
+    }
+
+    // コンストラクタの利用
+    const m1 = new Member("山田", 25);
+    const m2 = new Member("鈴木 ", 25);
+    m1.showInfo();
+    m2.showInfo();
+  </script>
+</body>
+</html>

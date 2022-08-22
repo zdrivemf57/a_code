@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="../images/animals/animal1.jpg" alt="">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      const pic = $("img").attr("src");
+      $("img").hover(function () {
+        $(this).attr("src", "../images/flower/flower1.jpg");
+      },
+        function () {
+          $(this).attr("src", pic);
+        })
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クロスフェード（次の画像と白い画面無く入れ替わる）</title>
+  <style>
+    #stage {
+      border: 1px solid #000;
+      width: 450px;
+      margin: 20px auto;
+      position: relative;
+    }
+
+    #stage img {
+      width: 100%;
+    }
+
+    #stage img:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+<div id="stage">
+  <img src="/images/animals/animal1.jpg" alt="">
+  <img src="/images/animals/animal2.jpg" alt="">
+  <button>切り替え</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  
+  let num = 3;
+  $("#stage button").click(function(){
+    $("#stage img:nth-child(1)").fadeOut(1000, "swing", function(){
+      // 1枚目の画像をHTML上から除去
+      $(this).remove();
+      // ボタンの前に画像を追加
+      $("#stage button").before(`<img src='/images/animals/animal${num}.jpg'>`);
+      num++;
+      if(num == 10) {
+        num = 1;
+      }
+    });
+  });
+
+}); //ready()
+</script>
+</body>
+</html>

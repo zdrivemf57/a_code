@@ -1,0 +1,129 @@
+$color: #f00;
+
+h1 {
+  background: $color;
+}
+
+h2 {
+  color: $color;
+}
+
+/* CSS コメント */
+// CSSに残らないコメント
+
+/* ネスト */
+ul {
+  li {
+    background: #0f0;
+    a {
+      color: #f00;
+    }
+  }
+}
+
+ul li {
+  background: #0f0;
+  a {
+    color: #f00;
+  }
+}
+
+/* 疑似要素などの指定の仕方 */
+ul li {
+  background: #0f0;
+  a {
+    color: #f00;
+    :hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* 親参照 */
+ul li {
+  background: #0f0;
+  a {
+    color: #f00;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  &-primary {
+    color: #00f;
+  }
+}
+
+header {
+  width: 980px;
+  .phone {
+    width: 100%;
+  }
+}
+
+/* 変数 */
+$color: #f00;
+$wide: 800px;
+$selector: div;
+
+#{$selector} {
+  background: $color;
+  width: $wide;
+  border: $wide solid $color;
+  padding: $wide / 2 + 10;
+  color: lighten($color, 30%);
+  color: darken($color, 30%);
+}
+
+$color: #f00;
+$wide: 400px;
+
+@mixin box-style {
+  color: $color;
+  width: $wide;
+}
+
+h1 {
+  @include box-style;
+}
+
+/* 第1引数は省略不可 */
+@mixin box-style($color, $wide: 800px) {
+  background: $color;
+  width: $wide;
+  border: 1px solid $color;
+}
+
+h1 {
+  @include box-style(#0f0, 500px);
+}
+
+h1 {
+  @include box-style(#0f0);
+}
+
+.wrapper {
+  width: 980px;
+}
+
+@media screen and (max-width: 768px) {
+	.wrapper {
+		width: 100%;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.wrapper {
+  width: 980px;
+  @include sp {
+    width: 100%;
+  }
+}

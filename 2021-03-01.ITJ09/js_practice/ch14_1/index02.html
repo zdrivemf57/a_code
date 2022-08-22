@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #tokyo {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>今日の天気</h1>
+  <p>関東地方はいい天気です</p>
+  <p id="tokyo">
+    東京は明日、桜が満開です
+  </p>
+  <button>詳しく</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("#tokyo").fadeIn();
+        $("p").css("color", "green");
+      });
+    });
+  </script>
+</body>
+</html>

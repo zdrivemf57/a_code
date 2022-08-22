@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll And Animation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <div class="inner">
+        <h1>Scroll And Animation</h1>
+    </div>
+</header>
+<section id="s1">
+    <div class="inner">
+        <h2>Vegetable</h2>
+        <div class="vege">
+            <img src="images/bean.jpg" alt="" width="300">
+            <img src="images/carrot.jpg" alt="" width="300">
+            <img src="images/corn.jpg" alt="" width="300">
+        </div>
+    </div>
+</section>
+<section id="s2">
+    <div class="inner">
+        <h2>Flower</h2>
+        <div class="flower">
+            <img src="images/flower1.jpg" alt="" width="600">
+            <div class="poem">
+                <p>Sweet, I blame you not, for mine the fault was, had I not been made of common clay I had climbed the higher heights unclimbed yet, seen the fuller air, the larger day. From the wildness of my wasted passion I had struck a better, clearer song, Lit some lighter light of freer freedom, battled with some Hydra-headed wrong.</p>
+                <p>Had my lips been smitten into music by the kisses that but made them bleed, You had walked with Bice and the angels on that verdant and enamelled meed. I had trod the road which Dante treading saw the suns of seven circles shine, Ay! perchance had seen the heavens opening, as they opened to the Florentine.</p>
+                <p>And the mighty nations would have crowned me, who am crownless now and without name, And some orient dawn had found me kneeling on the threshold of the House of Fame. I had sat within that marble circle where the oldest bard is as the young, And the pipe is ever dropping honey, and the lyre's strings are ever strung.</p>
+                <p class="author">Oscar Wilde</p>
+            </div><!-- /.poem -->
+        </div><!-- /.flower -->
+    </div>
+</section>
+<footer>
+    <p><small>&copy 20XX ZDRIVE K.K. Some Rights Reserved.</small></p>
+</footer>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#s1 h2").addClass("animated");
+    $(".vege img").addClass("animated");
+
+    let trigger = $("#s2").offset().top - ($(window).height() / 2);
+    $(window).scroll(function(){
+        if($(window).scrollTop() > trigger){
+            $("#s2 h2").addClass("animated");
+            $(".flower").addClass("animated");
+        }
+        else {
+            $("#s2 h2").removeClass("animated");
+            $(".flower").removeClass("animated");
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習13-4</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+</style>
+</head>
+<body>
+<p>問題１：
+windowの幅と高さを取得し、console.logで表示してください。</p>
+<p>問題２：
+問題１で取得した幅と高さを以下の画像に適用し、画面が画像で覆われるようにしてください。<br>
+その際、問題文は非表示にしてください。</p>
+<img src="images/cat.jpg">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    const windowWidth = $(window).width();
+    const windowHeight = $(window).height();
+    console.log(windowWidth);
+    console.log(windowHeight);
+
+    $('img').attr('width', windowWidth);
+    $('img').attr('height', windowHeight);
+    $('p').css('display', 'none');
+});
+</script>
+</body>
+</html>

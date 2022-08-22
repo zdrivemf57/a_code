@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transitionとcssを組み合わせたアニメーション</title>
+  <style>
+    img {
+      filter: blur(10px) grayscale(100%);
+      transition: all 1s;
+    }
+
+    img.clicked {
+      filter: blur(0) grayscale(0);
+    }
+  </style>
+</head>
+<body>
+<img src="/images/animals/animal1.jpg" alt="">
+<img src="/images/animals/animal2.jpg" alt="">
+<img src="/images/animals/animal3.jpg" alt="">
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  
+  $("img").click(function(){
+    $(this).toggleClass("clicked");
+  });
+
+});
+</script>
+</body>
+</html>

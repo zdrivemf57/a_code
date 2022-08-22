@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>見出し</h1>
+  <div>
+    <h2>こんにちは</h2>
+    <p>元気ですか？</p>
+  </div>
+  <button id="btn1">ボタン1</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#btn1").click(function (e) {
+        e.preventDefault();
+        $("h1").text("おはよう！");
+        $("h1").text("<h3>さよなら</h3>");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="stage">
+    <img src="images/flower1.jpg" width="750">
+</div>
+<div id="thumb">
+    <img src="images/flower1.jpg" width="100" data-id="1">
+    <img src="images/flower2.jpg" width="100" data-id="2">
+    <img src="images/flower3.jpg" width="100" data-id="3">
+    <img src="images/flower4.jpg" width="100" data-id="4">
+    <img src="images/flower5.jpg" width="100" data-id="5">
+    <img src="images/flower6.jpg" width="100" data-id="6">
+    <img src="images/flower7.jpg" width="100" data-id="7">
+</div>
+<div id="btn">
+    <button id="prev">前へ</button>
+    <button id="next">次へ</button>
+    <button id="autoplay">自動再生</button>
+</div>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    let picNum = $("#thumb img").length; // #thumb内のimgの数
+    let current = 1; // 現在表示の画像番号
+
+    $("#thumb img, #prev, #next").click(function(){
+        // クリックしたものによってcurrent番号を変更
+        if($(this).attr("id") == "prev") {
+            if(current == 1) {
+                current = picNum;
+            }
+            else {
+                current--;
+            }
+        }
+        else if($(this).attr("id") == "next") {
+            if(current == picNum) {
+                current = 1;
+            }
+            else {
+                current++;
+            }
+        }
+        else {
+            current = $(this).attr("data-id");
+        }
+        // 画像をセットする
+        $("#stage img").attr("src", "images/flower" + current + ".jpg");
+    });
+
+    let t; // タイマー用
+    $("#autoplay").click(function(){
+        if($(this).text() == "自動再生") {
+            $(this).text("停止");
+            t = setInterval(function(){
+                if(current < picNum) {
+                    current++;
+                }
+                else {
+                    current = 1;
+                }
+                $("#stage img").attr("src", "images/flower" + current + ".jpg");
+            }, 3000);
+        }
+        else {
+            $(this).text("自動再生");
+            clearInterval(t);
+        }
+    });
+});
+</script>
+</body>
+</html>

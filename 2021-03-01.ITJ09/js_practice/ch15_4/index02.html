@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="/travel/fukui1.jpg">
+  <button id="btn1" data-img="sendai1.jpg">仙台</button>
+  <button id="btn2" data-img="sli1.jpg">スリランカ</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#btn1").click(function () {
+        // data-img属性の値を取得
+        const name =
+          $("#btn1").attr("data-img");
+        console.log(name);
+        // img要素のsrc属性を変更
+        $("img").attr("src", "/travel/" + name);
+      }); // btn1のclick
+
+      $("#btn2").click(function () {
+        const name = $("#btn2").attr("data-img");
+        $("img").attr("src", "/travel/" + name);
+      });
+
+    }); // document ready
+  </script>
+</body>
+</html>

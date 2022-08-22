@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+div {
+  border: 2px solid #000;
+  width: 300px;
+  height: 100px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 480px) {
+  div {
+    background: pink;
+  }
+}

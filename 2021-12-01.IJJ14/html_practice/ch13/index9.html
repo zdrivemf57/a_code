@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+// Itemクラスに相当(コンストラクタ)
+function Item(name, price) {
+  this.name = name;
+  this.price = price;
+  this.showInfo = function(){
+    console.log(this.name);
+    console.log(this.price);
+  };
+}
+
+// Itemコンストラクタから
+// オブジェクトを生成
+const item1 = new Item("りんご", 100);
+const item2 = new Item("みかん", 200);
+
+item1.showInfo();
+item2.showInfo();
+</script>
+</body>
+</html>

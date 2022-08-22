@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div id="group1">
+  <button>ボタンA</button>
+  <button>ボタンB</button>
+</div>
+<div id="group2">
+  <button>ボタンC</button>
+  <button>ボタンD</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#group1 button").click(function(){
+    const text = $("#group1 button").text();
+    alert(text);
+  });
+
+  $("#group2 button").click(function(){
+    const text = $(this).text();
+    alert(text);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>Fruits</title> 
+<style> 
+table { 
+ border-collapse: collapse; 
+} 
+th, td { 
+ padding: 5px 10px; 
+ border: 1px solid #000; 
+} 
+</style> 
+</head> 
+<body> 
+<h1>商品リスト</h1> 
+<table id="item-table"> 
+ <tr> 
+ <td>商品名</td> 
+ <td>値段</td> 
+ <td>操作</td> 
+ </tr> 
+</table> 
+<script src="js/jquery-3.6.0.min.js"></script> 
+<script> 
+/** 
+ * 商品テーブルの 1 行分を生成する関数
+ * @param item name プロパティと price プロパティをもつ
+ */ 
+function createRow(item) { 
+ // テーブルに行を追加
+ $('#item-table').append('<tr>'); 
+ // 追加した行に商品情報を挿入
+ $('#item-table tr:last-child').append(`<td>${item.name}</td>`) 
+ .append(`<td>${item.price}円</td>`) 
+ .append('<td><button>削除</button></td>'); 
+ // 動的に追加されたボタンに削除機能を付与
+ $('#item-table tr:last-child button').click(function() { 
+ $(this).parent().parent().remove(); 
+ }); 
+} 
+/** 
+ * メインの処理
+ */ 
+$(document).ready(function() { 
+ // 表示させる商品のリスト
+ const items = [ 
+ {name: 'りんご', price: 100}, 
+ {name: 'みかん', price: 300}, 
+ {name: 'バナナ', price: 200} 
+ ]; 
+ for(let item of items) { 
+ createRow(item); 
+ } 
+}); 
+</script> 
+</body> 
+</html>

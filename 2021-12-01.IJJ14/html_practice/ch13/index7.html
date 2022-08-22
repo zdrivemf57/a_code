@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+// 関数の定義
+// ある処理をX回繰り返す関数
+// 引数: 繰り返しの回数
+// 引数: ある処理
+function repeat(x, shori) {
+  for(let i = 1; i <= x; i++) {
+    shori();
+  }
+}
+
+// 英語で挨拶をする関数
+function greet() {
+  console.log("Hello");
+  console.log("How are you");
+}
+
+// repeatの利用
+repeat(3, () => {
+  console.log("こんにちは");
+  console.log("元気ですか");
+});
+
+repeat(3, greet);
+</script>
+</body>
+</html>

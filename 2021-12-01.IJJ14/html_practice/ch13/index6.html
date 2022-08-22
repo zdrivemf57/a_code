@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+// 関数の定義
+// 配列の合計を算出する関数
+// ⇒ 引数:配列, 戻り値:合計
+function getTotal(nums) {
+  let total = 0;
+  for(let num of nums) {
+    total += num;
+  }
+  return total;
+}
+
+// 関数の利用
+const t = 
+   getTotal([30, 50, 20]);
+console.log(t);
+
+// 無名関数
+// ⇒ 変数に代入する
+const getBmi = function (height, weight) {
+  return weight / (height * height);
+};
+
+// 変数に代入した関数を利用
+const bmi = getBmi(1.7, 75);
+console.log(bmi);
+
+</script>
+</body>
+</html>

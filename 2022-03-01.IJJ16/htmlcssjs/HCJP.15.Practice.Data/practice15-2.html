@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>練習</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background: linear-gradient(white, pink);
+            border-bottom: 1px solid red;
+            height: 1000px;
+        }
+
+        section {
+            height: 800px;
+            border-bottom: 1px solid #000;
+            background: linear-gradient(white, lightblue);
+        }
+
+        a[href='#about'] {
+            display: inline-block;
+            margin-top: 10px;
+            background: #2d2dbf;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 2em;
+            border-radius: 5px;
+        }
+
+        a[href='#about']:hover {
+            background-color: #8585dc;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>
+            問題１：
+            ボタン１（button#btn1）を押したときに、上から1000pxの位置までスムーズスクロールして移動させてください。スクロールにかかる時間は、1秒とします。
+            <br>スムーズスクロールは、$("html, body")に対して、animateメソッドをかけることで実装できます。
+            <br><br>例：1.5秒かけて上から3000pxの位置にスムーズスクロール<br>
+            $("html, body").animate({scrollTop:"3000px"}, 1500);
+            <br><br>
+            問題２：
+            ボタン２（a[href='#about']）を押したときに、#aboutまでスムーズスクロールするようにしてください。スクロールにかかる時間は、1秒とします。
+            <br><br>
+            位置の取得は、<br>
+            $("セレクタ").offset().top<br>
+            で行えます。
+            <br><br>
+            <a href="https://www.sejuku.net/blog/61689" target="_blank">問題１と２の参考</a>
+            <br><br>
+        </p>
+        <p><button id="btn1">ボタン１</button></p>
+        <p><a href="#about">ボタン２</a></p>
+    </header>
+    <section id="home">
+        <p>↑ 1000px</p>
+        <h1>#home</h1>
+    </section>
+    <section id="about">
+        <h1>#about</h1>
+    </section>
+    <section id="company">
+        <h1>#company</h1>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 問題1
+            $("button#btn1").click(function () {
+                $("html, body").animate({
+                    scrollTop: 1000
+                }, 1000);
+                return false;
+            });
+
+            // 問題2
+            $("a[href='#about']").click(function(){
+                const scrollTo = $(this).attr("href");
+                const height = $(scrollTo).offset().top;
+                $("html, body").animate({
+                    scrollTop: height
+                }, 1000);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

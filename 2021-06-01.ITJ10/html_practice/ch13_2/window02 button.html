@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 5000px;
+      position: relative;
+    }
+
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .to {
+      opacity: 0.8;
+      top: -30px;
+      right: -70px;
+      display: inline-block;
+      width: 15rem;
+      position: fixed;
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    .to-entry-btn {
+      background: linear-gradient(107.61deg, #adff2f 7.99%, #228b22 91.12%);
+      display: block;
+      width: 60%;
+      padding: 6px 0;
+      margin: 30px auto;
+      margin-right: 55px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      overflow: hidden;
+    }
+
+    .scroll {
+      /* position: sticky; */
+      padding: 1rem;
+      border: 1px solid rgb(34, 170, 74);
+      position: sticky;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>windowオブジェクト</h1>
+  <a class="to" href="#step1" rel="noopener">
+    <div class="to-entry-btn">
+      お申し込みへ
+    </div>
+  </a>
+  <div class="scroll"></div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // .toのtopからの位置
+      var toy = $(".to").offset().top;
+      console.log(toy);
+
+      // ブラウザの大きさ
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      window.console.log(w);
+      window.console.log(h);
+
+      $(window).on("scroll", function () {
+        // スクロール値を取得する場合「.scrollTop()」
+        var scroll = $(window).scrollTop();
+        console.log(scroll);
+        // すぐ下の「.scroll」にスクロール値を表示
+        $(".scroll").text(scroll);
+      });
+
+    });
+  </script>
+</body>
+</html>

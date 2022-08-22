@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* リセット */
+*{
+	margin:0;padding:0;list-style-type:none;
+}
+
+/* ヘッダ */
+header{
+	height:800px;
+	background-image:url("../images/bg.jpg");
+	background-attachment:fixed;
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+#logo{
+	position:fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left: -200px;
+}
+
+/* ナビゲーション */
+nav{
+	width:100%;
+	height:60px;
+	z-index:500;
+}
+nav .zindex_fix{
+	position:relative;
+	z-index:500;
+	background-color: #000;
+	width:100%;
+	height:100%;
+}
+nav .nav_inner{
+	overflow:hidden;
+	width:960px;
+	margin:0 auto;
+}
+nav img {
+	padding-top: 10px;
+}
+nav ul{
+	overflow:hidden;
+	float:right;
+}
+nav li{
+	text-align:center;
+	width:130px;
+	border-left:#fff solid 1px;
+	float:left;
+}
+nav li a {
+	display: block;
+	box-sizing: border-box;
+	color: #fff;
+	height: 100%;
+	padding: 20px;
+}
+nav li.current a[href="#orange"], nav li a[href="#orange"]:hover {
+	background-color: #ff8c00;
+}
+nav li.current a[href="#grape"], nav li a[href="#grape"]:hover {
+	background-color: #c62bdb;
+}
+nav li.current a[href="#peach"], nav li a[href="#peach"]:hover {
+	background-color: #ff5ec9;
+}
+nav li.current a[href="#apple"], nav li a[href="#apple"]:hover {
+	background-color: #e00830;
+}
+nav li.current a[href="#melon"], nav li a[href="#melon"]:hover {
+	background-color: #49c613;
+}
+
+/* ナビ固定用CSS */
+.fixed {
+	position:fixed;
+	top:0;
+}
+
+/* メインコンテンツ */
+main{
+	position:relative;
+	z-index:100;
+}
+section {
+	background-image: url(../images/foam.png);
+	background-attachment: fixed;
+}
+section .inner{
+	max-width:1200px;
+	margin:0 auto;
+	color: #fff;
+}
+#orange {
+	background-color: #ff8c00;
+	height: 600px;
+}
+#grape {
+	background-color: #c62bdb;
+	height: 500px;
+}
+#peach {
+	background-color: #ff5ec9;
+	height: 700px;
+}
+#apple {
+	background-color: #e00830;
+	height: 550px;
+}
+#melon {
+	background-color: #49c613;
+	height: 1200px;
+}

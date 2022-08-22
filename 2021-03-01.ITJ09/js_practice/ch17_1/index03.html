@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #stage {
+      background: pink;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button id="show">表示</button>
+    <button id="hide">非表示</button>
+    <button id="toggle">交互</button>
+  </div>
+
+  <div id="stage">
+    <img src="/travel/fukui1.jpg" alt="">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 非表示
+      $("#hide").click(function () {
+        $("#stage").slideUp();
+      });
+
+      // 表示
+      $("#show").click(function () {
+        $("#stage").slideDown();
+      });
+
+      // 交互
+      $("#toggle").click(function () {
+        $("#stage").slideToggle(3000, "swing");
+      });
+
+    });
+  </script>
+</body>
+</html>

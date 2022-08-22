@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .foo {
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <h1>見出し1</h1>
+  <h2>見出し2</h2>
+  <button id="btn1">h1の変更</button>
+  <button id="btn2">h2の変更</button>
+  <button id="btn3">bodyの変更</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // btn1
+      $("#btn1").click(function (e) {
+        $("h1").css("Color", "red");
+        $("h1").css("font-size", "16px");
+      });
+
+      // btn2
+      $("#btn2").click(function (e) {
+        $("h2").css({
+          color: "green",
+          fontSize: "16px",
+        });
+      });
+
+      // btn3
+      $("#btn3").click(function (e) {
+        $("body").toggleClass("foo");
+      });
+
+    });
+  </script>
+</body>
+</html>

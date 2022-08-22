@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>分岐処理</h1>
+  <script>
+    const age = 25;
+
+    if (age >= 20) {
+      console.log("お酒OK");
+    }
+    else {
+      console.log("お酒NG");
+    }
+
+    const name = "佐藤光";
+    if (name === "本田") {
+      console.log("本田さんですね");
+    }
+
+    const x = "25";
+    // 型については気にしない
+    console.log(x == 25);
+    // 型と中身の両方を厳密に比較
+    console.log(x === 25);
+  </script>
+</body>
+</html>

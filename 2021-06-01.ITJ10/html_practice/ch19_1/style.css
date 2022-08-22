@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.wrap {
+  background: pink;
+}
+
+.about {
+  background: lightblue;
+}
+
+.access {
+  background: lightgreen;
+}

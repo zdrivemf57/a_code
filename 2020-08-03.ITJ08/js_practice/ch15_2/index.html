@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>画像の変更</h1>
+  <img id="main" src="images/animal1.jpg">
+  <hr>
+  <img id="s1" src="images/animal2.jpg" width="100">
+  <img id="s2" src="images/animal3.jpg" width="100">
+  <img id="s3" src="images/animal4.jpg" width="100">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#s1").click(function (e) {
+        // #s1のsrc属性の値を取得
+        let s1 = $("#s1").attr("src");
+        console.log(s1);
+        // #s1のsrc属性の値を取得
+        $("#main").attr("src", s1);
+      });
+
+      $("#s2").click(function (e) {
+        // #s2のsrc属性の値を取得
+        let s2 = $("#s2").attr("src");
+        console.log(s2);
+        // #s2のsrc属性の値を取得
+        $("#main").attr("src", s2);
+      });
+
+      $("#s3").click(function (e) {
+        // #s3のsrc属性の値を取得
+        let s3 = $("#s3").attr("src");
+        console.log(s3);
+        // #s3のsrc属性の値を取得
+        $("#main").attr("src", s3);
+      });
+
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+
+    /* チェックが入った id="x"
+       の次のdiv */
+    #x:checked+div {
+      animation: move 2s forwards;
+    }
+
+    /* チェックボックスを非表示 */
+    #x {
+      display: none;
+    }
+
+    /* 動きの定義 */
+    @keyframes move {
+      0% {
+        margin-left: 0;
+      }
+
+      50% {
+        margin-top: 300px;
+      }
+
+      100% {
+        margin-top: 0;
+        margin-left: 900px;
+        width: 300px;
+        height: 300px;
+        background-color: blue;
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button>
+    <label for="x">ボタン</label>
+  </button>
+
+  <input id="x" type="checkbox">
+
+  <div></div>
+</body>
+</html>

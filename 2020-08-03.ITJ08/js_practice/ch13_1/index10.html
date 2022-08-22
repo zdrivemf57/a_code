@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>オブジェクト内のオブジェクト</h1>
+  <pre>
+Jobクラス
+public class Job {
+  private String name;
+  private String company;
+  public void getInfo() {
+    ....
+  }
+}
+
+Memberクラス
+public class Member() {
+  private String name; //会員名
+  private Job job; //仕事の情報
+}
+
+</pre>
+
+  <script>
+    const member = {
+      name: "山田太郎",
+      job: {
+        name: "デザイナー",
+        company: "株式会社ABC",
+        showInfo: function () {
+          console.log(this.company +
+            "所属の" + this.name);
+        }
+      }
+    };
+
+
+    // オブジェクトの利用
+    member.job.showInfo();
+
+
+  </script>
+</body>
+</html>

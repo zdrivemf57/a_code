@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <th>鉛筆</th>
+    <td>100</td>
+    <td>
+      <input type="number">
+    </td>
+    <td>0円</td>
+  </tr>
+  <tr>
+    <th>分度器</th>
+    <td>300</td>
+    <td>
+      <input type="number">
+    </td>
+    <td>0円</td>
+  </tr>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("input").change(function(){
+    // 入力値の取得
+    const count = $(this).val();
+    // 単価の取得
+    const price = $(this).parent().prev().text();
+    // 小計の計算と表示
+    const total = count * price;
+    $(this).parent().next().text(total + "円");
+  });
+});
+</script>
+</body>
+</html>

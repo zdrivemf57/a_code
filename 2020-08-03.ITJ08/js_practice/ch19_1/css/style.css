@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+header {
+  background-color: #ffc489;
+}
+main {
+  background-color: #ffbcdd;
+}
+footer {
+  background-color: #bcffbc;
+19. Bootstrap 基礎 1 練習
+Copyright © ZDRIVE, K.K. All rights reserved. 3
+}
+.animal {
+  background-color: #99ccff;
+}
+.btn-mybutton {
+  background: darkblue;
+  color: white;
+}
+
+.jumbotron {
+  background-image: url(../images/header.jpg);
+  background-size: cover;
+  background-position: center center;
+}

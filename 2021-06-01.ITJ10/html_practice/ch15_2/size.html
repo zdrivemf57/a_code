@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <img src="../images/animals/animal1.jpg">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("img").click(function () {
+        // 1. 画面の幅・高さを取得
+        const w = $(window).width();
+        const h = $(window).height();
+
+        // 2. 取得した幅と高さを
+        //    imgに適用
+        // $(this).width(w);
+        // $(this).height(h); 下の方法でも同じ動作
+
+        $(this).width(w).height(h);
+
+      }); //click
+
+    }); //ready
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>練習</title>
+</head>
+<body>
+    <p>
+問題１：
+「次へ」ボタン(button#next)をクリックするたびに、div#stage内の画像が順番に切り替わるようにしてください。<br>使用する画像は、flower1.jpg ～ flower5.jpg です。
+</p>
+    <p>
+問題２：
+「次へ」ボタンを押さなくても、3.5秒ごとに自動的に画像が切り替わるようにしてください。
+</p>
+    <button id="next">次へ</button>
+    <br>
+    <div id="stage" style="border: 1px dotted #000; display: inline-block; padding: 20px;">
+        div#stage<br><br>
+        <img src="images/flower1.jpg" width="400">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 問題１
+            let i = 1;
+            $("#next").click(function (e) {
+                e.preventDefault();
+                i++;
+                if (i > 5) {
+                    i = 1;
+                }
+                const src = "images/flower" + i + ".jpg";
+                $("#stage img").attr("src", src);
+            });
+
+            // 問題２
+            setInterval(function () {
+                i++;
+                if (i > 5) {
+                    i = 1;
+                }
+                const src = "images/flower" + i + ".jpg";
+                $("#stage img").attr("src", src);
+            }, 3500);
+        });
+    </script>
+</body>
+</html>

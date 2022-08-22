@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<style>
+button {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+#stage {
+  position: relative;
+}
+#stage div {
+  text-align: center;
+  color: #fff;
+  background: black;
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+.current {
+  display: block!important;
+  z-index: 100;
+}
+.next {
+  display: block!important;
+}
+</style>
+</head>
+<body>
+<button>次の画像</button>
+<div id="stage">
+  <div class="current">
+    <h1>猫がこちらを見ていますよ！</h1>
+    <img src="images/animal1.jpg" alt="">
+  </div>
+  <div class="next">
+    <h1>ハトの表情が凛々しい！</h1>
+    <img src="images/animal2.jpg" alt="">
+  </div>
+  <div>
+    <h1>ゴリラが考え込んでいます！</h1>
+    <img src="images/animal6.jpg" alt="">
+  </div>
+  <div>
+    <h1>犬が退屈そうにしています！</h1>
+    <img src="images/animal9.jpg" alt="">
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+  
+  let nextNum = 2;
+
+  $('button').click(function(){
+    $('.current').fadeOut(1000, 'swing', function(){
+      // .currentを除去する際に、余計なスタイル属性値を削除
+      $(this).removeAttr('style')
+             .removeClass('current');
+      $('.next').addClass('current')
+                .removeClass('next');
+      // 次の画像の指定
+      nextNum++;
+      if(nextNum == 5) {
+        $('#stage div:first-child').addClass('next');
+        nextNum = 1;
+      }
+      else {
+        $('.current').next()
+                     .addClass('next');
+      }
+    });
+  });
+
+}); // ready()
+</script>
+</body>
+</html>

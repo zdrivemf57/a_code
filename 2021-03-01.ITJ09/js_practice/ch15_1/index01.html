@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .deco {
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS操作</h1>
+  <h2>色を変える</h2>
+  <h2>大きさを変える</h2>
+  <button id="btn1">色</button>
+  <button id="btn2">大きさ</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 色を変更する
+      $("#btn1").click(function () {
+        $("h2").css("color", "blue");
+        $("h1").addClass("deco");
+      });
+
+      // 大きさを変更する
+      $("#btn2").click(function () {
+        $("h2").css("font-size", "50px");
+      });
+
+    }); // ready()のペア
+  </script>
+</body>
+</html>

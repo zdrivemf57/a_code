@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+.wrap {
+  background: lightgreen;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.kanto {
+  border: 1px solid red;
+  width: 45%;
+  float: left;
+}
+
+.kansai {
+  border: 1px solid blue;
+  width: 45%;
+  float: right;
+}
+
+.area {
+  font-size: 200%;
+}

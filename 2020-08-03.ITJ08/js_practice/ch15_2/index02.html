@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .changed {
+      color: red;
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>色などを変更</h1>
+  <button id="btn1">ADD</button>
+  <button id="btn2">REMOVE</button>
+  <button id="btn3">TOGGLE</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#btn1").click(function () {
+        $("h1").addClass("changed");
+      });
+
+      $("#btn2").click(function () {
+        $("h1").removeClass("changed");
+      });
+
+      $("#btn3").click(function (e) {
+        e.preventDefault();
+        $("h1").toggleClass("changed");
+      });
+    });
+  </script>
+</body>
+</html>

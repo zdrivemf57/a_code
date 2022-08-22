@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>登録フォーム</h1>
+<form action="" method="post">
+  <p>名前:
+    <input type="text" name="name">
+  </p>
+  <p>顔写真:
+    <input type="file" name="face">
+  </p>
+  <p>年齢:
+    <input type="number" name="age" min="0" max="150" step="1" value="20">
+  </p>
+  <p>生年月日:
+    <input type="date" name="birthday" value="2000-01-01">
+  </p>
+  <p>パスワード:
+    <input type="password" name="pass">
+  </p>
+  <p>備考:
+    <textarea name="note" placeholder="備考を入力" cols="30" rows="5">初期値</textarea>
+  </p>
+  <p>お住まいの地域:
+    <select name="area">
+      <option value="1">東京都</option>
+      <option value="2" selected>千葉県</option>
+      <option value="3">埼玉県</option>
+    </select>
+  </p>
+  <input type="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+body {
+  font-family: Meiryo, 'メイリオ', Osaka, sans-serif;
+  color: #333333;
+  line-height: 1.4;
+  background: #dddddd;
+}
+
+body, h1, h2, p {
+  padding: 0;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+  background: #ffffff;
+}
+
+#ichioshi h1 {
+  text-align: center;
+  color: #ffffff;
+  background: #103b7b;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+#ichioshi .plan {
+  border-bottom: 1px solid #777777;
+}
+
+#ichioshi h2 {
+  color: #ea1111;
+  font-size: 16px;
+}
+
+#ichioshi img {
+  padding: 3px;
+  border: 1px solid #777777;
+}
+
+#ichioshi .price {
+  color: #45aa0f;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  background: #134fa8;
+  color: #ffffff;
+}

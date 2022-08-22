@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .styled {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Toggle</h1>
+  <button type="">デザイン変更</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("h1").toggleClass("styled");
+      });
+    });
+  </script>
+</body>
+</html>

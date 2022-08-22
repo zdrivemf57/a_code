@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>オブジェクト</h1>
+  <pre>
+public class Member {
+  public String name;
+  public void sayHi() {
+    System.out.println("こんにちは" +
+                       name + "です");
+  }
+}
+
+----
+MyApp
+
+Member m = new Member();
+m.name = "山田太郎";
+m.age = 25; ×
+m.sayHi();
+</pre>
+
+  <script>
+    const m = {
+      name: "山田太郎",
+      sayHi: function () {
+        console.log("こんにちは" +
+          this.name + "です");
+      }
+    };
+
+    // オブジェクトの利用方法1
+    m.sayHi();
+    m.name = "加藤紘一";
+    m.sayHi();
+
+    // 利用方法2
+    m["name"] = "本田次郎";
+    m["sayHi"]();
+
+    const x = "name";
+    m[x] = "鈴木浩二";
+
+    // プロパティやメソッドの追加が可能
+    m.age = 25;
+    m.sayAge = function () {
+      console.log(this.age + "才です");
+    };
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>画像ギャラリー</h1>
+  <img src="images/animal1.jpg">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 3秒ごとに画像が入れ替わる
+      let num = 1;
+      setInterval(function () {
+        // numを画像名に変換
+        const pic = `images/animal${num}.jpg`;
+        console.log(pic);
+        $("img").attr("src", pic);
+        num++;
+        if (num == 10) {
+          num = 1;
+        }
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

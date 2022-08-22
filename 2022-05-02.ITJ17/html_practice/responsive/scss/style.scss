@@ -1,0 +1,25 @@
+// @media screen and (min-width: 768px) {
+//   h1 {
+//     color: red;;
+//   }
+// }
+
+// SCSSを利用したレスポンシブ
+$tb: 768px; // タブレットサイズ
+$sp: 480px; // スマートフォンサイズ
+// メディアクエリのミックスイン
+@mixin style_at($breakpoint) {
+  @media screen and (min-width: $breakpoint){
+    @content; 
+  }
+}
+
+div {
+  background: pink;
+  @include style_at($tb){
+    width: 50%;
+  }
+  @include style_at($sp){
+    width: 75%;
+  }
+}

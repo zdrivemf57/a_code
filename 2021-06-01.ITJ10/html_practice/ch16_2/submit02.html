@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>会員登録</h1>
+
+  <div class="error"></div>
+
+  <form action="register" method="post">
+    <p>名前
+    <input type="text" name="user" id="user">
+  </p>
+    <p>メール
+    <input type="text" name="email" id="email">
+  </p>
+    <input type="submit">
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("form").submit(function () {
+        // 入力値の取得
+        const user = $("#user").val();
+        const email = $("#email").val();
+
+        // 入力に不備が無いかチェック
+        let isValidated = true;
+        if (user === "") {
+          isValidated = false;
+        }
+        if (email === "") {
+          isValidated = false;
+        }
+
+        // 不備があれば、エラーメッセージ
+        if (!isValidated) {
+          $(".error").text("入力に不備があります");
+          return false;
+        }
+        // 不備がなければ、送信
+        else {
+          // エラーメッセージを空に
+          $(".error").text("");
+          // 不備がなければ、
+          // 確認をした上で送信
+          return confirm("本当に登録しますか？");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

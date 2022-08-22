@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="process.php" method="post">
+    <input type="text">
+    <input type="submit">
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 送信直前に処理がされる
+      $("form").submit(function () {
+        const value =
+          $("input[type='text']").val();
+        if (value == "") {
+          alert("未入力です");
+          return false;
+        }
+
+        const msg = value
+          + "を本当に送信しますか？";
+        return confirm(msg);
+      });
+    });
+  </script>
+</body>
+</html>

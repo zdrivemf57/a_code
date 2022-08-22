@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+商品名:<input id="itemName" type="text">
+値段:<input id="itemPrice" type="number">
+<button id="btn">登録</button>
+
+<table border="1">
+  <tr>
+    <th>商品名</th>
+    <th>値段</th>
+    <th>操作</th>
+  </tr>
+</table>
+
+<template id="row">
+  <tr>
+    <td class="name"></td>
+    <td><span class="price"></span>円</td>
+    <td><button class="del">削除</button></td>
+  </tr>
+</template>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $('#btn').click(function(){
+    // 入力値の取得
+    const itemName = $('#itemName').val();
+    const itemPrice = $('#itemPrice').val();
+    console.log(itemName, itemPrice);
+
+    // tableへの挿入
+    // template内の要素を複製
+    const clone = $($('#row').html());
+    clone.find('.name').append(itemName);
+    clone.find('.price').append(itemPrice);
+
+    clone.find('.del').click(function(){
+      $(this).parent().parent().remove();
+    });
+
+    // tableへの挿入
+    $('table').append(clone);
+
+  }); // click
+
+}); // ready  
+</script>
+</body>
+</html>

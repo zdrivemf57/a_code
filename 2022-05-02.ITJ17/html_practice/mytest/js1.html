@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サンプル</title>
+</head>
+
+<body>
+  <p>5 秒後にアラートが表示されます。</p>
+  <script>
+    alert('こんにちは');
+
+    console.log('こんにちは');
+    console.log('');
+
+    const name = '山田太郎';
+    const price = 300;
+    console.log(`こんにちは${name}さん`);
+    console.log(`税込み金額は${price * 1.10}円です`)
+    console.log('');
+
+    // 配列の作成
+    const fruits = ['りんご', 'バナナ', 'ぶどう'];
+    // 配列の参照
+    console.log(fruits[1]); // バナナ
+    fruits[1] = 'オレンジ';
+    console.log(fruits[1]); // オレンジ
+    console.log('');
+
+    fruits.unshift('オレンジ'); // 先頭に追加
+    fruits.push('スイカ'); // 末尾に追加
+    console.log('フルーツの数:' + fruits.length); // 5
+    console.log(fruits[0]); // オレンジ
+    console.log(fruits[fruits.length - 1]); // スイカ
+    console.log('');
+
+    for (let i = 0; i < fruits.length; i++) {
+      console.log(fruits[i]);
+    }
+    console.log('');
+
+    for (let item of fruits) {
+      console.log(item);
+    }
+    console.log('');
+
+    let i = 0;
+    while (i < fruits.length) {
+      console.log(fruits[i]);
+      i++;
+    }
+    console.log('');
+
+    fruits.forEach((item) => {
+      console.log(item);
+    });
+    console.log('');
+
+    const myBMI = calcBMI(1.71, 65.4);
+    console.log(myBMI);
+    console.log('');
+
+    function calcBMI(height, weight) {
+      let bmi = weight / (height * height);
+      return bmi;
+    }
+
+    const bmi1 = calcBMI(1.715, 69.6);
+    console.log('BMI1=' + bmi1);
+    const bmi2 = calcBMI(1.583, 54.0);
+    console.log('BMI2=' + bmi2);
+    console.log('');
+
+    // オブジェクトの作成
+    let user = {
+      name: '山田太郎',
+      sayHi: function () {
+        console.log('こんにちは' + this.name + 'です');
+      }
+    };
+    // オブジェクトの利用
+    user.sayHi(); // こんにちは山田太郎です
+    console.log('');
+
+    user = {
+      name: "山田太郎",
+      age: 32,
+      sayHi: function () {
+        console.log("こんにちは" + this.name + "です");
+      },
+      sayAge: function () {
+        console.log("私は" + this.age + "才です");
+      }
+    }
+
+    user.name = '本田一郎';
+    console.log(user.name); // 本田一郎
+    user.sayHi(); // こんにちは本田一郎です
+
+    // ドットの代りに [ ] を使うこともできる
+    user['name'] = '本田一郎';
+    user['sayHi']();
+    console.log('');
+
+    // 後からプロパティやメソッドの追加ができる
+    user.address = '東京都';
+    user.sayAddress = function () {
+      console.log('住所は' + this.address + 'です');
+    };
+    user.sayAddress();
+    console.log('');
+
+    const member = {
+      name: '山田太郎',
+      job: {
+        name: 'デザイナー',
+        company: 'ABCデザイン事務所',
+        getInfo: function () {
+          console.log(this.company + '[' + this.name + ']');
+        }
+      }
+    }
+
+    member.job.name = 'ディレクター';
+    member.job.getInfo();
+    console.log('');
+
+    console.log(member);
+    console.log('');
+
+    const person = {
+      name: '山田太郎', // name プロパティ
+      age: 20, // age プロパティ
+      hello: function () { // hello()メソッド
+        console.log('こんにちは');
+      }
+    };
+    console.log(person);
+    console.log(person.name);
+    person.hello();
+    console.log('');
+
+    person.address = '東京都';
+    console.log(person);
+    console.log('');
+
+    // クラスの定義
+    class User {
+      name;
+      age;
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      showInfo() {
+        console.log(this.name + '(' + this.age + ')');
+      }
+    }
+    // クラスからインスタンスを生成
+    const u1 = new User('山田太郎', 32);
+    const u2 = new User('本田一郎', 28);
+    console.log(u1);
+    console.log(u2);
+    u1.showInfo();
+    u2.showInfo();
+    console.log('');
+
+    // 関数の定義
+    const calcBMI2 = function (height, weight) {
+      const bmi = weight / (height * height);
+      return bmi;
+    };
+    // 関数の利用
+    const myBMI2 = calcBMI2(1.71, 65.4);
+    console.log(myBMI2);
+    console.log('');
+
+    // 関数の定義(アロー関数) 
+    const calcBMI3 = (height, weight) => {
+      const bmi = weight / (height * height);
+      return bmi;
+    };
+    // 関数の利用
+    const myBMI3 = calcBMI3(1.71, 65.4);
+    console.log(myBMI3);
+    console.log('');
+
+    // 高階関数の定義(第二引数がコールバック関数)
+    function repeat(num, callback) {
+      for (let i = 1; i <= num; i++) {
+        // このコールバック関数は引数を一つとるものとする
+        callback(i);
+      }
+    }
+    // 関数の利用(第二引数は無名関数として指定)
+    repeat(3, function (count) {
+      console.log(count + ":Hello");
+    });
+    console.log('');
+
+    // 上記関数のコールバックとして使用する関数の定義
+    function countHello(count) {
+      console.log(count + ":Hello!");
+    }
+    // コールバックを無名関数にしない場合、関数名のみを記す
+    repeat(3, countHello);
+    console.log('');
+
+    // setInterval がそれ
+    setInterval(function () {
+      console.log('こんにちは');
+    }, 3000);
+
+    // 関数の定義
+    const myAlert = (messages) => {
+      for (let msg of messages) {
+        alert(msg);
+      }
+    };
+    // 第一引数: コールバック関数
+    // 第二引数: 時間(ミリ秒)
+    setTimeout(() => {
+      const messages = ['こんにちは', '元気ですか?', '私は元気です'];
+      myAlert(messages);
+    }
+      , 5000);
+  </script>
+  <noscript>
+    <h1>JavaScriptを有効にしてください。</h1>
+  </noscript>
+</body>
+
+</html>

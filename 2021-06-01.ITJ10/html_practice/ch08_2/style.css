@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.rainy {
+  color: blue;
+}
+
+.sunny {
+  color: red;
+}
+
+#tomorrow {
+  background: pink;
+}
+
+#today {
+  background: lightblue;
+}

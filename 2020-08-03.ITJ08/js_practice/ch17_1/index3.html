@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>画像ギャラリー</h1>
+  <img src="images/animal1.jpg" width="400">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let num = 1;
+      // 一定時間ごとの繰り返し
+      setInterval(function () {
+        // 1～9の番号が回る
+        num++;
+        if (num == 10) {
+          num = 1;
+        }
+        console.log(num);
+
+        // numを画像ファイル名に反映
+        const name = `images/animal${num}.jpg`;
+        console.log(name);
+
+        //フェードを使った画像切替
+        $("img").fadeOut(500, "swing", function () {
+          $(this).attr("src", name).fadeIn(500);
+        });
+      }, 4000);
+    });
+  </script>
+</body>
+</html>

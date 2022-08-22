@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="stage">
+    <img src="images/animal1.jpg" alt="">
+  </div>
+  <div id="thumb">
+    <img src="images/animal2.jpg" alt="" width="100">
+    <img src="images/animal3.jpg" alt="" width="100">
+    <img src="images/animal4.jpg" alt="" width="100">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#thumb img").click(function (e) {
+        e.preventDefault();
+        const thumb = $(this).attr("src");
+        console.log(thumb);
+
+        // #stage内の画像に適用
+        $("#stage img").attr("src", thumb)
+      });
+    });
+  </script>
+</body>
+</html>

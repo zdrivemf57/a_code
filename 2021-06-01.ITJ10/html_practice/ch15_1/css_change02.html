@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .detail {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>ニュース</h1>
+  <p>今日は雨が降っています</p>
+  <p class="detail">明日も雨でしょう</p>
+  <button id="btn1">表示</button>
+  <button id="btn2">非表示</button>
+  <button id="btn3">表示/非表示</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("#btn1").click(function () {
+        $("p:nth-of-type(2)").removeClass("detail");
+      });
+
+      $("#btn2").click(function () {
+        $("p:nth-of-type(2)").addClass("detail");
+      });
+
+      $("#btn3").click(function () {
+        $("p:nth-of-type(2)").toggleClass("detail");
+      });
+
+    });
+  </script>
+</body>
+</html>

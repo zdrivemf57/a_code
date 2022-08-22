@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>無名関数</h1>
+  <script>
+    // 一般的な関数定義
+    const getBmi = function (h, w) {
+      return w / (h * h);
+    };
+
+    const bmi = getBmi(1.7, 78.5);
+    console.log(bmi);
+
+    // ラムダ式による関数定義
+    const getArea = (base, height) => {
+      return base * height / 2;
+    };
+    const base = getArea(10, 5);
+    console.log(base);
+
+    // 引数として無名関数を利用
+    // 第一引数: 関数
+    // 第二引数: 何ミリ秒後に実行？
+    setTimeout(() => {
+      alert("hello");
+    }, 3000);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+// 会員オブジェクト
+// ⇒複数のデータをまとめたもの
+const member = {
+  name: "山田太郎",
+  age: 25,
+  isStudent: false,
+  hobby: ["カメラ", "自転車"],
+  sayHi: function(){
+    console.log("こんにちは");
+  },
+  job: {
+    company: "株式会社XYZ",
+    role: "デザイナー",
+    showInfo: function(){
+      console.log(this.company);
+      console.log(this.role);
+    }
+  }
+};
+
+
+member.job.role = "経理";
+member.job.showInfo();
+console.log(member);
+</script>
+</body>
+</html>

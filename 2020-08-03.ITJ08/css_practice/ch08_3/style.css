@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.wrap {
+  background: pink;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.inner {
+  background: lightblue;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center; /*文字中央揃え*/
+}
+
+.year {
+  font-size: 40px;
+  font-weight: bold;
+}

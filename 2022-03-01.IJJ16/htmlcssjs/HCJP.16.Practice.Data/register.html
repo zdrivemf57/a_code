@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会員登録</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>会員登録</h1>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="user">ユーザ名</label>
+                        <input type="text" class="form-control" id="user">
+                    </div><!-- /.form-group -->
+                    <div class="form-group">
+                        <label for="email">Eメール</label>
+                        <input type="email" class="form-control" id="email">
+                    </div><!-- /.form-group -->
+
+                    <p>会員種別</p>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="type" id="nomal" value="1">
+                        <label class=""form-check-label" for="nomal">通常会員</label>
+                        <input type="radio" class="form-check-input" name="type" id="special" value="2">
+                        <label class=""form-check-label" for="special">プレミアム会員</label>
+                    </div><!-- /.form-check -->
+
+                    <p>利用するサービス</p>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="service" id="photo" value="1">
+                        <label class="form-check-label" for="photo">マイ・フォト</label>
+                        <input type="checkbox" class="form-check-input" name="service" id="music" value="2">
+                        <label class="form-check-label"  for="music">マイ・ミュージック</label>
+                    </div><!-- /.form-check -->
+
+                    <div class="form-group">
+                        <label for="note">備考</label>
+                        <textarea name="note" cols="50" rows="10" class="form-control" id="note"></textarea>
+                    </div><!-- /.form-group -->
+
+                    <p><input class="btn btn-primary" type="submit" value="登録"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

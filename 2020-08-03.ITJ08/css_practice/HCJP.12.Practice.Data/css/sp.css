@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.center-container {
+  min-width: auto;
+}
+
+nav ul {
+  width: 100%;
+}
+
+/* メインコンテンツ */
+aside {
+  display: none;
+}
+
+.section-group {
+  width: 100%;
+}
+
+.menu li {
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}

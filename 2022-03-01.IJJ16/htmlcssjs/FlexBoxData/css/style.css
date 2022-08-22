@@ -1,0 +1,38 @@
+﻿@charset "utf-8";
+.mainNav {
+	padding: 0;
+	background-color: rgba(255,0,0,0.2);
+	display: flex;
+	justify-content: space-around;
+}
+
+.mainNav li {
+	list-style-type: none;
+	margin: 10px;
+	background:#60B99B;
+	color: #fff;
+	padding: 15px;
+}
+.main {
+	display: flex;
+}
+
+.main section {
+	margin: 10px;
+	background: #f5f0cd;
+	padding: 15px;
+
+}
+
+.main .col-2 {
+	flex: 2;
+}
+
+.main h2 {
+	color: #e6ac22;
+	font-size: 1.5em;
+}
+
+.main p {
+	margin-top: 10px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>オブジェクト</h1>
+  <p>複数のデータ、関数をまとめたもの</p>
+  <p>配列の高位版。
+    部屋に名前が付けられる
+  </p>
+  <script>
+    const user = {
+      name: "佐藤光",
+      age: 25,
+      address: "東京都",
+      sayHi: function () {
+        console.log("こんにちは" + this.name + "です");
+      },
+      intro: function () {
+        console.log("名前:" + this.name);
+        console.log("年齢:" + this.age);
+        console.log("住所:" + this.address);
+      }
+    };
+
+    // オブジェクトの利用
+    user.age = 30;
+    user.sayHi();
+    user.intro();
+  </script>
+</body>
+</html>

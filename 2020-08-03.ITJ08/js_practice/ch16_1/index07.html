@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>return false</h1>
+  <a href="https://www.zdrv.com/">ジードライブ</a>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("a").click(function () {
+        const result =
+          confirm("本当に移動しますか？");
+        return result;
+      });
+    });
+  </script>
+</body>
+</html>

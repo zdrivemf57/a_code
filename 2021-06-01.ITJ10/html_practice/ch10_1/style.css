@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+body {
+  background: url(../images/animals/animal5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  background-color: #ffffff9f;
+  width: 300px;
+  height: 200px;
+}

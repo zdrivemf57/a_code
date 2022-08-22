@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>メンバーリスト</h1>
+<table border="1">
+  <tr>
+    <th>氏名</th>
+    <th>年齢</th>
+    <th>メール</th>
+  </tr>
+  <c:forEach items="${members" var="m">
+  <tr>
+    <th>${m.name}</th>
+    <th>${m.age}才</th>
+    <th>${m.mail}</th>
+  </tr>
+<c:forEach>
+</table>
+</body>
+</html>

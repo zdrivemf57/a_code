@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="colorbox.css">
+</head>
+<body>
+  <h1>福井</h1>
+  <a title="福井駅前" rel="fukui" href="/travel/fukui1.jpg">
+    <img src="/travel/fukui1.jpg" width="100">
+  </a>
+  <a title="越前市" rel="fukui" href="/travel/fukui2.jpg">
+    <img src="/travel/fukui2.jpg" width="100">
+  </a>
+  <a title="恐竜博物館" rel="fukui" href="/travel/fukui3.jpg">
+    <img src="/travel/fukui3.jpg" width="100">
+  </a>
+
+  <h1>日光</h1>
+  <a rel="nikko" href="/travel/nikko1.jpg">
+    日光の写真1
+  </a>
+  <a rel="nikko" href="/travel/nikko2.jpg">
+  </a>
+  <a rel="nikko" href="/travel/nikko3.jpg">
+  </a>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="jquery.colorbox-min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("a").colorbox({
+        speed: 1000,
+        opacity: 0.2
+      });
+    });
+  </script>
+</body>
+</html>

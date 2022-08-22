@@ -1,0 +1,57 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+
+/* 全体的な文字設定 */
+html {
+  font-size: 10px;
+}
+
+body {
+  color: #333;
+  font-family: serif;
+}
+
+/* 見出しの文字 */
+h1 {
+  font-family: 'Pushster', cursive;
+  color: rgba(219, 233, 96, 0.773);
+}
+
+p {
+  font-size: 24px;
+}
+
+div {
+  font-size: 40px;
+}
+
+div p {
+  /* 1em => 100% */
+  /* 40pxの50%⇒20px */
+  font-size: 0.5em;
+}
+
+.sunny {
+  /* 直接の親20pxの300%⇒60px */
+  font-size: 3em;
+}
+
+.rainy {
+  /* htmlに対する300% */
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 20px;
+  background: #24df33;
+  color: #fff;
+  border-radius: 10px;
+}
+
+/* liでもOK */
+ul {
+  list-style-type: katakana;
+}

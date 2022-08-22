@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="/travel/fukui1.jpg">
+  <button data-img="fukui2.jpg">変更</button>
+
+  <img src="/travel/nikko1.jpg">
+  <button data-img="nikko2.jpg">変更</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function (e) {
+        e.preventDefault();
+        const name = $(this).attr("data-img");
+        console.log(name);
+        $(this).prev().attr("src", "/travel/" + name);
+      });
+    });
+  </script>
+</body>
+</html>

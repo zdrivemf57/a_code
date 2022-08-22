@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+h1 {
+  color: green;
+}
+
+/* .はclassを示す */
+.kanto {
+  color: red;
+}
+
+.kansai {
+  color: blue;
+}
+
+/* #はidを指す */
+#k {
+  font-weight: normal;
+}
+
+/* マルチクラス */
+/* 共通の設定 */
+.btn {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+/* 固有の設定 */
+.red {
+  background: red;
+}
+
+.blue {
+  background: blue;
+}
+
+
+/* 同じclass名⇒固有の設定 */
+/* 共通設定 */
+.rainy {
+  color: blue;
+}
+
+/* 固有の設定 */
+h2.rainy {
+  background: lightblue;
+}
+
+

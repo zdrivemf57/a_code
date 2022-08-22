@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      height: 1000px;
+      border-top: 1px solid #000;
+    }
+
+    /*1番上に来た時に固定*/
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <h1>株式会社XYZ</h1>
+
+  <nav>
+    <ul>
+      <li><a href="#about">会社概要</a></li>
+      <li><a href="#access">アクセス</a></li>
+      <li><a href="#contact">問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>会社概要</h2>
+    <p>弊社は1995年に...</p>
+  </section>
+
+  <section id="access">
+    <h2>アクセス</h2>
+    <p>新宿駅から徒歩5分...</p>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <p>電話番号は...</p>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("nav a").click(function () {
+        // 目的地のスクロール量
+        const target = $(this).attr("href");
+        let posi = $(target).offset().top;
+
+        // ナビゲーションの高さ分を調整
+        posi -= $("nav").height();
+
+        // スクロール
+        $("html, body").animate({
+          scrollTop: posi
+        }, 1500);
+
+        // ページの再読み込み防止
+        return false;
+      }); // click
+
+    }); // ready
+  </script>
+</body>
+</html>

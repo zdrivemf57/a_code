@@ -1,0 +1,117 @@
+@charset "UTF-8";
+h1 {
+  background: #f00;
+}
+
+h2 {
+  color: #f00;
+}
+
+/* CSS コメント */
+/* ネスト */
+ul li {
+  background: #0f0;
+}
+
+ul li a {
+  color: #f00;
+}
+
+ul li {
+  background: #0f0;
+}
+
+ul li a {
+  color: #f00;
+}
+
+/* 疑似要素などの指定の仕方 */
+ul li {
+  background: #0f0;
+}
+
+ul li a {
+  color: #f00;
+}
+
+ul li a :hover {
+  text-decoration: underline;
+}
+
+/* 親参照 */
+ul li {
+  background: #0f0;
+}
+
+ul li a {
+  color: #f00;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+}
+
+.btn-primary {
+  color: #00f;
+}
+
+header {
+  width: 980px;
+}
+
+header .phone {
+  width: 100%;
+}
+
+/* 変数 */
+div {
+  background: #f00;
+  width: 800px;
+  border: 800px solid #f00;
+  padding: 410px;
+  color: #ff9999;
+  color: #660000;
+}
+
+h1 {
+  color: #f00;
+  width: 400px;
+}
+
+/* 第1引数は省略不可 */
+h1 {
+  background: #0f0;
+  width: 500px;
+  border: 1px solid #0f0;
+}
+
+h1 {
+  background: #0f0;
+  width: 800px;
+  border: 1px solid #0f0;
+}
+
+.wrapper {
+  width: 980px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.wrapper {
+  width: 980px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

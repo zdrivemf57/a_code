@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <p>
+    名前:
+    <input type="text" name="name"
+           size="5"
+           maxlength="3"
+           placeholder="例)佐藤光"
+           value="佐藤光"
+           required>
+  </p>
+
+    <p>
+    ペット:
+    <label><input type="radio" name="pet" value="1"> 飼っている</label>
+    <label><input type="radio" name="pet" value="2" checked> 飼っていない</label>
+    <label><input type="radio" name="pet" value="3"> これから飼う</label>
+  </p>
+
+    <p>
+    好きな季節:
+    <input type="checkbox" value="1" name="season" checked>春
+    <input type="checkbox" value="2" name="season" checked>夏
+    <input type="checkbox" value="3" name="season" checked>秋
+    <input type="checkbox" value="4" name="season" checked>冬
+  </p>
+
+    <p>
+    内容:
+    <textarea name="msg"
+              placeholder="メッセージ"
+              required
+              cols="30"
+              rows="5"></textarea>
+  </p>
+
+    <p>
+    旅行の予定:
+    <select name="travel">
+      <option value="1">今月中</option>
+      <option value="2">来月中</option>
+      <option value="3" selected>未定</option>
+    </select>
+  </p>
+
+    <p>
+    個人情報の扱い:
+    <input type="checkbox"
+           name="privacy">同意する
+  </p>
+    <p><input type="submit"
+            value="登録"></p>
+  </form>
+</body>
+</html>

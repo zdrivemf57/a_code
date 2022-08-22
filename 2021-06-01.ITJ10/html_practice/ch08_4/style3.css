@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+h3 .area {
+  color: red;
+}
+
+h3.area {
+  background: yellow;
+}
+
+h3, .area {
+  font-size: 24px;
+}

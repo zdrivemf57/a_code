@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="/travel/fukui1.jpg" alt="">
+  <button title="fukui2.jpg">切り替え</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        // buttonのtitle属性値を取得
+        const title = $("button").attr("title");
+        console.log(title);
+        // imgのsrc属性値を変更
+        const path = "/travel/" + title;
+        $("img").attr("src", path);
+      });
+    });
+  </script>
+</body>
+</html>

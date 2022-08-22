@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1, 
+    #kanto #tokyo p {
+      color: green;
+    }
+
+    #kanto > p {
+      background: pink;
+    }
+
+    h1 + p {
+      background: yellow;
+    }
+
+    a {
+      color: green;
+      text-decoration: none;
+    }
+    
+    a:link {
+      background: lightgreen;
+    }
+
+    a:visited {
+      background: yellow;
+    }
+
+    a:hover {
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>天気予報</h1>
+  <p>全国の天気をお伝えします</p>
+</header>
+<section id="kanto">
+  <p>関東はいい天気です</p>
+  <section id="tokyo">
+    <p>東京は晴れです</p>
+  </section>
+</section>
+
+<a href="index.html">リンク</a>
+</body>
+</html>

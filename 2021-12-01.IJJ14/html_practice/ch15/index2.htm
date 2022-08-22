@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<img id="p1" src="/images/animals/animal1.jpg" alt="猫">
+<img id="p2" src="/images/animals/animal9.jpg" alt="犬">
+
+<p>こんにちは、元気？</p>
+<button data-size="32px">大</button>
+<button data-size="16px">小</button>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  // p1の属性値を取得
+  const name = $("#p1").attr("src");
+  const text = $("#p1").attr("alt");
+  console.log(name, text);
+
+  // p2に属性値をセット
+  $("#p2").attr("src", name);
+  $("#p2").attr("alt", text);
+
+  //p要素の文字サイズ
+  $("button").click(function(){
+    // $(this):クリックされたボタン
+    const size = $(this).attr("data-size");
+    $("p").css("font-size", size);
+  });
+}); //ready()
+</script>
+</body>
+</html>

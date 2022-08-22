@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>会員登録</h1>
+  <form action="" method="post">
+    <p>
+    お名前：
+    <input type="text" name="name"
+           required
+           placeholder="例:山田太郎">
+  </p>
+    <p>
+    年齢：
+    <input type="number" name="age"
+           size="3" maxlength="3"
+           min="0" max="120"
+           value="0">
+  </p>
+    <p>
+    海外に行ったことがありますか？<br>
+    <input type="radio" name="abroad" value="1">はい
+    <input type="radio" name="abroad" value="2" checked>いいえ
+    <input type="radio" name="abroad" value="3">今年中に行く予定
+  </p>
+    <p>
+    好きな季節はいつですか？<br>
+    <input type="checkbox" name="s1">春
+    <input type="checkbox" name="s2">夏
+    <input type="checkbox" name="s3">秋
+    <input type="checkbox" name="s4">冬
+  </p>
+    <p>
+    行ってみたい地域はどこですか？<br>
+    <input type="checkbox" name="area" value="1" checked>アジア
+    <input type="checkbox" name="area" value="2" checked>アメリカ
+    <input type="checkbox" name="area" value="3" checked>ヨーロッパ
+    <input type="checkbox" name="area" value="4" checked>アフリカ
+  </p>
+    <p>
+    <input type="checkbox" name="privacy" required>
+    個人情報の扱いに同意する
+  </p>
+    <p>
+    備考：<br>
+    <textarea name="note" id="" cols="30" rows="5" placeholder="備考を入力してください"></textarea>
+  </p>
+    <p>
+    好きな動物は？
+    <select name="" id="">
+      <option value="1">犬</option>
+      <option value="2">猫</option>
+      <option value="3" selected>両方</option>
+    </select>
+  </p>
+    <p>検索
+    <input type="search">
+  </p>
+    <p>
+    <input type="submit" name="register" value="登録する">
+    <input type="submit" name="cancel" value="キャンセル">
+  </p>
+  </form>
+</body>
+</html>

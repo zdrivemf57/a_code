@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+header {
+	background-color: #ffffff60;
+  padding: 20px;
+}
+
+main {
+	/* background-color: #ffbcdd; */
+}
+
+footer {
+	background-color: #bcffbc;
+}
+
+.animal {
+	/* background-color: #99ccff; */
+}
+
+.jumbotron {
+  background-image: url(../images/animals/animal6.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>お問い合わせフォーム</h1>
+  <p>氏名<input type="text"></p>
+  <p>郵便番号
+  <input id="zip" type="text">
+</p>
+  <p>住所
+  <textarea id="place" cols="30" rows="10"></textarea>
+</p>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#zip').change(function () {
+        let zip = $(this).val();
+        // AJAX通信
+        $.ajax({
+          url: 'https://zipcloud.ibsnet.co.jp/api/search',
+          type: 'GET',
+          data: { zipcode: zip },
+          dataType: 'JSONP'
+        })
+          .done(function (res) {
+            // 成功
+            if (res.status == 400) {
+              $('#place').val(res.message);
+            }
+            else {
+              const r = res.results[0];
+              let info = r.address1;
+              info += r.address2;
+              info += r.address3;
+              $('#place').val(info);
+            }
+          })
+          .fail(function () {
+            alert('失敗しました');
+          });
+      });
+    });
+  </script>
+</body>
+</html>

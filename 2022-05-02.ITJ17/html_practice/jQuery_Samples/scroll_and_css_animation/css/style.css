@@ -1,0 +1,152 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Titillium+Web');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.inner {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 50px 0;
+    background-color: #2e867d;
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+    font-size: 60px;
+}
+
+section {
+    padding: 200px 0 300px;
+}
+
+h2 {
+    font-size: 60px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: normal;
+    margin-bottom: 50px;
+    letter-spacing: 10px;
+}
+
+#s1 {
+    background-color: #da742d;
+}
+
+.vege {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#s2 {
+    background-color: #4c4775;
+}
+
+.flower::after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.flower > img {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.poem {
+    line-height: 1.8;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.author {
+    text-align: right;
+    font-size: 32px;
+    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Homemade Apple', cursive;
+}
+
+footer {
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #23615a;
+}
+
+/* アニメーション用追加分 */
+h2 {
+    opacity: 0;
+    letter-spacing: -5px;
+    transition-property: opacity letter-spacing;
+    transition-duration: 1500ms;
+}
+
+h2.animated {
+    opacity: 1;
+    letter-spacing: 10px;
+}
+
+.vege img {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    transition-property: opacity letter-spacing;
+    transition-duration: 1500ms;
+}
+
+.vege img:nth-child(1){
+    transition-delay: 500ms;
+}
+
+.vege img:nth-child(2){
+    transition-delay: 1000ms;
+}
+
+.vege img:nth-child(3){
+    transition-delay: 1500ms;
+}
+
+.vege img.animated {
+    top: 0;
+    opacity: 1;
+}
+
+.flower > img {
+    transform: scale(0.8);
+    opacity: 0;
+    transition-property: transform opacity;
+    transition-duration: 2500ms;
+    transition-delay: 500ms;
+}
+
+.flower.animated > img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.flower {
+    overflow: hidden;
+    height: 0;
+    transition-property: height;
+    transition-duration: 2500ms;
+        transition-delay: 500ms;
+}
+
+.flower.animated {
+    height: 600px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>各地の天気</h1>
+  <select id="area">
+    <option value="016010">札幌</option>
+    <option value="130010">東京</option>
+    <option value="471010">那覇</option>
+  </select>
+  <button>天気を表示</button>
+
+  <div id="result">天気を表示</div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("button").click(function () {
+        // 入力値の取得
+        const area = $("#area").val();
+
+        $.ajax({
+          url: "https://weather.tsukumijima.net/api/forecast/city/" + area,
+          type: "GET",
+          dataType: "JSON"
+        })
+          .done(function (res) {
+            console.log(res);
+            const w1 = res.forecasts[0].image;
+            const w2 = res.forecasts[1].image;
+            const w3 = res.forecasts[2].image;
+            console.log(w1, w2, w3);
+
+            // テーブルタグの生成
+            let table = "<table>";
+            table += "<tr><th>今日</th>";
+            table += "<td>" + w1.title;
+            table += `<img src="${w1.url}"></td></tr>`;
+            table += "<tr><th>明日</th>";
+            table += "<td>" + w2.title;
+            table += `<img src="${w2.url}"></td></tr>`;
+            table += "<tr><th>明後日</th>";
+            table += "<td>" + w3.title;
+            table += `<img src="${w3.url}"></td></tr>`;
+            table += "</table>";
+
+            // テーブルを表示
+            $("#result").html(table);
+          })
+          .fail(function () {
+            console.log("失敗");
+          });
+      }); //click
+
+    }); //ready
+  </script>
+</body>
+</html>

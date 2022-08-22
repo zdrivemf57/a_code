@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>h1</h1>
+  <div id="boxA">
+    <button>ボタン1</button>
+    <button>ボタン2</button>
+  </div>
+  <div id="boxB">
+    <button>ボタン3</button>
+    <button>ボタン4</button>
+  </div>
+
+  <form action="process.php" method="post">
+    <p>年齢:<input id="age" type="number"></p>
+    <input type="submit">
+  </form>
+
+  <div class="div1">
+    <img class="pic1" src="../images/animal1.jpg" alt="">
+  </div>
+  <button class="btn1">toggle(show/hide) img</button>
+  <button class="btn2">toggle(show/hide) div</button><br>
+  <button class="btn3">slideToggle(slideDown/.slideUp) img</button>
+  <button class="btn4">slideToggle(slideDown/.slideUp) div</button><br>
+  <button class="btn5">fadeToggle(fadeIn/fadeOut) img</button>
+  <button class="btn6">fadeToggle(fadeIn/fadeOut) div</button><br>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 親要素、子要素、兄弟要素の取得
+      $('div button').click(function () {
+        console.log($(this).html());
+        console.log($(this).prev().html());
+        console.log($(this).next().html());
+        console.log($(this).siblings());
+        console.log($(this).parent());
+        console.log($(this).parent().children());
+        return false;
+      });
+
+      // changeメソッド
+      $('#age').change(function () {
+        console.log($('#age').val());
+      });
+
+      // submit
+      $('form').submit(function () {
+        const age = $('#age').val();
+        if($(age < 0 || age > 120) {
+          $('#age').before('<p>年齢は0～120で！</p>');
+          return false;
+        }
+      });
+
+      $('.pic1').hide('slow', function () {
+        $(this).attr('src', '../images/animal2.jpg');
+        $(this).show('slow');
+      });
+
+      $('.btn1').click(function () {
+        $('.pic1').toggle(2000,'swing');
+      });
+      
+      $('.btn2').click(function () {
+        $('.div1').toggle(2000,'swing');
+      });
+
+      $('.btn3').click(function () {
+        $('.pic1').slideToggle(2000,'swing');
+      });
+      
+      $('.btn4').click(function () {
+        $('.div1').slideToggle(2000,'swing');
+      });
+
+      $('.btn5').click(function () {
+        $('.pic1').fadeToggle(2000,'swing');
+      });
+      
+      $('.btn6').click(function () {
+        $('.div1').fadeToggle(2000,'swing');
+      });
+
+    });
+  </script>
+</body>
+
+</html>

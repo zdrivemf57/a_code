@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #news1,
+    #news2 {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn1">ニュース1</button>
+  <button id="btn2">ニュース2</button>
+  <div id="news1">
+    <h1>黄砂に注意</h1>
+    <p>九州地方で黄砂が見られます。
+    ご注意ください</p>
+  </div>
+  <div id="news2">
+    <h1>聖火リレー</h1>
+    <p>
+    全国各地でリレーが始まりました
+  </p>
+  </div>
+  <div id="stage"></div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#btn1").click(function () {
+        // #news1の中身を取得
+        const elm =
+          $("#news1").html();
+        console.log(elm);
+        // #stageに埋め込む
+        $("#stage").html(elm);
+      });
+
+      $("#btn2").click(function () {
+        $("#stage").html($("#news2").html());
+      });
+    });
+  </script>
+</body>
+</html>

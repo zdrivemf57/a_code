@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>一定時間後の処理</h1>
+  <button>STOP</button>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const id = setTimeout(function () {
+        $("h1").css("color", "#f00");
+      }, 3000);
+
+      $("button").click(function (e) {
+        clearTimeout(id);
+      });
+    });
+  </script>
+</body>
+</html>

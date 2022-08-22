@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+body {
+  font-family: Meiryo, 'メイリオ', Osaka, sans-serif;
+  color      : #333333;
+  line-height: 1.4;
+  background : #dddddd;
+}
+
+body,
+h1,
+h2,
+p {
+  padding: 0;
+}
+
+.container {
+  width     : 960px;
+  margin    : 0 auto;
+  padding   : 0 10px;
+  background: #ffffff;
+}
+
+/* footer */
+footer p {
+  background: #134ea8;
+  color: #ffffff;
+  padding: 10px;
+}
+
+/* nav */
+.mainnav ul {
+  margin         : 0;
+  padding-left   : 0;
+  list-style-type: none;
+
+  display        : flex;
+  flex-direction : row;
+  flex-wrap      : wrap;
+  justify-content: space-between;
+  align-items    : stretch;
+  align-content  : stretch;
+}
+
+.mainnav ul li {
+  background: #12529A;
+  width     : 19.5%;
+  margin-bottom: 10px;
+}
+
+.mainnav ul li a{
+  display      : block;
+  color        : #ffffff;
+  border       : 1px solid #888;
+  text-align   : center;
+  line-height  : 3.5;
+}
+
+/* トップページ */
+.flex-container {
+  display: flex;
+}
+
+.news {
+  width: 75%;
+}
+
+.news h2 {
+  background: #0f3b7a;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.news dl {
+  border-top: 1px dotted #cccccc;
+}
+
+.date {
+  color: #af7117;
+  font-weight: bold;
+}
+
+.news dl dd {
+  margin: 0;
+  padding: 0 5px 5px 5px;
+  border-bottom: 1px dotted #cccccc;
+}
+
+.sidepanel {
+  width: 30%;
+  padding-left: 10px;
+}
+
+.sidepanel table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.sidepanel table caption {
+  background: #e35000;
+  color: #fff;
+  padding: 5px;
+}
+
+.sidepanel table th, td {
+  border: 1px solid #e35000;
+  color: #e35000;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.sidepanel table th {
+  background: #e3500050;
+}
+
+/* イチオシページ */
+#ichioshi h1 {
+  text-align: center;
+  color     : #ffffff;
+  background: #103b7b;
+  font-size : 16px;
+  padding   : 5px 0;
+}
+
+#ichioshi .plan {
+  border-bottom: 1px solid #777777;
+}
+
+#ichioshi h2 {
+  color    : #ea1111;
+  font-size: 16px;
+}
+
+#ichioshi img {
+  padding: 3px;
+  border : 1px solid #777777;
+}
+
+#ichioshi .price {
+  color      : #45aa0f;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  background: #134fa8;
+  color     : #ffffff;
+}

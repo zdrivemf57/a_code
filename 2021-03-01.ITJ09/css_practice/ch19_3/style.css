@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.main {
+  background: lightblue;
+  border: 1px solid #000;
+}
+
+.sub {
+  background: lightgreen;
+  border: 1px solid #000;
+}
+
+.item {
+  background: pink;
+  border: 1px solid #000;
+}
+
+.jumbotron {
+  background: url(/travel/sli4.jpg);
+  background-size: cover;
+}

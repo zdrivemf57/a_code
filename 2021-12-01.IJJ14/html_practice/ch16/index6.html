@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>登録フォーム</h1>
+<div id="error"></div>
+<form action="finish.html" method="get">
+  <p>名前:
+    <input type="text" id="name">
+  </p>
+  <p>年齢:
+    <input type="number" id="age">
+  </p>
+  <input type="submit">
+</form>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  //フォーム送信時の処理
+  $("form").submit(function(){
+    //入力値の取得
+    const name = $("#name").val();
+    const age = $("#age").val();
+    
+    //バリデーション(入力値チェック)
+    let isValid = true;
+    if(name === "") {
+      isValid = false;
+    }
+
+    if(age === "") {
+      isValid = false;
+    }
+    else if(age < 0) {
+      isValid = false;
+    }
+
+    //入力に不備がある場合、エラーメッセージを表示し、送信しない
+    if(isValid == false) {
+      $("#error").text("入力に不備があります");
+      return false; // 送信しない
+    }
+
+    $("#error").text("");
+
+    //不備がない場合、ユーザーに確認を促す
+    //confirm(): キャンセルを選択すると、falseを返す
+    return confirm(`名前:${name}　年齢:${age}で登録します`);
+  }); //submit()
+
+}); //ready()
+</script>
+</body>
+</html>

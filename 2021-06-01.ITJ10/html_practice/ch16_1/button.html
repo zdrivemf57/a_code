@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="" id="box1">
+    <button>ボタンA</button>
+    <button>ボタンB</button>
+    <button>ボタンC</button>
+  </div>
+
+  <div class="" id="box2">
+    <button>ボタンX</button>
+    <button>ボタンY</button>
+    <button>ボタンZ</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("#box1 button").click(function () {
+        const btn = $("#box1 button").text();
+        alert(btn);
+      });
+
+      $("#box2 button").click(function () {
+        const btn = $(this).text();
+        alert(btn);
+      });
+    });
+  </script>
+</body>
+</html>

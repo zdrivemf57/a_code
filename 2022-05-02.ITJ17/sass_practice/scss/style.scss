@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixins";
+
+h1 {
+  color: $mainColor;
+  @include mystyle;
+  span {
+    background: lighten($subColor, 50%);
+    a {
+      color: green;
+      &:hover {
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+h2 {
+  @include boxstyle(50%, #ff0);
+}
+

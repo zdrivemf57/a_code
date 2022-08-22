@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">ボタン</button>
+  <h2>会社概要</h2>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('#btn').click(function(){
+      // h1とp要素を生成
+      const h1 = $('<h1>');
+      const p = $('<p>');
+        // Element p = new P要素 ← Javaでの似た表記
+
+      // 生成した要素をbodyに加える
+      $('body').prepend(h1); // body要素内の最初の要素としてh1を追加
+      $('body').append(p); // body要素内の最後の要素としてpを追加
+
+      // h1,p内に文字を入れる
+      $('body > h1').append('株式会社ABC');
+      $('body > p').append('新宿の英会話学校です');
+
+      // imgを生成
+      const img = $('<img>');
+
+      // imgに画像ファイルを指定
+      img.attr('src', 'images/animal1.jpg');
+      img.attr('width', '300');
+    
+      // bodyに追加
+      // $('body').append(img);
+
+      // h2の後に追加
+      $('h2').after(img);
+
+      // h1の中身を削除
+      $('h1').empty();
+
+      // ボタンの削除(buttonタグごと)
+      $('#btn').remove();
+
+    }); // #btn.click
+  }); // ready
+  </script>
+</body>
+</html>

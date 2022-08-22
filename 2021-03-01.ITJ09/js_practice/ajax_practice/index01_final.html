@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>住所検索</h1>
+  <p>
+  郵便番号:
+  <input type="text" id="zip">
+</p>
+  <p id="result"></p>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#zip").change(function (e) {
+        const zip = $(this).val();
+        $.ajax({
+          url: "https://zipcloud.ibsnet.co.jp/api/search",
+          data: { zipcode: zip },
+          type: "GET",
+          dataType: "JSONP"
+        })
+          .done(function (res) {
+            console.log(res);
+            if (res.status == 400) {
+              $("#result").text(res.message);
+            }
+            else if (res.results == null) {
+              $("#result").text("該当する住所はありません");
+            }
+            else {
+              // 住所を表示
+              const info = res.results[0]
+              const ad1 = info.address1;
+              const ad2 = info.address2;
+              const ad3 = info.address3;
+              $("#result").text(ad1 + ad2 + ad3);
+            }
+          })
+          .fail(function () {
+            $("#result").text("通信に失敗しました");
+          });
+      });
+    });
+  </script>
+</body>
+</html>

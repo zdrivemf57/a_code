@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.rainy {
+  color: blue;
+}
+
+.sunny {
+  color: red;
+}
+
+#title {
+  font-size: 80px;
+}
+
+.info {
+  background: pink;
+}
+
+p.sunny {
+  background: lightgreen;
+}

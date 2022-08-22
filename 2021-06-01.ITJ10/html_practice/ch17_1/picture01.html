@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn1">表示</button>
+  <button id="btn2">スライド表示</button>
+  <button id="btn3">フェード表示</button>
+  <div>
+    <img src="../images/animals/animal1.jpg" alt="">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("#btn1").click(function () {
+        $("div").toggle(2000, "swing");
+      });
+
+      $("#btn2").click(function () {
+        $("div").slideToggle(2000, "swing");
+      });
+
+      $("#btn3").click(function () {
+        $("img").fadeToggle(2000, "swing");
+      }); div
+
+
+    });
+  </script>
+</body>
+</html>

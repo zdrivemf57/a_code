@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/* 見出しの文字を赤、48pxに設定 */
+#site-title {
+  color: red;
+  font-size: 48px;
+}
+
+.sunny {
+  color: orange;
+}
+
+h2.sunny {
+  background: #000;
+}
+
+.rainy {
+  color: blue;
+}
+
+.btn {
+  color: white;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background: green;
+}
+
+.btn-secondary {
+  background: purple;
+}

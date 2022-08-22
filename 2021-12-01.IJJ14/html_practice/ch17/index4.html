@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>表示/非表示</h1>
+<img src="/images/animals/animal1.jpg" alt="">
+<button id="btn1">表示</button>
+<button id="btn2">非表示</button>
+<button id="btn3">トグル</button>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  
+  $("#btn1").click(function(){
+    $("img").fadeIn(500);
+  });
+
+  $("#btn2").click(function(){
+    $("img").fadeOut(500);
+  });
+
+  $("#btn3").click(function(){
+    $("img").fadeToggle(500);
+  });
+
+}); //ready()
+</script>
+</body>
+</html>

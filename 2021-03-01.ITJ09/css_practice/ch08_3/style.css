@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* 関東地方を左に配置 */
+.kanto {
+  background: lightblue;
+  width: 300px;
+  float: left;
+}
+
+/* 関西地方を左に配置 */
+.kansai {
+  background: lightgreen;
+  width: 300px;
+  float: left;
+}
+
+.rainy {
+  color: blue;
+}

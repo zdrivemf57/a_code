@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*クラス*/
+    .sunny {
+      color: red;
+    }
+
+    /* ID */
+    #logo {
+      font-size: 80px;
+    }
+
+    /* 子孫セレクタ */
+    section p {
+      color: green;
+    }
+
+    section div p {
+      background: pink;
+    }
+
+    /* 親子セレクタ */
+    section > p {
+      text-decoration: underline;
+    }
+
+    /* 隣接セレクタ */
+    #logo + p {
+      font-size: 32px;
+    }
+
+    /* マウスオーバー時 */
+    p:hover {
+      font-weight: bold;
+    }
+
+    /* 奇数番目のli */
+    li:nth-child(2n + 1) {
+      background: orange;
+    }
+  </style>
+</head>
+<body>
+<h1 id="logo">天気予報</h1>  
+<p>今日は<span class="sunny">晴れ</span>です</p>
+<section>
+  <p>元気ですか？</p>
+  <div>
+    <p>私は元気です</p>
+  </div>
+</section>
+
+ul>li*8{アイテム$$}
+<ul>
+  <li>アイテム01</li>
+  <li>アイテム02</li>
+  <li>アイテム03</li>
+  <li>アイテム04</li>
+  <li>アイテム05</li>
+  <li>アイテム06</li>
+  <li>アイテム07</li>
+  <li>アイテム08</li>
+</ul>
+</body>
+</html>
