@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習05-6</title>
+</head>
+<body>
+<img src="images/fukui1.jpg" width="400">
+
+<script>
+// 画像の枚数
+const IMAGE_NUM = 3;
+
+// 現在の画像番号
+let current = 1;
+
+// 2.5秒ごとに画像を切り替える
+setInterval(() => {
+  // currentを1～3の間で順番に変化させる
+  if(current < IMAGE_NUM) {
+    current++;
+  } else {
+    current = 1;
+  }
+  console.log(current);
+
+  document.querySelector('img').src = `images/fukui${current}.jpg`;
+}, 2500);
+</script>
+</body>
+</html>

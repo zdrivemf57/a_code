@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習04-2</title>
+</head>
+<body>
+<h1><!-- ここにメッセージを表示 --></h1>
+
+<script>
+const num = prompt('日本語の場合は1を、英語の場合は2を入力してください');
+
+let message;
+if(num === '1') {
+  message = 'こんにちは!';
+} else if(num === '2') {
+  message = 'Hello!';
+} else {
+  message = 'ERROR!';
+}
+
+document.querySelector('h1').textContent = message;
+</script>    
+</body>
+</html>

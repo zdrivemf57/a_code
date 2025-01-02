@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ライブラリの利用練習</title>
+</head>
+
+<body>
+    <h1>テストの得点</h1>
+
+    <form name="registerForm">
+        <p>国語:
+            <input type="text" name="p" value="0">
+        </p>
+        <p>数学:
+            <input type="text" name="p" value="0">
+        </p>
+        <p>社会:
+            <input type="text" name="p" value="0">
+        </p>
+        <p>理科:
+            <input type="text" name="p" value="0">
+        </p>
+        <p>英語:
+            <input type="text" name="p" value="0">
+        </p>
+        <input type="submit">
+    </form>
+
+    <!-- ここに棒グラフを表示 -->
+    <canvas id="scores"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script>
+        // フォーム要素の取得
+        const form = document.registerForm;
+
+        // 描画エリア要素の取得
+        const ctx = document.getElementById('scores');
+        let chartInstance = null;
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+
+            // 点数を配列で取得
+            const pointList = [];
+            form.p.forEach(item => {
+                if (isNaN(Number(item.value))) {
+                    pointList.push(0);
+                } else {
+                    pointList.push(Number(item.value));
+                }
+            });
+
+            // 既存のチャートがある場合、破棄
+            if (chartInstance) {
+                chartInstance.destroy(); // 以前のインスタンスを破棄
+            }
+
+            // グラフを描画
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['国語', '数学', '社会', '理科', '英語'],
+                    datasets: [{
+                        label: '得点',
+                        data: pointList,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

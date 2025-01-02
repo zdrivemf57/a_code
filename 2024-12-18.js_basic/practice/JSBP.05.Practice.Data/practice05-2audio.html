@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>練習05-3</title>
+</head>
+
+<body>
+  <p>画像をクリックすると鳴き声がします。</p>
+  <img src="images/fukui1.jpg" data-sound="audio/cat-meow-6226.mp3">
+    <img src="images/fukui2.jpg" data-sound="audio/dog-bark-179915.mp3">
+
+      <script>
+        const elements = document.querySelectorAll('img');
+        elements.forEach(element => {
+          element.addEventListener('click', event => {
+            const audio = new Audio();
+            audio.src = event.target.getAttribute('data-sound');
+            audio.play();
+          });
+        });
+      </script>
+</body>
+
+</html>

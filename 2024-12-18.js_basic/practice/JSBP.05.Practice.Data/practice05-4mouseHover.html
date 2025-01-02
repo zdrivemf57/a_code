@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>練習05-2</title>
+</head>
+
+<body>
+  <h1>UNTITLED</h1>
+  <img src="images/fukui1.jpg" alt="福井1" width="300">
+  <img src="images/fukui2.jpg" alt="福井2" width="300">
+  <script>
+    const h1 = document.querySelector('h1');
+    document.querySelectorAll('img')
+      .forEach(img => {
+        img.addEventListener('mouseover', event => {
+          h1.textContent = event.target.getAttribute('alt');
+        });
+        img.addEventListener('mouseout', event => {
+          h1.textContent = 'UNTITLED'
+        });
+      });
+  </script>
+</body>
+
+</html>
