@@ -2,10 +2,10 @@
 // Promiseを返す関数は非同期関数と呼ばれる
 // 非同期関数は同期的に実行できる ⇒ then()を使用する
 function printMessage(message, delay) {
-  return new Promise((resolve) => {
+  return new Promise((a) => {
     setTimeout(() => {
       console.log(message);
-      resolve();
+      a();
     }, delay);
   });
 }

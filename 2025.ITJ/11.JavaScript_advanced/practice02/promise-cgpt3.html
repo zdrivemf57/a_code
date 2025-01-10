@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromiseのWeb開発例</title>
+</head>
+<body>
+  <h1>ユーザー情報</h1>
+  <div id="user-info">読み込み中...</div>
+
+  <script>
+    // APIからユーザー情報を取得する関数（非同期処理）
+    function fetchUserData() {
+      return new Promise((resolve, reject) => {
+        // 疑似的にAPI通信をシミュレーション
+        setTimeout(() => {
+          const success = true; // 通信が成功した場合
+          // const success = false; // 通信が失敗した場合
+          if (success) {
+            resolve({
+              name: '山田 太郎',
+              age: 25,
+              email: 'yamada@example.com'
+            });
+          } else {
+            reject('データの取得に失敗しました');
+          }
+        }, 2000); // 2秒後に処理を完了
+      });
+    }
+
+    // DOMにデータを表示する関数
+    function displayUserData(userData) {
+      const userInfoDiv = document.getElementById('user-info');
+      userInfoDiv.innerHTML = `
+        <p>名前: ${userData.name}</p>
+        <p>年齢: ${userData.age}歳</p>
+        <p>メール: ${userData.email}</p>
+      `;
+    }
+
+    // エラーを表示する関数
+    function displayError(errorMessage) {
+      const userInfoDiv = document.getElementById('user-info');
+      userInfoDiv.textContent = `エラー: ${errorMessage}`;
+    }
+
+    // 実際に非同期処理を行う
+    fetchUserData()
+      .then((userData) => {
+        // データの取得に成功した場合
+        displayUserData(userData);
+      })
+      .catch((error) => {
+        // データの取得に失敗した場合
+        displayError(error);
+      });
+  </script>
+</body>
+</html>
