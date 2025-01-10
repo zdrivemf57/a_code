@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+<button>ボタン</button>
+
+    <script>
+      // コンソールに「Hello」と表示する
+      function printHello() {
+        console.log("Hello");
+      }
+      // button要素クリック時にprintHello()を呼び出す
+      const button = document.querySelector("button");
+      button.addEventListener("click", printHello);
+    </script>
+  </body>
+</html>
