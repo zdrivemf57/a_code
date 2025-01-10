@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+.title {
+  color: #0c1b72;
+  /* 境界線の位置調整 */
+  display: inline-block;
+  line-height: 1;
+  padding: 5px 10px;
+  /* 境界線 */
+  border-color: #0c1b72;
+  border-style: none none solid solid;
+  border-left-width: 10px;
+  border-bottom-width: 2px;
+}
+
+.outer {
+  border: 5px solid #14af81;
+  width: 50%;
+  height: 250px;
+  overflow: hidden;
+}
+
+/* 
+幅や高さを指定していない: 
+・幅は親要素に対して 100% 
+・高さは auto(テキスト量に応じる) 
+*/
+.inner {
+  border: 5px solid #af147b;
+}
+
+.scroll {
+  border: 5px solid #306b24;
+  height: 250px;
+  overflow: auto;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fruits</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 5px 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>商品リスト</h1>
+  <table id="item-table">
+    <tr>
+      <th>商品名</th>
+      <th>値段</th>
+      <th>操作</th>
+    </tr>
+  </table>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // テーブルに行を追加
+      $('#item-table').append('<tr>');
+      // 追加した行に商品情報を挿入
+      $('#item-table tr:last-child')
+        .append('<td>りんご</td>')
+        .append('<td>100 円</td>')
+        .append('<td><button>削除</button></td>');
+      // 動的に追加されたボタンに削除機能を付与
+      $('#item-table tr:last-child button').click(function () {
+        $(this).parent().parent().remove();
+      });
+    });
+  </script>
+</body>
+
+</html>

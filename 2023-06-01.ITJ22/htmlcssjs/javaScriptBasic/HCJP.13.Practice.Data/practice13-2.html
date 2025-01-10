@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習13-2</title>
+</head>
+<body>
+<p>
+問題１：
+jQueryを使い、以下のa要素のリンク先をGoogle(https://www.google.com/)に変更してください。
+</p>
+<p><a href="https://www.yahoo.co.jp/" target="_blank">リンク先</a></p>
+<p>
+問題２：
+jQueryを使い、以下の画像の代替文字をconsole.logで表示してください。
+</p>
+<p><img src="images/flower.jpg" alt="ハイビスカスの花" width="300"></p>
+<p id="question" data-img="cat.jpg">
+問題３：
+jQueryを使い、上記の花の画像をネコの画像に差し替えてください。<br>
+画像ファイル名は、この問題文（p#question）のdata-img属性の値(cat.jpg)を取得して利用してください。</p>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('a').attr('href', 'https://www.google.com/');
+
+    console.log($('img').attr('src'));
+
+    $('img').attr('src', `images/${$('#question').attr('data-img')}`);
+});
+</script>
+</body>
+</html>

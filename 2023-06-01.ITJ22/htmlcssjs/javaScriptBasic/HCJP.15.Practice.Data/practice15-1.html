@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>練習</title>
+</head>
+
+<body>
+    <p>
+        問題１：
+        div#stage内の画像が4.5秒ごとに自動的に切り替わるようにしてください。<br>
+        画像が切り替わるときは、0.7秒かけて画像をフェードアウトさせ、0.8秒かけて新しい画像をフェードインさせてください。<br>
+        使用する画像は、flower1.jpg ～ flower5.jpg です。
+    </p>
+    <br>
+    <div id="stage" style="border: 1px dotted #000; display: inline-block; padding: 20px;">
+        div#stage<br><br>
+        <img src="images/flower1.jpg" width="400">
+    </div>
+    <p>
+        問題２：
+        以下のボックス内の青枠部分と「折りたたむ」ボタンを非表示にしてください。<br>
+        「続きを読む」ボタンを押すと、青枠部分がスライドダウンして表示されるようにします。<br>同時に「続きを読む」ボタンが消えて、「折りたたむ」ボタンが表示されるように設定してください。<br>
+        「折りたたむ」を押すと、青枠部分がスライドアップして非表示になります。<br>同時にボタンは「続きを読む」に切り替わります。
+    </p>
+    <div class="article" style="width: 305px; border: 1px solid #000; padding: 10px;">
+        <h2>ネコ</h2>
+        <p>今日は日光に遊びに行った。観光客で賑わう通りを抜けると、ちょっと不思議な体験をした。左右の目の色が違うネコが、じろりとこちらを見つめていた。</p>
+        <div style="border:3px solid blue;">
+            <img src="images/cat.jpg" width="300">
+            <p>近づいても物怖じすることなく、ただひたすらにこちらを見つめてきた。声をかけると、ネコもこちらの言葉を理解したかのように頷いた。</p>
+        </div>
+        <button class="continue">続きを読む</button>
+        <button class="close">折りたたむ</button>
+    </div>
+    <div class="article" style="width: 305px; border: 1px solid #000; padding: 10px;">
+        <h2>未知との遭遇</h2>
+        <p>北陸の地方都市、福井。ソースカツ丼とおろしそばが有名なこの街の駅前で、未知との遭遇を体験した。</p>
+        <div style="border:3px solid blue;">
+            <img src="images/fukui1.jpg" width="300">
+            <p>突如現れた体長数メートルの巨大な首長竜にこちらを睨まれ、私は息をのんだ。</p>
+        </div>
+        <button class="continue">続きを読む</button>
+        <button class="close">折りたたむ</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const photo = {
+                num: 1,
+                next: function () {
+                    if (this.num == 5) {
+                        this.num = 1;
+                    } else {
+                        this.num++;
+                    }
+                    return 'images/flower' + this.num + '.jpg';
+                },
+                stop: function () {
+                    clearInterval(t);
+                    clearInterval(t2);
+                }
+            };
+
+            const t = setInterval(function () {
+                $('#stage img').fadeOut(700, function () {
+                    $(this).attr('src', photo.next());
+                    $(this).fadeIn(800);
+                });
+            }, 700);
+
+            $('.article div, .close').hide();
+
+            $('.continue').click(function () {
+                $(this).prev().slideDown();
+                $(this).hide();
+                $(this).next().show();
+            });
+            $('.close').click(function () {
+                $(this).prev().prev().slideUp();
+                $(this).hide();
+                $(this).prev().show();
+            });
+        });
+    </script>
+</body>
+
+</html>

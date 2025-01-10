@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習12-5</title>
+</head>
+<body>
+<h1>分岐処理</h1>
+<p>メッセージ(10字以内)を入力してください</p>
+<input type="text" id="input">
+<button id="btn">送信</button>
+
+<script>
+document.getElementById('btn').addEventListener('click', () => {
+  // コンソールのクリア
+  console.clear();
+
+  // 入力値の取得。trim()で前後の空白文字を除去
+  const input = document.getElementById('input').value.trim();
+
+  // エラー内容を保持するための変数
+  let error;
+
+  // 文字数チェック
+  if(!input) {
+    error = '未入力';
+  } else if (input.length > 10) {
+    error = '10 字オーバー';
+  }
+
+  if(error) {
+    console.log(error);
+    alert('入力に不備があります');
+  } else {
+    console.log(input);
+    alert('入力ありがとうございました');
+  }
+});
+</script>
+</body>
+</html>

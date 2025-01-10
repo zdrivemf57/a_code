@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.box1 { 
+  text-align: center; 
+  border: 5px solid #333; 
+  padding-top: 80px; 
+  width: calc(300px - (5px * 2)); 
+  height: calc(200px - (5px * 2) - 80px); 
+  /* box2 の margin-top よりも大きいので優先される */ 
+  margin-bottom: 100px; 
+ }
+
+ .box2 { 
+  box-sizing: border-box; 
+  text-align: center; 
+  border: 5px solid #333; 
+  padding-top: 80px; 
+  width: 300px; 
+  height: 200px; 
+  margin-top: 50px; 
+ }
+ 

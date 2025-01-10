@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習13-1</title>
+</head>
+<body>
+<h1 id="company">株式会社ABC</h1>
+<p class="welcome">ようこそ<span>ABC</span>のウェブサイトへ！</p>
+<h2>サービス</h2>
+<ul class="service">
+  <li>ホームページ制作</li>
+  <li>アプリ開発</li>
+  <li>動画制作</li>
+</ul>
+<script>
+  const themeColor = '#08f';
+
+  // id を元に要素を選択、操作
+  const h1 = document.getElementById('company');
+  h1.style.color = themeColor;
+
+  // css セレクタを元に要素を選択、操作
+  const span = document.querySelector('.welcome span');
+  span.style.fontWeight = 'bold';
+  
+  // css セレクタを元に複数要素を選択、操作
+  const liList = document.querySelectorAll('.service li');
+  liList.forEach(li => li.style.color = themeColor);
+</script>
+</body>
+</html>

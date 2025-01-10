@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>住所検索</title>
+</head>
+
+<body>
+  <h1>会員登録</h1>
+  <form action="">
+    <p>氏名:
+      <input type="text" name="name">
+    </p>
+    <p>郵便番号:
+      <input type="text" id="zipcode">
+      <button id="search">住所検索</button>
+    </p>
+    <p>住所:
+      <input type="text" id="address" name="address">
+    </p>
+    <p>住所(ﾌﾘｶﾞﾅ)
+      <input type="text" id="kana" name="kana">
+    </p>
+    <input type="submit">
+  </form>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#search').click(function () {
+        $.ajax({
+          url: 'https://zipcloud.ibsnet.co.jp/api/search?zipcode=' +
+            $('#zipcode').val(),
+          type: 'GET',
+          dataType: 'JSONP'
+        })
+          .done(function (res) {
+            console.log(res);
+            if (res.status != 200) {
+              alert(res.message);
+            } else {
+              // 複数の住所が該当する可能性がある
+              // ⇒ 最初の住所だけ取り出す
+              const r = res.results[0];
+              const address = r.address1 + r.address2 + r.address3;
+              const kana = r.kana1 + r.kana2 + r.kana3;
+              $('#address').val(address);
+              $('#kana').val(kana);
+            }
+          })
+          .fail(function () {
+            alert('通信に失敗しました');
+          });
+        return false; // フォームの送信を防ぐ
+      });
+    });
+  </script>
+</body>
+
+</html>

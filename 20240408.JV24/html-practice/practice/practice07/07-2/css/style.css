@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/* タイプセレクタ */
+div {
+  width: 300px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+/* ID セレクタ */
+#first {
+  background: #fab5b5;
+}
+
+/* クラスセレクタ */
+.second {
+  background: #a2f8c3;
+}
+
+/* ボタンの共通設定 */
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 3px solid #646464;
+  cursor: pointer;
+}
+
+/* ボタンごとの設定 */
+.btn-dark {
+  background: #000;
+  color: #fff;
+}
+
+.btn-round {
+  border-radius: 1em;
+}

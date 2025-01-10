@@ -1,0 +1,359 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+
+/*
+------------------------------------------------------- */
+/* base
+------------------------------------------------------- */
+
+body {
+    font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシックPro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳＰゴシック', 'MS PGothic', sans-serif;
+    line-height: 1.5;
+}
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-shadow: 0 0 10px #dddddd;
+}
+a {
+    text-decoration: none;
+}
+h1 a {
+    display: block;
+    background: url("../images/logo.png") 0px 30px no-repeat;
+    height: 90px;
+    width: 260px;
+    text-indent: -9999px;
+    float: left;
+    margin-right: 20px;
+}
+h2 {
+     font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    padding-bottom: 10px;
+    margin-bottom : 30px;
+}
+.menu h2, .shop h2, .contact h2 {
+    height: 150px;
+    font-size: 40px;
+    color: #ffffff;
+    padding-top: 80px;
+    padding-left: 30px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.menu h2 {
+    background: url("../images/titleimage01.jpg") 0 0 no-repeat;
+}
+.shop h2 {
+    background: url("../images/titleimage02.jpg") 0 0 no-repeat;
+}
+.contact h2 {
+    background: url("../images/titleimage03.jpg") 0 0 no-repeat;
+}
+.message h2, .topics h2 {
+    border-bottom: 1px dotted #cccccc;
+    padding: 0 0 10px 0;
+}
+h3 {
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+p:not(:last-of-type){
+    margin-bottom: 10px;
+}
+section {
+    margin-bottom: 15px;
+}
+ul {
+    list-style-type: none;
+}
+input, textarea {
+    border: 1px solid #dddddd;
+}
+.gl-header {
+    height: 90px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.gl-footer {
+    text-align: center;
+    border-top: 1px solid #cccccc;
+    padding-top: 20px;
+}
+
+/*
+------------------------------------------------------ */
+/* nav
+------------------------------------------------------- */
+.gl-nav ul {
+    padding-top: 35px;
+    display: table;
+    table-layout: fixed;
+    width: 640px;
+}
+.gl-nav li {
+    display: table-cell;
+    text-align: center;
+}
+.gl-nav a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    color: #000000;
+}
+.gl-nav a:hover {
+    color: #999999;
+    background-color : #eeeeee;
+}
+
+/*
+------------------------------------------------------ */
+/* top
+------------------------------------------------------- */
+.main-img {
+    margin-bottom: 30px;
+}
+.message {
+    overflow: hidden;
+}
+.message img {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    float: right;
+    margin-left: 20px;
+}
+.topics dl {
+    overflow: hidden;
+}
+.topics dt {
+    float: left;
+    width: 120px;
+    background-color: #555555;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.topics dd {
+    margin-left: 140px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.top-aside ul {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.top-aside li {
+    float: left;
+    margin-right: 10px;
+}
+.top-aside li:last-child {
+    margin-right: 0;
+}
+/*
+------------------------------------------------------- */
+/* menu
+------------------------------------------------------- */
+.menu .flex-container {
+    display: flex;
+}
+.menu .flex-item01 {
+    order: 1;
+    flex-grow: 1;
+}
+.menu .flex-item02 {
+    order: 0;
+    flex-grow: 3;
+}
+.menu-box ul {
+    display: flex;
+    width: 600px;
+    margin: 20px 0 30px 0;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+.menu-box:nth-of-type(5) ul {
+    height: 400px;
+    align-content: space-between;
+}
+.menu-box img {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    margin-bottom: 3px;
+}
+.caption {
+    font-size: 12px;
+}
+
+/*
+------------------------------------------------------- */
+/* shop
+------------------------------------------------------- */
+.shop .flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+.shop table {
+    border-collapse: collapse;
+    width: 440px;
+}
+.shop th, .shop td {
+    padding: 10px;
+}
+.shop th {
+    width: 25%;
+    vertical-align: top;
+    font-weight: normal;
+    text-align: left;
+    background-color: #555555;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+.shop tr:last-child th {
+    border: none;
+}
+
+/*
+------------------------------------------------------- */
+/* contact
+------------------------------------------------------- */
+.contact .require {
+    color: #ff0000;
+}
+.contact .item01, .contact .item02 {
+    display: block;
+    width: 300px;
+    float: left;
+    margin-bottom: 10px;
+    text-align: right;
+    line-height: 40px;
+    margin-right: 10px;
+}
+.contact .item01:after {
+    content: "";
+    display: block;
+    clear:both;
+}
+.contact input {
+    border-radius: 3px;
+    padding: 8px;
+}
+.contact input[type="text"], .contact input[type="email"], .contact input[type="tel"] {
+    width: 300px;
+}
+.contact .item02wrapper {
+    overflow: hidden;
+}
+.contact .item02wrapper label {
+    line-height: 40px;
+}
+.contact p:nth-child(7) .item02, .contact p:nth-child(8) .item02, .contact p:nth-child(9) .item02 {
+    line-height: 30px;
+}
+.contact .item02wrapper .sm {
+    font-size: 10px;
+}
+.contact .item02wrapper select {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 3px;
+}
+.contact input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    width: 180px;
+    height: 54px;
+    text-align: center;
+    /*line-height: 40px;*/
+    border-radius: 3px;
+    background-color: #aaaaaa;
+    border: 2px solid #aaaaaa;
+    color: #fff;
+    transition: all .3s;
+}
+.contact input[type="submit"]:hover {
+    background-color: #fff;
+    color: #aaaaaa;
+}
+
+/*
+------------------------------------------------------- */
+/* スマートフォン
+------------------------------------------------------- */
+@media screen and (max-width: 479px){
+    .wrapper {
+        width: 100%;
+        padding: 0;
+    }
+    .gl-main {
+        padding: 0 10px;
+    }
+    h1 a{
+        width: 100%;
+        background-position: center center;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    .message h2, .topics h2 {
+        border: none;
+        margin-bottom: 0;
+    }
+    .gl-header {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    /* nav */
+    .gl-nav ul {
+        padding-top: 0;
+        table-layout: auto;
+        width: 100%;
+    }
+    .gl-nav li {
+        font-size: 14px;
+        border-left:1px solid #eeeeee;
+    }
+    .nav li:first-child {
+        border-left: none;
+    }
+    .nav a {
+        padding: 5px 0;
+    }
+
+    /* home */
+    .main-img img {
+        width: 100%;
+    }
+    .message img {
+        float: none;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: none;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .topics dt {
+        float: none;
+        width: auto;
+    }
+    .topics dd {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .top-aside li {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .top-aside li:last-child {
+        margin-bottom: 0;
+    }
+}

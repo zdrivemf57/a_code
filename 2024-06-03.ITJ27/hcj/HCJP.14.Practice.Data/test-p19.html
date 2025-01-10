@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form name="messageForm" action="" method="post">
+    <input type="text" name="messageInput">
+    <input type="submit" name="submit" disabled>
+  </form>
+  <script>
+  document. messageForm.messageInput.addEventListener('input', event => {
+    if(event.target.value.length >= 10) {
+      messageForm.submit.removeAttribute('disabled');
+    } else {
+      messageForm.submit.setAttribute('disabled', true);
+    }
+  });
+  </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習05-1</title>
+</head>
+<body>
+<h1>イベント</h1>
+<button>ボタン</button>
+
+<script>
+    // h1とクリックイベントの関連付け
+    const h1 = document.querySelector('h1');
+    h1.addEventListener('click', () => {
+      console.log('見出しをクリックしました')
+    });
+    
+    // buttonとクリックイベントの関連付け
+    const button = document.querySelector('button');
+    button.addEventListener('click', (event) => {
+      console.log('ボタンをクリックしました')
+      console.log(event);
+      console.log(event.target.innerText);
+    });
+    </script>
+</body>
+</html>

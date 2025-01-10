@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習13-4</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        display: flex;
+      }
+
+      #box {
+        width: 300px;
+        height: 300px;
+        overflow-y: scroll;
+        background: #c3ecb2;
+      }
+
+      .widthSize {
+        text-align: center;
+        border: 1px solid #f00;
+        border-top: none;
+        margin-bottom: 10px;
+      }
+
+      .widthSize span {
+        position: relative;
+        bottom: -0.7em;
+        padding: 0 10px;
+        border: 1px solid #f00;
+        background: #fff;
+      }
+
+      .heightSize {
+        border: 1px solid #f00;
+        border-left: none;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .heightSize span {
+        position: relative;
+        right: -2em;
+        padding: 0 10px;
+        border: 1px solid #f00;
+        background: #fff;
+      }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="left">
+    <div id="box">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ipsa voluptates architecto alias cupiditate. Omnis voluptate at quo accusantium perspiciatis tempora, doloremque amet alias expedita, corporis iusto nam unde vero.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt molestiae temporibus vel fugiat dicta. Tempore fugiat iste enim rem error, molestiae ad numquam, ipsam est nobis libero quidem dolorem!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, voluptatum! Nulla quas officia, deserunt cupiditate numquam exercitationem ullam mollitia praesentium odit at architecto debitis quo cumque dolor dolorum, quidem reiciendis.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis corporis sequi ab qui officiis modi. Dolor adipisci odit officiis amet, sit tempore modi pariatur asperiores quibusdam quia, sunt quasi!
+    </div>
+    
+    <!-- 幅を表示 -->
+    <div id="w1" class="widthSize"><span>〇〇px</span></div>
+    <div id="w2" class="widthSize"><span>〇〇px</span></div>
+  </div><!-- /.left-->
+  
+  <!-- 高さを表示 -->
+  <div id="h1" class="heightSize"><span>〇〇px</span></div>
+  <div id="h2" class="heightSize"><span>〇〇px</span></div>
+</div>
+<script>
+  const box = document.getElementById('box');
+  // スクロールバーを含まない幅
+  const w1 = document.getElementById('w1');
+  w1.style.width = `${box.clientWidth}px`;
+  w1.innerHTML = `<span>${box.clientWidth}px</span>`;
+  // スクロールバーを含む幅
+  const w2 = document.getElementById('w2');
+  w2.style.width = `${box.offsetWidth}px`;
+  w2.innerHTML = `<span>${box.offsetWidth}px</span>`;
+  // 表示領域の高さ
+  const h1 = document.getElementById('h1');
+  h1.style.height = `${box.clientHeight}px`;
+  h1.innerHTML = `<span>${box.clientHeight}px</span>`;
+  // スクロール分も含めた高さ
+  const h2 = document.getElementById('h2');
+  h2.style.height = `${box.scrollHeight}px`;
+  h2.innerHTML = `<span>${box.scrollHeight}px</span>`;
+</script>
+</body>
+</html>

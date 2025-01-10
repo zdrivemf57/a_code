@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習05-2</title>
+    <style>
+      #thumb img {
+        filter: grayscale(100%);
+      }
+
+      #thumb img:hover {
+        filter: grayscale(0%);
+      }
+    </style>
+</head>
+<body>
+<div id="stage">
+  <h1>駅前の恐竜</h1>
+  <p>福井駅ではリアルな恐竜が出迎えてくれます</p>
+  <img src="images/fukui1.jpg" width="480">
+</div>
+<div id="thumb">
+  <img src="images/fukui1.jpg" alt="駅前の恐竜" width="100" 
+       data-description="福井駅ではリアルな恐竜が出迎えてくれます">
+  <img src="images/fukui2.jpg" alt="越前の街並み" width="100"
+       data-description="城下町の面影が残る素敵な雰囲気です">
+  <img src="images/fukui3.jpg" alt="恐竜博物館" width="100"
+       data-description="子どもから大人まで楽しめる巨大な博物館です">
+</div>
+
+<script>
+  // #stage内の各要素を取得
+  const h1OnStage = document.querySelector('#stage h1');
+  const pOnStage = document.querySelector('#stage p');
+  const imgOnStage = document.querySelector('#stage img');
+  
+  document.querySelectorAll('#thumb img').forEach(img => {
+    img.addEventListener('mouseover', event => {
+      // クリックされた画像の各属性を取得
+      const src = event.target.getAttribute('src');
+      const alt = event.target.getAttribute('alt');
+      const description = event.target.getAttribute('data-description');
+  
+      // #stage内のコンテンツを更新
+      h1OnStage.textContent = alt;
+      pOnStage.textContent = description;
+      imgOnStage.src = src;
+    });
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+@charset "utf-8"; 
+/* ------------------ 
+ 全体的な設定
+-------------------- */ 
+body { 
+ background: #dff7ff; /* 背景色 */ 
+ font-family: serif; /* 明朝体 */ 
+ text-align: center; /* 文字の中央配置 */ 
+} 
+/* ---------------------- 
+ 見出しと段落の設定
+------------------------- */ 
+h1 { 
+ color: #fff; 
+ background: #161886; 
+ display: inline-block; /* 背景を文字の範囲に合わせる */ 
+ padding: 0 1em; /* 文字と背景の間の余白 */ 
+ border-radius: 5px; /* 角丸 */ 
+ margin-bottom: 0; /* 下部要素との余白調整 */ 
+} 
+h2 { 
+ color: #161886; 
+ margin-bottom: 0; /* 下部要素との余白調整 */ 
+} 
+p { 
+ margin-top: 0; /* 上部要素との余白調整 */ 
+}

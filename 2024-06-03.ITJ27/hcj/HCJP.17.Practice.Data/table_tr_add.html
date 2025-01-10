@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fruits</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 5px 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <table id="producttable">
+    <thead>
+      <tr>
+        <td>UPC_Code</td>
+        <td>Product_Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- existing data could optionally be included here -->
+    </tbody>
+  </table>
+
+  <!-- 行のテンプレート  -->
+  <template id="productrow">
+    <tr>
+      <td class="record"></td>
+      <td></td>
+    </tr>
+  </template>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+  // templete 要素の content 属性の有無を確認することで、
+  // ブラウザーが HTML の template 要素に対応しているかテストします。
+  if ("content" in document.createElement("template")) {
+  // 既存の HTML tbody と template の行を使って
+  // table をインスタンス生成します。
+  const tbody = document.querySelector("tbody");
+  const template = document.querySelector("#productrow");
+
+
+  // 新しい行を複製して表に挿入します。
+  const clone = template.content.cloneNode(true);
+  let td = clone.querySelectorAll("td");
+  td[0].textContent = "1235646565";
+  td[1].textContent = "Stuff";
+
+
+  tbody.appendChild(clone);
+
+
+  // 新しい行を複製して表に挿入します。
+  const clone2 = template.content.cloneNode(true);
+  td = clone2.querySelectorAll("td");
+  td[0].textContent = "0384928528";
+  td[1].textContent = "Acme Kidney Beans 2";
+
+
+  tbody.appendChild(clone2);
+  } else {
+    // HTML の template 要素に対応していないので
+    // 表に行を追加するほかの方法を探します。
+  }
+  </script>
+</body>
+
+</html>

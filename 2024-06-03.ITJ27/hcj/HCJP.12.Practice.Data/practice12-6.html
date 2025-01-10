@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習12-6</title>
+</head>
+<body>
+<h1>反復処理</h1>
+
+<script>
+const fruits = ["りんご", "バナナ", "ぶどう"];
+
+// 通常の for 文による記述
+console.log('通常の for 文による記述');
+for(let i = 0; i < fruits.length; i++) {
+    console.log(i, fruits[i]);
+}
+
+// for of による記述
+console.log('for of による記述');
+let counter = 0;
+for(const item of fruits) {
+ console.log(counter, item);
+ counter++;
+}
+</script>
+</body>
+</html>

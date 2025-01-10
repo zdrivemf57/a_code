@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fruits</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 5px 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>商品リスト</h1>
+  <table id="item-table">
+    <tr>
+      <th>商品名</th>
+      <th>値段</th>
+      <th>操作</th>
+    </tr>
+  </table>
+  <button type="button" id="btn">追加</button>
+
+  <!-- 商品情報を格納するテンプレート -->
+  <template id="item-row">
+    <tr>
+      <td><!-- 商品名 --></td>
+      <td><!-- 値段 --></td>
+      <td><button>削除</button></td>
+    </tr>
+  </template>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    /**
+    * 商品テーブルの 1 行分を生成する関数
+    * @param item name プロパティと price プロパティをもつ
+    */
+    function createRow(item) {
+      // テンプレート内の要素(1 行分の HTML)を複製
+      const clonedRow = $($('#item-row').html());
+      // 行内の td 要素にデータを追加
+      clonedRow.find('td:nth-child(1)').append(item.name);
+      clonedRow.find('td:nth-child(2)').append(item.price + '円');
+      // 削除ボタンに処理を追加
+      clonedRow.find('button').click(function () {
+        $(this).parent().parent().remove();
+      });
+      // 行をテーブルに追加
+      $('#item-table').append(clonedRow);
+
+    }
+    /**
+    * メインの処理
+    */
+    $(document).ready(function () {
+      // 表示させる商品のリスト
+      const items = [
+        { name: 'りんご', price: 100 },
+        { name: 'みかん', price: 300 },
+        { name: 'バナナ', price: 200 }
+      ];
+      for (let item of items) {
+        createRow(item);
+      }
+      $('#btn').click(function () {
+        $('#item-table').append("<tr><td>1</td><td>2</td><td>3</td></tr>");
+      });
+    });
+  </script>
+</body>
+
+</html>

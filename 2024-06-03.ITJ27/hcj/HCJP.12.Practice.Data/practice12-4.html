@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習12-4</title>
+</head>
+<body>
+<h1>配列の操作</h1>
+<script>
+    // ベースとなる配列
+    const info1 = [300, '青森県'];
+
+    // 要素を追加
+    info1.unshift('りんご');
+    info1.push('低農薬');
+
+    // 要素の確認
+    console.log(`要素数: ${info1.length}`);
+    console.table(info1);
+
+    // 要素を複製
+    const info2 = info1;
+    const info3 = [...info1];
+
+    // 複製したものを変更
+    info2[0] = 'みかん';
+    info2[2] = '和歌山県';
+    info3[0] = 'ぶどう';
+    info3[2] = '山梨県';
+
+    // info1 と info2 の参照元が同じであることを確認
+    // ⇒ info2 への変更が info1 にも影響している
+    console.table(info1);
+    
+    // 分割代入
+    const [name, price, ...other] = info3;
+    console.log(name);
+    console.log(price);
+    console.log(other);
+</script>
+</body>
+</html>

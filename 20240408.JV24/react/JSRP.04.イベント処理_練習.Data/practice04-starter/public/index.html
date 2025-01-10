@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>React Practice</title>
+  <link rel="stylesheet" href="bootstrap.min.css" />
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <hr />
+  <div class="container">
+    <h1>JavaScriptとイベント処理</h1>
+    <hr />
+    <h2 class="mb-3">クリックイベントとイベントオブジェクト</h2>
+    <div id="greeting-buttons">
+      <button class="btn btn-primary">おはよう</button>
+      <button class="btn btn-success">こんにちは</button>
+      <button class="btn btn-danger">こんばんは</button>
+    </div>
+    <hr />
+    <h2 class="mb-3">フォームイベント</h2>
+    <div id="alert-message" class="alert alert-success d-none">
+      Some Message
+    </div>
+    <form name="contact">
+      <div class="mb-3">
+        <label class="form-label" for="contact-email">
+          連絡先メールアドレス
+        </label>
+        <input type="text" class="form-control" name="email" id="contact-email" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="message">お問い合わせ内容</label>
+        <textarea type="text" class="form-control" name="message" id="message" rows="8"></textarea>
+      </div>
+      <input type="submit" class="btn btn-primary" name="submit" disabled />
+    </form>
+    <hr />
+    <h5>独自追加 </h5>
+    <h6>UNTITLED</h6>
+    <img src="images/cat.jpg" alt="こちらを見る猫" width="300">
+    <img src="images/dog.jpg" alt="伏せてる犬" width="300">
+    <form name="myform">
+      <input type="checkbox" name="pet" value="dog">犬
+      <input type="checkbox" name="pet" value="cat">猫
+      <input type="checkbox" name="pet" value="other">その他
+      <input type="submit">
+    </form>
+    
+  </div>
+  <script src="bootstrap.bundle.min.js"></script>
+  <script>
+    // ボタンクリック時の処理を定義(イベントハンドラ関数)
+    function alertContent(event) {
+      console.log(event); // 独自追加
+      alert(event.target.textContent);
+    }
+
+    // ボタンクリック時のイベントを設定
+    document
+      .querySelectorAll("#greeting-buttons button")
+      .forEach((button) => button.addEventListener("click",
+        alertContent));
+
+    /*
+     * フォームイベント
+     */
+    const form = document.contact;
+
+    // メールアドレス入力時の処理
+    form.email.addEventListener("input", (event) => {
+      // 正規表現によるメールアドレスのチェック
+      const regex = /^[^@]+@[^@]+\.[^@]+$/;
+      const val = event.target.value;
+      const isEmail = regex.test(val);
+
+      // メールアドレスの形式の場合、送信ボタンを有効化
+      if (isEmail) {
+        form.submit.removeAttribute("disabled");
+      } else {
+        form.submit.setAttribute("disabled", true);
+      }
+    });
+
+    // 送信ボタン押下時の処理
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const alertMessage = document.getElementById("alert-message");
+      if (form.message.value.trim() === "") {
+        alertMessage.className = "alert alert-danger";
+        alertMessage.textContent = "お問い合わせ内容を入力してください";
+      } else {
+        alertMessage.className = "alert alert-success";
+        alertMessage.textContent = "お問い合わせ内容を送信しました";
+        form.email.value = "";
+        form.message.value = "";
+        form.submit.setAttribute("disabled", true);
+      }
+    });
+  </script>
+  <script>
+    const h6 = document.querySelector('h6');
+    document.querySelectorAll('img')
+    .forEach(img => {
+      img.addEventListener('mouseover', event => {
+        h6.textContent = event.target.getAttribute('alt');
+      });
+    
+      img.addEventListener('mouseout', event => {
+        h6.textContent = 'UNTITLED'
+      });
+    });
+    </script>
+    <script>
+      document.myform.addEventListener("submit", event => {
+        event.preventDefault(); // 送信しない(後述)
+        document.myform.pet.forEach(p => {
+          if(p.checked) console.log(p.value);
+        });
+      });
+    </script>
+      
+</body>
+
+</html>

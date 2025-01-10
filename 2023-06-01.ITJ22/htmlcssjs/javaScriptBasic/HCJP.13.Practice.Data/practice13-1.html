@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>練習13-1</title>
+</head>
+
+<body>
+    <p>
+        問題１：
+        jQueryを使い、以下のh1要素の文字サイズを80pxにしてください。
+    </p>
+    <h1>h1要素</h1>
+    <p>
+        問題２：
+        jQueryを使い、以下のh2要素を以下のように設定してください。<br>
+        文字サイズ：32px<br>
+        背景色：#235e45<br>
+        文字の色：#ffffff
+    </p>
+    <h2>h2要素</h2>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 問題１
+            $('h1').css('font-size', '80px');
+            // 問題２
+            $('h2').css({
+                fontSize: '32px',
+                backgroundColor: '#235e45',
+                color: '#ffffff'
+            });
+        });
+    </script>
+</body>
+
+</html>

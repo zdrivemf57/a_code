@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQueryの利用練習</title>
+</head>
+
+<body>
+  <div style="margin-bottom: 10px">
+    <button data-photo="cat.jpg">ネコ</button>
+    <button data-photo="dog.jpg">イヌ</button>
+    <button data-photo="panda.jpg">パンダ</button>
+  </div>
+  <img src="cat.jpg" width="400">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+    $('button').click(function () {
+      // $(this)はクリックされたボタンを指す
+      // ボタンの data-photo 属性の値を取得する
+      const photo = $(this).attr('data-photo');
+      // 画像を 1000 ミリ秒かけてフェードアウト
+      // fadeOut の第二引数は、フェードアウト完了後の処理
+      $('img').fadeOut(1000, function () {
+        // $(this)はフェードアウトした img 要素を指す
+        // 要素の src 属性を変更し、1000 ミリ秒かけてフェードイン
+        $(this).attr('src', photo)
+          .fadeIn(1000);
+      });
+    });
+  </script>
+</body>
+
+</html>

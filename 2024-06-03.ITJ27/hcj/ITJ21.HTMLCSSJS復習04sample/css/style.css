@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.container {
+    width: 1030px;
+}
+
+h1 {
+    text-align: center;
+}
+
+section img {
+    border: 1px solid #aaa;
+    padding: 3px;
+}
+
+h2 {
+    border-bottom: 1px dotted #999;
+    border-left: 3px solid #999;
+    padding: 5px 8px;
+}
+
+.info ul {
+    list-style-type: none;
+}
+
+.info li:last-child {
+    color: #00f;
+}

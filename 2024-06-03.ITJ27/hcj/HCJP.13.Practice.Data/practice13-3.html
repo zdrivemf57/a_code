@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習13-3</title>
+</head>
+<body>
+<ul id="dataList">
+  <li>画像タイトル: <span class="photoTitle">ハイビスカス</span></li>
+  <li>画像ファイル: <span class="filePath">images/flower.jpg</span></li>
+  <li>表示幅: <span class="imageSize">400</span>px</li>
+</ul>
+
+<h1><!-- ここに画像タイトルを表示 --></h1>
+<div id="photo"><!-- ここに画像を表示 --></div>
+
+<script>
+  // 画像の情報を取得
+  const photoTitle = document.querySelector('.photoTitle').textContent;
+  const filePath = document.querySelector('.filePath').textContent;
+  const imageSize = document.querySelector('.imageSize').textContent;
+
+  // 画像用の HTML 文字列を生成
+  const img = `<img src="${filePath}" width="${imageSize}">`;
+
+  // タイトルと画像を表示
+  document.querySelector('h1').textContent = photoTitle;
+  document.getElementById('photo').innerHTML = img;
+
+  // 画面上部に表示されている情報を非表示にする
+  document.getElementById('dataList').style.display = 'none';
+</script>
+</body>
+</html>

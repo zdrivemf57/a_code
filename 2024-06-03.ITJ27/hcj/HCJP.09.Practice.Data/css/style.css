@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+* {
+  box-sizing: border-box;
+  /* 各要素がもつデフォルトのマージンを初期化 */
+  margin: 0;
+}
+
+html, body {
+  /* .wrap の高さが 100%になるために必要 */
+  height: 100%;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.wrap {
+   background-color: #eee;
+   border-left: 2px solid #fff;
+   border-right: 2px solid #999;
+   max-width: 1200px;
+   min-width: 700px;
+   min-height: 100%;
+   padding: 0 30px;
+   /* 幅を決めて左右のマージンを auto にすると中央に配置できる */
+   margin: 0 auto;
+}
+
+/*
+* ヘッダー
+*/
+h1 {
+  padding-top: 20px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  width: 150px;
+  line-height: 3;
+  text-align: center;
+  background-color: #bd4646;
+  border-right: 1px solid #999;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ad4141;
+  border-right: 1px solid #eee;
+}
+
+.menu {
+  margin-top: 30px;
+  /* 背景画像の配置 */
+  height: 250px;
+  background-image: url(../images/titleimage01.jpg);
+  background-position: left center;
+  background-size: cover;
+  /* 文字の調整 */
+  color: #fff;
+  font-weight: bold;
+  font-size: 60px;
+  padding-top: 140px;
+  padding-left: 50px;
+}
+
+/*
+* メイン
+*/
+main {
+  margin-top: 30px;
+}
+
+.lunch {
+  border-bottom: 1px dashed #333;
+  padding-bottom: 30px;
+}
+
+.cafe {
+  margin-top: 30px;
+}
+
+/*
+* フッター
+*/
+footer {
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding: 10px 0;
+  text-align: center;
+}

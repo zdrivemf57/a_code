@@ -1,0 +1,229 @@
+/* .breadcrumb{
+    margin: 30px 0px;
+} */
+
+/* color: #FDED6D; */
+/* #05B9B2 */
+
+h1 {
+    margin-bottom: 0px;
+    padding-left: 20px;
+    /* border-left: 5px solid #FDED6D; */
+    border-left: 5px solid #009F98;
+
+}
+
+@media (max-width: 991px) {
+    h1 {
+        margin-top: 5%;
+        /* 任意のマージンを指定 */
+    }
+}
+
+
+h2 {}
+
+.hum {
+    background-color: #A4DEE0;
+}
+
+/* サイドバー */
+
+#sidebar {
+    background-color: #A4DEE0;
+    min-height: 100vh;
+    /* ビューポートの高さに対して最小の高さ */
+
+}
+
+
+body>#sidebar {
+    height: auto;
+    /* 要素を超えた分の背景が伸びないブラウザ用 */
+}
+
+
+.nav-link {
+    color: rgb(99, 99, 99);
+}
+
+.disabled .nav-link {
+    padding-bottom: 0px;
+    border-radius: 0px;
+    border-bottom: 1px solid;
+    color: black;
+}
+
+#sidebar .nav-pills .nav-link.active {
+    border-radius: 0px;
+    color: white;
+    background-color: lightseagreen;
+}
+
+.nav-item:hover {
+    background-color: white;
+    /* sidebarホバー時の背景色 */
+}
+
+.nav-item:hover .nav-link {
+    color: rgb(148, 147, 147);
+    /* ホバー時のテキスト色 */
+}
+
+.offcanvas-body .nav-item:hover {
+    background-color: #F2F2F2;
+    /* offcanvasホバー時の背景色 */
+}
+
+.offcanvas-body .disabled {
+    margin-top: 5px;
+}
+
+
+.dropdown {
+    position: fixed;
+    bottom: 80px;
+}
+
+
+/* 各ボタン */
+
+.btn {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+
+
+.btn-edit {
+
+    width: 60px;
+    height: 30px;
+    font-size: 16px;
+    color: lightseagreen;
+    background-color: white;
+    border: thin solid lightseagreen;
+    border-radius: 15px;
+}
+
+.btn-remove {
+    width: 60px;
+    height: 30px;
+    font-size: 16px;
+    color: white;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 15px;
+}
+
+
+.btn-newAdd,
+.back,
+.btn-add,
+.btn-clone,
+.btn-update {
+    width: 120px;
+    height: 40px;
+    background-color: white;
+    color: lightseagreen;
+    border: lightseagreen solid 2px;
+    border-radius: 15px;
+
+}
+
+.btn-update {
+    display: block;
+    /* インライン要素をブロック要素に変更 */
+    margin: 16px auto;
+    /* 上部と下部に16px、左右にauto（中央揃え） */
+    text-align: center;
+    /* テキストを中央揃え（追加しても構いません） */
+}
+
+.btn-editDele {
+    width: 160px;
+    height: 40px;
+    background-color: white;
+    color: lightseagreen;
+    border: lightseagreen solid 2px;
+    border-radius: 15px;
+}
+
+.btn-allergyMinus, .btn-allergyPlus{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: lightseagreen;
+    border: lightseagreen solid 2px;
+    border-radius: 15px;
+}
+
+/* 更新者・更新日時情報 */
+.updatedatail {
+    text-align: right;
+}
+
+/* アラートメッセージ */
+
+
+/* ページネーションを中央に配置 */
+.pagination {
+    justify-content: center;
+    margin-top: 16px;
+}
+
+/* ページネーションアイテムのスタイル調整（必要に応じて） */
+.pagination .page-item {
+    margin: 0 5px;
+    /* アイテム間の余白を調整 */
+}
+
+/* アクティブなページネーションアイテムのスタイル調整（必要に応じて） */
+.pagination .page-item.active .page-link {
+    background-color: lightseagreen;
+    border-color: lightseagreen;
+    color: white;
+}
+
+
+/* 1. 連番を表示するセレクタをより具体的に指定 */
+table.addOrderTableBelow tbody tr,
+table.detailOrderTableBelow tbody tr {
+    counter-increment: row-counter;
+}
+
+/* 2. counter-resetをテーブルごとに設定 */
+table.addOrderTableBelow tbody,
+table.detailOrderTableBelow tbody {
+    counter-reset: row-counter;
+}
+
+/* 3. 連番を表示する */
+table.addOrderTableBelow tbody tr th.num::before,
+table.detailOrderTableBelow tbody tr th.num::before {
+    content: counter(row-counter);
+}
+
+/* ホバー効果を除外した行 */
+table tr:hover th:not([rowspan="14"]),
+table tr:hover td:not([rowspan="14"]) {
+    /* ホバースタイルを指定 */
+    background-color: #f0f0f0;
+    /* 例: 背景色を変更 */
+    cursor: pointer;
+    /* 例: ポインターカーソルを表示 */
+}
+
+
+.addIngredient {
+    counter-reset: allergyNum;
+}
+
+.addIngredient tr td.agNum::before {
+    content: "アレルギー " counter(allergyNum);
+}
+
+.addIngredient tr td.agNum {
+    counter-increment: allergyNum;
+}

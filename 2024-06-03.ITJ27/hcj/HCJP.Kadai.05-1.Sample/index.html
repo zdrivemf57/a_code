@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>TARO YAMADA</title>
+<link href="css/main.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function () {
+  $('#gallery img').click(function () {
+    let src = $(this).attr('src');
+    $('#photo-large img').attr('src', src);
+  })
+});
+</script>
+</head>
+<body>
+<div id="container">
+  <header>
+    TARO YAMADA
+    <nav>
+      <ul>
+        <li><a href="index.html">top</a></li>
+        <li><a href="profile.html">profile</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main">
+    <h1>Events</h1>
+    <p>展示会： 20XX年1月25日 at 代官山 Galleria Artista</p>
+    <h1>News</h1>
+    <dl id="news">
+      <dt>20XX.12.21</dt>
+      <dd>20XX年1月25日 代官山 Galleria Artista で行われる展示会に出品します。 皆様ぜひ遊びに来てください！</dd>
+      <dt>20XX.11.15</dt>
+      <dd>青山 Blue Room での展示会は大盛況のうち終了いたしました。 ご来場いただいた方、誠にありがとうございました！</dd>
+    </dl>
+    <h1>Gallery</h1>
+      <div id="gallery">
+        <p><img src="images/photo1.jpg" alt=""></p>
+        <p><img src="images/photo2.jpg" alt=""></p>
+        <p><img src="images/photo3.jpg" alt=""></p>
+        <p><img src="images/photo4.jpg" alt=""></p>
+        <p><img src="images/photo5.jpg" alt=""></p>
+        <p><img src="images/photo6.jpg" alt=""></p>
+        <p><img src="images/photo7.jpg" alt=""></p>
+        <p><img src="images/photo8.jpg" alt=""></p>
+      </div>
+      <div id="photo-large">
+        <img src="images/photo1.jpg" alt="">
+      </div>
+  </div>
+  <footer>
+    COPYRIGHT &copy; TARO YAMADA ALL RIGHTS RESERVED.
+  </footer>
+</div>
+</body>
+</html>

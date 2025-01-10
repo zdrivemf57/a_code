@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="navi">
+			<ul>
+				<li><a href="images/photo01.jpg"><img src="images/photo01_thum.jpg" alt=""></a></li>
+				<li><a href="images/photo02.jpg"><img src="images/photo02_thum.jpg" alt=""></a></li>
+				<li><a href="images/photo03.jpg"><img src="images/photo03_thum.jpg" alt=""></a></li>
+				<li><a href="images/photo04.jpg"><img src="images/photo04_thum.jpg" alt=""></a></li>
+				<li><a href="images/photo05.jpg"><img src="images/photo05_thum.jpg" alt=""></a></li>
+				<li><a href="images/photo06.jpg"><img src="images/photo06_thum.jpg" alt=""></a></li>
+				<li><a href="images/photo07.jpg"><img src="images/photo07_thum.jpg" alt=""></a></li>
+				<li><a href="images/photo08.jpg"><img src="images/photo08_thum.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="main">
+			<img src="images/photo01.jpg" alt="" width="638">
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('.navi a').click(function(e){
+			const img = $(this).attr('href');
+			console.log(this);
+			$('.main img').fadeOut(1000, 
+			function(){
+				console.log(this);
+				$('.main img').attr('src', img);
+				$('.main img').fadeIn(1500);
+			})
+			return false;
+		});
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習12-11</title>
+</head>
+<body>
+<h1>無名関数/アロー関数</h1>
+
+<script>
+/**
+ * 身長と体重からBMI値を算出する関数
+ * @param height 身長(m)
+ * @param weight 体重(kg)
+ * @return BMI値
+ */
+const calcBMI = (height, weight) => {
+  return weight / (height * height);
+}
+
+// 関数の利用
+const bmi = calcBMI(1.71, 65.4);
+console.log(bmi.toFixed(2));
+</script>
+</body>
+</html>

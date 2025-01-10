@@ -1,0 +1,242 @@
+@charset "utf-8";
+
+/* 共通
+----------------------------*/
+
+body {
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体",
+        "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color: #432;
+    font-size: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+
+
+/* 見出し */
+.page-title {
+    font-size: 3rem;
+    font-family: "Philosopher", serif;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.top-title {
+    font-size: 1.5rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #000 solid;
+    font-weight: normal;
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+
+/* ボタン */
+.button {
+    font-size: 1.2rem;
+    background: #432;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 38px;
+}
+
+.button:hover {
+    background: #2a1908;
+}
+
+/* HEADER
+------------------------------- */
+.main-bg {
+    text-align: center;
+    margin-top: 2%;
+    background-image: url(../images/kv_img01.jpg);
+    background-size: cover;
+    height: 60vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+.main-bg .container {
+    margin-top: 10%;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 125px;
+    margin-top: 30px;
+}
+
+.main-nav {
+    display: flex;
+    font-size: 1.25rem;
+    margin-top: 48px;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 36px;
+}
+
+.main-nav a {
+    color: #432;
+}
+
+.main-nav a:hover {
+    border-bottom: 1px solid #432;
+    padding: 3px;
+}
+
+.main-bg h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding: 10px 0 20px 0;
+}
+
+.sns {
+    display: flex;
+    width: 320px;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.sns-button {
+    background: #443322;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 8px;
+    width: 100px;
+    display: block;
+}
+
+.sns-button:hover {
+    background: #2a1908;
+}
+
+/* HOME
+------------------------------- */
+
+.home-content {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-content.banners a {
+    margin: 5px 5px 50px 0px;
+}
+
+.home-content.banners a:last-child {
+    margin-right: 0;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    margin: 10px 0 42px;
+}
+
+/* フッター
+------------------------------- */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 26px 0;
+}
+
+footer p {
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+/* 下層
+------------------------------- */
+.lower-title {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 36px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    background-color: #ead79b;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  .breadcrumbs span {
+    color: #777777;
+  }
+
+
+  /* shop
+------------------------------ */
+.shop {
+    padding: 20px 0 50px;
+  }
+  .shop-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 30px;
+  }
+  .shop-list-link {
+    display: block;
+    padding: 20px;
+    line-height: 1.42857;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .shop-list-link:hover {
+    /*text-decoration: underline;*/
+    border:2px solid #432;
+  }
+  .shop-list-image {
+    height: auto;
+  }
+  .shop-list-name,
+  .shop-list-price {
+    display: block;
+    text-align: center;
+  }
+
+  .shop-list-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .shop-list-price {
+    color: #777777;
+    font-size: 14px;
+  }

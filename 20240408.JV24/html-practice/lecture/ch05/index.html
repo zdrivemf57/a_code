@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/contact" method="post">
+    <table border="1" cellspacing="0" cellpadding="10">
+      <tr>
+        <th><label for="name">氏名</label></th>
+        <td>
+          <input type="text"
+            name="user"
+            placeholder="山田太郎"
+            required
+            size="10" maxlength="5"
+            id="name">
+        </td>
+      </tr>
+      <tr>
+        <th>年齢</th>
+        <td>
+          <input type="number"
+            name="age"
+            min="0" max="120"
+            step="1"
+            value="20">
+        </td>
+      </tr>
+      <tr>
+        <th>好きな動物</th>
+        <td>
+          <label><input type="checkbox" name="pet" value="cat" checked>猫</label>
+          <input type="checkbox" name="pet" value="dog">犬
+          <input type="checkbox" name="pet" value="other">その他
+        </td>
+      </tr>
+      <tr>
+        <th>評価</th>
+        <td>
+          <input type="radio" name="evaluation" value="good">良い
+          <input type="radio" name="evaluation" value="normal" checked>普通
+          <input type="radio" name="evaluation" value="bad">悪い
+        </td>
+      </tr>
+      <tr>
+        <th>ご意見</th>
+        <td>
+            <textarea name="item" cols="40" rows="3" placeholder="ご意見をどうそ。"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>お住いの地域</th>
+        <td>
+          <select name="item">
+            <option value="1">都内</option>
+            <option value="2">国内（都外）</option>
+            <option value="3">海外</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>週末の予定は？</th>
+        <td>
+          <input type="text" list="plans"></p>
+          <datalist id="plans">
+            <option value="買い物">
+            <option value="旅行">
+            <option value="勉強">
+          </datalist>
+        </td>
+      </tr>
+      <tr><th colspan="2"><input type="submit" value="送信する"></th></tr>
+    </table>
+  </form>
+</body>
+</html>

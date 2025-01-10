@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食材新規登録</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/bff2254426.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <!-- header -->
+
+            <!-- header -->
+
+            <!-- aside -->
+
+            <!-- aside -->
+
+
+            <main class="col-lg-9 col-md-8 col-sm-12">
+
+                <div class="">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="top.html">TOP</a></li>
+                            <li class="breadcrumb-item"><a href="">食材一覧</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">食材新規登録</li>
+                        </ol>
+                    </nav>
+                </div>
+
+
+                <h1>食材新規登録</h1>
+
+                <div class="">
+                    <!-- action：ファイルの送信先のURLを入力 -->
+                    <form action="#" method="post" enctype="multipart/form-data">
+
+                        <table class="table addIngredient" id="myTable1">
+                            <tr>
+                                <th class="ingNum" rowspan="14">#</th>
+                                <th>食材:</th>
+                                <td colspan="3">テキスト</td>
+                                <td rowspan="14"><button type="button" class="btn-remove">削除</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>食材カテゴリー：</td>
+                                <td colspan="3">
+                                    <select>
+                                        <option value="1">1</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="agNum">：</td>
+                                <td>
+                                    <select>
+                                        <option value="1">1</option>
+                                    </select>
+                                </td>
+                                <td><button type="button" onclick="onDeleteButtonClick(this)">-</button></td>
+                            </tr>
+                            <tr>
+                                <td class="agNum">：</td>
+                                <td>
+                                    <select>
+                                        <option value="1">1</option>
+                                    </select>
+                                </td>
+                                <td><button type="button" onclick="onDeleteButtonClick(this)">-</button></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <button type="button" onclick="addRow('myTable1')">+</button>
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+                        <table class="table addIngredient" id="myTable2">
+                            <tr>
+                                <th class="ingNum" rowspan="14">#</th>
+                                <th>食材:</th>
+                                <td colspan="3">テキスト</td>
+                                <td rowspan="14"><button type="button" class="btn-remove">削除</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>食材カテゴリー：</td>
+                                <td colspan="3">
+                                    <select>
+                                        <option value="1">1</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="agNum">：</td>
+                                <td>
+                                    <select>
+                                        <option value="1">1</option>
+                                    </select>
+                                </td>
+                                <td><button type="button" onclick="onDeleteButtonClick(this)">-</button></td>
+                            </tr>
+                            <tr>
+                                <td class="agNum">：</td>
+                                <td>
+                                    <select>
+                                        <option value="1">1</option>
+                                    </select>
+                                </td>
+                                <td><button type="button" onclick="onDeleteButtonClick(this)">-</button></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <button type="button" onclick="addRow('myTable2')">+</button>
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+
+
+                        <div>
+                            <button type="button" class="btn-clone" data-table="myTable2">+ テーブル追加</button>
+                            <input type="submit" value="食材登録" class="btn-addOrder">
+                        </div>
+
+
+                    </form>
+                </div>
+            </main>
+
+            <!-- footer -->
+
+            <!-- footer -->
+
+        </div>
+    </div>
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+    <script>
+
+        var maxRows = 13; // 追加可能な最大行数
+
+        function addRow(tableId) {
+            var table = document.getElementById(tableId);
+            var rowCount = table.rows.length;
+
+            if (rowCount < maxRows) {
+                var newRow = table.insertRow(rowCount - 1); // 最後から2番目に新しい行を挿入
+
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+                var cell3 = newRow.insertCell(2);
+
+                // 新しい行のセルにコンテンツを追加
+                cell1.innerHTML = '<td></td>';
+                cell1.className = "agNum";
+                cell1.innerHTML = "：";
+                cell2.innerHTML = '<td><select><option value="1">1</option></select></td>';
+                cell3.innerHTML = '<td><button type="button" onclick="onDeleteButtonClick(this)">-</button></td>';
+            } else {
+                alert("最大行数に達しました。");
+            }
+        }
+
+        // HTML内の全てのボタンを取得
+        var cloneButtons = document.querySelectorAll('.btn-clone');
+
+        // ボタンがクリックされたときの処理を定義
+        cloneButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                var tableId = button.getAttribute('data-table');
+                var originalTable = document.getElementById(tableId);
+                var newTable = originalTable.cloneNode(true);
+
+                // 新しいテーブルのIDを変更してユニークにする
+                var newTableId = "myTable" + (document.querySelectorAll('.table.addIngredient').length + 1);
+                newTable.setAttribute('id', newTableId);
+
+                // 新しいテーブルのonclickのIDを変更してユニークにする
+
+                newTable.setAttribute('onclick', "addRow('" + newTableId + "')");
+                var b = newTable.querySelector(".table button[onclick='addRow('myTable1')']");
+                console.log(b)
+
+                // 新しいテーブルを追加
+                var container = button.parentElement;
+                container.parentNode.insertBefore(newTable, container); // 新しいテーブルをボタンの前に追加
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習05-5</title>
+</head>
+<body>
+<form name="registerForm">
+  <p>名前:
+    <input type="text" name="name">
+  </p>
+  <p>年齢:
+    <input type="number" name="age">
+  </p>
+  <p>趣味:
+    <label><input type="checkbox" name="hobby" value="音楽">音楽</label>
+    <label><input type="checkbox" name="hobby" value="スポーツ">スポーツ</label>
+    <label><input type="checkbox" name="hobby" value="旅行">旅行</label>
+    <label><input type="checkbox" name="hobby" value="ショッピング">ショッピング</label>
+    <label><input type="checkbox" name="hobby" value="その他" id="otherCheckbox">その他</label>
+  </p>
+  <p>その他の場合: <input type="text" name="other" disabled></p>
+  <input type="submit">
+</form>
+
+<script>
+  // フォーム要素の取得
+  const form = document.registerForm;
+  
+  // その他にチェックを入れた場合、内容を入力できるようにする
+  document.getElementById('otherCheckbox')
+  .addEventListener('change', event => {
+    const isChecked = event.target.checked;
+    if(isChecked) {
+      form.other.removeAttribute('disabled');
+    } else {
+      form.other.value = '';
+      form.other.setAttribute('disabled', true);
+    }
+  });
+  
+  // 送信ボタン押下時
+  form.addEventListener('submit', event => {
+    console.clear();
+    event.preventDefault();
+    
+    // 名前と年齢の取得
+    const name = form.name.value;
+    const age = Number(form.age.value);
+    
+    // 趣味を配列で取得(その他の場合は内容を取得)
+    const hobbyList = [];
+    form.hobby.forEach(item => {
+      // チェックされていない趣味は配列に加えない
+      if(!item.checked) return;
+  
+      if(item.value === 'その他') {
+        hobbyList.push(form.other.value);
+      } else {
+        hobbyList.push(item.value);
+      }
+    });
+  
+    // バリデーション
+    const errors = [];
+    if(!name) {
+      errors.push('名前を入力してください');
+    }
+  
+    if(age < 15) {
+      errors.push('15歳未満は入力できません');
+    }
+  
+    if(hobbyList.length === 0) {
+      errors.push('趣味を選択してください');
+    }
+  
+    // 入力値の確認
+    console.table({name, age, hobbyList});
+  
+    if(errors.length === 0) {
+      alert('入力ありがとうございました');
+    } else {
+      alert('入力に不備があります');
+      // エラー内容の確認
+      console.table(errors);
+    }
+  });
+  </script>
+  </body>
+</html>

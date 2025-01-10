@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>大久保市民動物園</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container-fluid bg-dark text-light text-center pt-3 pb-2">
+    <header>
+      <h1>大久保市民動物園</h1>
+    </header>
+  </div>
+  <div class="container my-4">
+    <main>
+      <h2 class="display-5">園内検索</h2>
+
+      <form class="mt-3 mb-5" action="">
+        <div class="row">
+          <label class="col-2 col-lg-1 col-form-label" for="keyword">キーワード
+          </label>
+          <div class="col-10 col-lg-11 mb-3">
+            <input class="form-control" type="text" id="keyword" name="keyword">
+          </div>
+          <label class="col-2 col-lg-1 col-form-label" for="area">種類</label>
+          <div class="col-10 col-lg-11 mb-3">
+            <select class="form-select" name="area" id="area">
+              <option value="0">全ての動物</option>
+              <option value="1">イヌ・ネコの仲間</option>
+              <option value="2">サルの仲間</option>
+              <option value="3">トリの仲間</option>
+              <option value="4">ウマの仲間</option>
+              <option value="5">その他</option>
+            </select>
+          </div>
+          <div class="col-2 col-lg-1">その他</div>
+          <div class="col-10 col-lg-11">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" value="1" id="choice1">
+              <label class="form-check-label" for="choice1">要整理券</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" value="2" id="choice2">
+              <label class="form-check-label" for="choice2">ふれあい体験</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" value="3" id="choice3">
+              <label class="form-check-label" for="choice3">エサの時間</label>
+            </div>
+          </div>
+
+          <div class="col-12 mt-4">
+            <input class="btn btn-primary" type="submit" value="絞り込む">
+          </div>
+        </div>
+      </form>
+      <table class="table table-hover">
+        <thead>
+          <tr class="table-dark">
+            <th>エリア</th>
+            <th>動物</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A-3</td>
+            <td>パンダ</td>
+            <td>人気のため整理券が必要です</td>
+          </tr>
+          <tr>
+            <td>B-4</td>
+            <td>キリン</td>
+            <td>エサ(500 円)をあげる体験ができます</td>
+          </tr>
+          <tr>
+            <td>A-7</td>
+            <td>クジャク</td>
+            <td>なし</td>
+          </tr>
+          <tr>
+            <td>C-2</td>
+            <td>ライオン</td>
+            <td>10:00 と 14:00 にエサをあげます</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a class="page-link" href="#">&laquo;</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+      </ul>
+    </main>
+  </div>
+  <div class="container-fluid bg-dark text-light text-center pt-4 pb-2">
+    <footer>
+      <p><small>&copy Okubo Citizen Zoo All Rights Reserved.</small></p>
+    </footer>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+F

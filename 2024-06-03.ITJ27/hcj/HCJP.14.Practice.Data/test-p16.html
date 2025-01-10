@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form name="keisan">
+    <input type="submit" value="計算">
+    <input type="number" name="num1" value="0"> +
+    <input type="number" name="num2" value="0"> =
+    <input type="number" name="answer" value="0" readonly>
+  </form>
+  <script>
+  document.keisan.addEventListener('submit', event => {
+    event.preventDefault(); // 送信しない(後述)
+    const num1 = Number(document.keisan.num1.value);
+    const num2 = Number(document.keisan.num2.value);
+    document.keisan.answer.value = num1 + num2;
+  });
+  </script>
+</body>
+</html>

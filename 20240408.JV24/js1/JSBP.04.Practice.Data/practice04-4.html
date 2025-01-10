@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>練習04-4</title>
+    <style>
+      .blueBorder {
+        border: 5px solid #3ccfe2;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body>
+<h1 class="blueBorder">猫の画像</h1>
+<img src="images/flower.jpg" alt="ハイビスカス">
+
+<script>
+  // 画像を猫に変更
+  const img = document.querySelector('img');
+  img.setAttribute('src', 'images/cat.jpg');
+  img.setAttribute('alt', '猫');
+  img.setAttribute('width', 300);
+  
+  // 見出しの枠線を除去
+  document.querySelector('h1').classList.remove('blueBorder');
+  
+  // 画像に枠線を付ける
+  img.classList.add('blueBorder');
+  </script>
+</body>
+</html>

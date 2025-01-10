@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+/* 初期化 */
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* 汎用クラス 中央配置用*/
+.center-container {
+  min-width: 700px;
+  max-width: 980px;
+  margin: 0 auto;
+  /* 領域の明確化 適宜コメント化すること*/
+  /* background-color: rgba(255,0,0,0.2); */
+}
+ 
+/* 汎用クラス 横並び用*/
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ヘッダーとフッター */
+/* ヘッダー、フッターの背景色、文字色、余白調整 */
+header, footer {
+  background-color: #160101;
+  color: #fff;
+}
+
+header {
+  padding: 20px 0 30px;
+}
+
+header a {
+  color: #fff;
+}
+
+/* ヘッダー内、タイトルとグローバルメニュー横並びと文字位置調整 */
+header .flex-container {
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* グローバルメニューの幅と配置、文字の中央揃え */
+nav ul {
+  justify-content: space-between;
+  width: 400px;
+}
+
+nav li {
+  text-align: center;
+}
+
+/* ヘッダーイメージ画像の調整 */
+.hero {
+  font-size: 2rem;
+  background-image: url(../images/titleimage01.jpg);
+  background-size: cover;
+  height: 200px;
+  padding-top: 120px;
+  padding-left: 30px;
+  margin-top: 20px;
+}
+
+/* フッター調整 */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+/* メインコンテンツ */
+main {
+  margin-top: 30px;
+}
+ 
+main > .flex-container {
+  justify-content: space-between;
+}
+
+/* メインコンテンツ */
+/* サイドバーの幅決め この時点で一時的にカラム落ちになるが気にしない */
+aside {
+  order: 2;
+  width: 200px;
+}
+
+/* サイドバーをボタンのデザインにする */
+aside li a {
+  display: block;
+  border: 1px solid #888;
+  text-align: center;
+  line-height: 3.5;
+  margin-bottom: 10px;
+}
+
+aside li a:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+
+/* Menu の幅決め */
+.section-group {
+   order: 1;
+   max-width: 780px;
+   /* calc 関数で計算をすることができる */
+   width: calc(100% - 200px);
+}
+
+.menu {
+  margin-top: 30px;
+}
+ 
+/* :first-child で最初の要素のみ選択できる */
+.menu:first-child {
+  margin-top: 0;
+}
+ 
+/* Menu の写真を 3 列で配置 */
+.menu li {
+  /* この場合、差し引きがない方が計算しやすい */
+  box-sizing: content-box;
+  width: 30%;
+  padding-right: 3.33%;
+  margin-top: 20px;
+}
+
+.menu li img {
+  padding: 3px;
+  border: 1px solid #eee;
+} 
+ 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>練習15-1</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+		body {
+			text-align: center;
+		}
+
+		h1,
+		img {
+			font-family: 'Lobster', cursive;
+			font-size: 48px;
+			color: #0e2f4b;
+			position: relative;
+			bottom: -1.5em;
+			opacity: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Fukui Travel</h1>
+	<img src="images/fukui1.jpg" width="400">
+
+	<script>
+		// キーフレーム
+		const keyframes = [
+			{ /* スタート時点設定なし */ },
+			{
+				opacity: 0.5,
+				offset: 0.8
+			},
+			{
+				bottom: 0,
+				opacity: 1
+			}
+		];
+		// 詳細設定
+		const settings = {
+			duration: 1000,
+			fill: 'forwards',
+			easing: 'ease-in-out',
+			delay: 1000
+		};
+		// h1 にアニメーションを適用
+		document.querySelector('h1')
+			.animate(keyframes, settings);
+		// h1 よりも 0.5 秒遅らせて、img にアニメーションを適用
+		setTimeout(() => {
+			document.querySelector('img')
+				.animate(keyframes, settings);
+		}, 500);
+	</script>
+</body>
+
+</html>
