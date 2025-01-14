@@ -54,5 +54,87 @@
 </template>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js">
+</script>
+<script>
+/**
+ * 1地域、1日分の天気をHTML要素で返す関数
+ * @param forecast 1日分の天気データ
+ */
+ function getWeatherUnit(forecast) {
+  const template = document.getElementById('weather-unit-template');
+  const fragment = document.importNode(template.content, true);
+  fragment.querySelector('.date').textContent = forecast.date;
+  fragment.querySelector('.icon').setAttribute('src', forecast.image.url);
+  fragment.querySelector('.min-temp').textContent =
+forecast.temperature.min.celsius;
+  fragment.querySelector('.max-temp').textContent =
+forecast.temperature.max.celsius;
+  return fragment;
+}
+
+/**
+ * 1地域、3日分の天気を表示する関数
+ * @param weather 天気予報APIから取得できるデータ
+ */
+function createWeatherRow(weather) {
+  const template = document.getElementById('weather-area-template');
+  const fragment = document.importNode(template.content, true);
+  fragment.querySelector('.title').textContent = weather.title;
+  fragment.querySelector('.headline').textContent = weather.description.headline;
+
+  // weather.forecasts内の3日分の天気を取得
+  for(const forecast of weather.forecasts) {
+    fragment.querySelector('.weather-area')
+.append(getWeatherUnit(forecast));
+  }
+
+  document.getElementById('weather-info').append(fragment);
+}
+
+/**
+ * 地域IDを元に、天気予報を取得・表示する関数
+ * @param areaId 地域ID
+ */
+async function showWeather(areaId) {
+  try {
+    const url = 'https://weather.tsukumijima.net/api/forecast/city/' + areaId;
+    const response = await axios.get(url);
+    createWeatherRow(response.data);
+  } catch(error) {
+    console.log(error);
+  }
+}
+/**
+ * 地域ボタンの動的生成
+ */
+
+// 地点定義表より: https://weather.tsukumijima.net/primary_area.xml
+const areas = [
+  {name: '札幌', id: '016010'},
+  {name: '仙台', id: '040010'},
+  {name: '東京', id: '130010'},
+  {name: '大阪', id: '270000'},
+  {name: '福岡', id: '400010'},
+  {name: '那覇', id: '471010'}
+];
+
+// 地域ボタンの作成
+areas.forEach(area => {
+  const template = document.getElementById('area-button-template');
+  const buttonFragment = document.importNode(template.content, true);
+  const button = buttonFragment.querySelector('button')
+  button.textContent = area.name;
+  button.setAttribute('data-area-id', area.id);
+
+  // ボタン押下時の処理
+  button.addEventListener('click', event => {
+    event.target.setAttribute('disabled', true);
+    showWeather(event.target.getAttribute('data-area-id'));
+  });
+
+  document.getElementById('area-buttons').append(button);
+});
+</script>
 </body>
 </html>
