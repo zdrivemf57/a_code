@@ -16,8 +16,8 @@ export default function App () {
   ];
 
   return (
-    <div>
-      <h1>Taro's Site</h1>
+    <div className="container mt-3">
+      <h1 className="display-3 text-center">Taro's Site</h1>
       <hr />
       <Card>
         <Profile personalInfo={personalInfo} />
