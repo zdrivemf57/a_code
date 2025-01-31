@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Practice</title>
+    <link rel="stylesheet" href="/bootstrap.min.css" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <hr />
+    <div class="container">
+      <h1>JavaScriptとイベント処理</h1>
+      <hr />
+      <h2 class="mb-3">クリックイベントとイベントオブジェクト</h2>
+      <div id="greeting-buttons">
+        <button class="btn btn-primary">おはよう</button>
+        <button class="btn btn-success">こんにちは</button>
+        <button class="btn btn-danger">こんばんは</button>
+      </div>
+    </div>
+    
+    <script type="module" src="/src/main.jsx"></script>
+    <script src="/bootstrap.bundle.min.js"></script>
+    <script>
+      // ボタンクリック時の処理を定義(イベントハンドラ関数)
+      function alertContent(event) {
+        alert(event.target.textContent);
+      }
+
+      // ボタンクリック時のイベントを設定
+      document
+        .querySelectorAll("#greeting-buttons button")
+        .forEach((button) => button.addEventListener("click", alertContent));
+    </script>
+  </body>
+</html>

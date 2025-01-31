@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>佐藤</button>
+    <button>鈴木</button>
+    <button>山田</button>
+    <script>
+      // ボタンの名前を取得して、挨拶を表示する
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const name = event.target.innerText;
+          alert(`こんにちは、${name}さん`);
+        });
+      });
+    </script>
+  </body>
+</html>

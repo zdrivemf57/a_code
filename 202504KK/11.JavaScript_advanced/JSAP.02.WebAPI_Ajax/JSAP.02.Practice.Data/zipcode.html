@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>住所検索</title>
+</head>
+
+<body>
+  <h1>会員登録</h1>
+  <form action="">
+    <p>氏名:
+      <input type="text">
+    </p>
+    <p>郵便番号:
+      <input type="text" id="zipcode">
+      <button type="button" id="search">住所検索</button>
+    </p>
+    <p>住所:
+      <input type="text" id="address">
+    </p>
+    <p>住所(ﾌﾘｶﾞﾅ)
+      <input type="text" id="kana">
+    </p>
+    <button type="button">送信</button>
+  </form>
+
+  <!-- Axios 読み込み -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js">
+  </script>
+  <script>
+    // API の URL 
+    const API_URL = 'https://zipcloud.ibsnet.co.jp/api/search';
+
+    // 郵便番号入力欄と検索ボタン
+    const inputZipcode = document.getElementById('zipcode');
+    const searchButton = document.getElementById('search');
+
+    // 住所、フリガナの入力欄
+    const inputAddress = document.getElementById('address');
+    const inputKana = document.getElementById('kana');
+
+    /** 
+     * 郵便番号検索 API から住所を取得し、表示させる関数
+     * @param zipcode 郵便番号
+     */
+    async function getAddress(zipcode) {
+      // 検索ボタンを非活性化
+      searchButton.setAttribute('disabled', true);
+
+      try {
+        const params = { zipcode };
+        const response = await axios.get(API_URL, { params });
+        const data = response.data;
+
+        // 入力値のチェック
+        if (data.status !== 200) {
+          throw data.message;
+        } else if (!data.results) {
+          throw '該当する住所が存在しません';
+        }
+
+        // 複数の住所が該当する可能性がある ⇒ 最初の住所だけ取り出す
+        const r = data.results[0];
+
+        // 住所を入力欄に挿入
+        const address = r.address1 + r.address2 + r.address3; 
+        const kana = r.kana1 + r.kana2 + r.kana3;
+        inputAddress.value = address;
+        inputKana.value = kana;
+      } catch (error) {
+        alert(error);
+      }
+
+      // 検索ボタンを再活性化
+      searchButton.removeAttribute('disabled');
+    }
+    
+    // 住所検索ボタン押下時 
+    searchButton.addEventListener('click', event => {
+      getAddress(inputZipcode.value);
+    }); 
+  </script>
+</body>
+
+</html>

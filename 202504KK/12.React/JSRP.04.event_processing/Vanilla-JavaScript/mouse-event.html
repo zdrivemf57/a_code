@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  
+  <body>
+    <h1>UNTITLED</h1>
+    <img src="images/cat.jpg" alt="空を見上げる猫" width="300" />
+    <img src="images/dog.jpg" alt="尻尾を振る子犬" width="300" />
+
+    <script>
+      const h1 = document.querySelector("h1");
+      document.querySelectorAll("img").forEach((img) => {
+        img.addEventListener("mouseover", (event) => {
+          h1.textContent = event.target.getAttribute("alt");
+        });
+        img.addEventListener("mouseout", (event) => {
+          h1.textContent = "UNTITLED";
+        });
+      });
+    </script>
+  </body>
+</html>

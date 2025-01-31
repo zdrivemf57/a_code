@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fruits</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 5px 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>商品リスト</h1>
+  <table id="item-table">
+    <tr>
+      <th>商品名</th>
+      <th>値段</th>
+      <th>操作</th>
+    </tr>
+  </table>
+
+  <script>
+    // button 要素の作成
+    const button = document.createElement('button');
+    button.textContent = '削除';
+    // button 要素に削除機能を付与
+    button.addEventListener('click', e => {
+      // 親の親 = tr 要素を削除
+      e.target.parentNode.parentNode.remove();
+    });
+
+    // td 要素の生成
+    const td1 = document.createElement('td');
+    td1.textContent = 'りんご';
+    const td2 = document.createElement('td');
+    td2.textContent = '100 円';
+    const td3 = document.createElement('td');
+    td3.append(button);
+
+    // tr 要素に td 要素を追加
+    const tr = document.createElement('tr');
+    tr.append(td1, td2, td3);
+    
+    // tr 要素をテーブルに追加
+    document.getElementById('item-table').append(tr); 
+  </script>
+</body>
+
+</html>
