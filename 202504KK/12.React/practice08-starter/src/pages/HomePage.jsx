@@ -14,8 +14,9 @@ import VocabFilter from "../components/VocabFilter";
 export default function HomePage() {
   // 単語の絞り込み条件
   const currentTypeId = useAtomValue(currentVocabTypeAtom);
+
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["vocabs"],
+    queryKey: ["vocabs", currentTypeId],
     queryFn: () => {
       if (currentTypeId === 0) {
         return getVocabs();

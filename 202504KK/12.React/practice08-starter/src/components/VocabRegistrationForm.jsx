@@ -18,6 +18,7 @@ export default function VocabRegistrationForm() {
 
   // 単語の種別はステートで管理
   const [typeId, setTypeId] = useState(1);
+  
   // バリデーションエラー表示用
   const [showValidationError, setShowValidationError] = useState(false);
 
