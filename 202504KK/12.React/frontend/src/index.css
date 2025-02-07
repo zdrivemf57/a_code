@@ -1,0 +1,6 @@
+pre {
+    font-size: var(--bs-font-size);
+    font-family: var(--bs-font-family);
+    margin-bottom: 0;
+  }
+  
