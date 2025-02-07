@@ -1,4 +1,4 @@
-import useLoginMember from "../hooks/auth/useGetLoginMember";
+import useLoginMember from "../hooks/auth/useLoginMember";
 import LoginForm from "../components/login/LoginForm";
 import { Container } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
