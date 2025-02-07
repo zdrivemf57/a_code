@@ -1,10 +1,12 @@
 import customAxios from "./customAxios"; 
+
 /**------------------------------------- 
  * A01 を利用
  * ログイン ID とパスワードを送信する関数 
  ----------------------------------------*/ 
 export async function sendLoginIdAndPass({ loginId, loginPass }) { 
  const res = await customAxios.post("/auth/login", { loginId, loginPass });
+ console.log(res)
  return res.data; 
 } 
 
