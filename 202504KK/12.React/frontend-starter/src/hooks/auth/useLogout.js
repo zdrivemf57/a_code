@@ -5,16 +5,19 @@ import { sendLogoutRequest } from "../../helpers/api/authApi";
 import useSetFlashMessage from "../common/useSetFlashMessage";
 import { useResetAtom } from "jotai/utils";
 import { itemPageAtom } from "../../atoms/itemPageAtom";
+import { useQueryClient } from "@tanstack/react-query";
 
 // 以下の処理を行う関数を返す
 // 1. サーバー側で保持している認証情報を破棄するためのリクエストを送信
 // 2. 併せて React 側で保持している認証情報も破棄
 // 3. 備品リストのページ番号をリセット
-// 4. トップページへリダイレクト
+// 4. 会員情報のキャッシュをクリア
+// 5. トップページへリダイレクト
 export default function useLogout() {
   const setLoginMember = useSetAtom(loginMemberAtom);
   const setFlashMessage = useSetFlashMessage();
   const resetItemPage = useResetAtom(itemPageAtom);
+  const queryClient = useQueryClient();
   const navigate = useNavigate();
 
   const logout = async (flashMessageBody) => {
@@ -30,6 +33,9 @@ export default function useLogout() {
 
     // 備品リストのページ番号をリセット
     resetItemPage();
+
+    // 会員情報のキャッシュをクリア
+    queryClient.invalidateQueries({ queryKey: ["member"] });
 
     // ログアウト完了のメッセージを 3 秒間表示
     setFlashMessage(flashMessageBody, 3000);
