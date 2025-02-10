@@ -9,10 +9,17 @@ export default function useItemDetail() {
   const { id } = useParams();
 
   // 備品の取得
-  const { data, isLoading, isError } = useQuery({
+  const { data: item, isLoading, isError } = useQuery({
     queryKey: ["item", id],
-    queryFn: () => getItemById(id)
+    queryFn: async () => {
+        const {status, data} = await getItemById(id);
+        if(status !== "OK") {
+            throw new Error();
+        }
+
+        return data;
+    }
   });
 
-  return { item: data, isLoading, isError };
+  return { item, isLoading, isError };
 }

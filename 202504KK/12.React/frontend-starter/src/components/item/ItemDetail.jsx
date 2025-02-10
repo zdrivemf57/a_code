@@ -5,7 +5,7 @@ import ItemDeleteModal from "./ItemDeleteModal";
 import FlashMessage from "../common/FlashMessage";
 
 export default function ItemDetail({ item }) {
-  const { id, name, amount, location, registered, updated, note } = item.data;
+  const { id, name, amount, location, registered, updated, note } = item;
   const [showModal, setShowModal] = useState(false);
   console.log('★',item)
   return (
