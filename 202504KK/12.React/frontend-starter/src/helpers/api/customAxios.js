@@ -15,10 +15,11 @@ customAxios.interceptors.request.use(
     const loginMemberInStorage = JSON.parse(
       localStorage.getItem("loginMember")
     );
-    
+
     const token = loginMemberInStorage?.token;
     if (token) {
-      config.headers["Authorization"] = token; // ヘッダーにトークンを追加
+      // ヘッダーにトークンを追加
+      config.headers["Authorization"] = token;
     }
     return config;
   },
