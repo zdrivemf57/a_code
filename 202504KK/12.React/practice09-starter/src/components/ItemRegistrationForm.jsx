@@ -20,6 +20,7 @@ export default function ItemRegistrationForm() {
 
   return (
     <form onSubmit={submitData}>
+      {isError && <div className="alert alert-danger">登録に失敗しました</div>}
       <div className="mb-3">
         商品名:
         <input type="text" className="ms-3" ref={nameRef} />
