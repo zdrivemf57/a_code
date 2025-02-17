@@ -39,6 +39,7 @@ export default function ItemSaveForm({ item = defaultItem }) {
     validate
   } = useItemForm();
   const [errors, setErrors] = useState(null);
+  console.log('★ItemSaveForm_nameRef', nameRef);
   console.log('★ItemSaveForm_validate', validate);
   
   // 入力値の送信
