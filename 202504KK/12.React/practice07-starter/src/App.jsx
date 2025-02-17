@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import { getProducts } from "./helpers/productsApi";
 import ProductTable from "./components/ProductTable";
-import { useState } from "react";
 import ProductRegistationForm from "./components/ProductRegistrationForm";
 import { useQuery } from "@tanstack/react-query";
 
