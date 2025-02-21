@@ -126,11 +126,28 @@ member2.showInfo(); // 鈴木次郎 (30才) 利用可能ポイント: 6000
 // nstanceof演算子
 // インスタンスの元になっているクラスを検証するための演算子
 // 例: Member2を継承するPremiumMember, SeniorMemberが存在する場合の挙動
-class SeniorMember extends Member2 {};
+class SeniorMember extends Member2 {}
 // PremiumMemberクラスを元にインスタンスを作成
 const member = new PremiumMember("山田太郎", 25, 100);
 console.log(member instanceof PremiumMember); // true
 console.log(member instanceof SeniorMember); // false
 console.log(member instanceof Member2); // true
+
+// 関数内での利用例
+class Member3 {
+  constructor(public name: string, public age: number) {}
+}
+class PremiumMember3 extends Member3 {}
+class SeniorMember3 extends Member3 {}
+function showInfo(member: Member3) {
+  console.log(`${member.name} (${member.age}才)`);
+  if (member instanceof PremiumMember) {
+    console.log("種別: プレミアム会員");
+  } else if (member instanceof SeniorMember) {
+    console.log("種別: シニア会員");
+  } else {
+    console.log("種別: 通常会員");
+  }
+}
 
 export {};
