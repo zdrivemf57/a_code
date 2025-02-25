@@ -7,6 +7,8 @@ import CounterComponent from './components/CounterComponent'
 import WindowResizeComponent from './components/WindowResizeComponent'
 import TimerComponent from './components/TimerComponent'
 import GrammarComponent from './components/GrammarComponent'
+import UserList from './components/UserList'
+import SumAndAverage from './components/SumAndAverage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,11 +35,13 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <GrammarComponent />
+      {/* <GrammarComponent /> */}
       <FetchDataComponent />
       <CounterComponent />
       <WindowResizeComponent />
       <TimerComponent />
+      {/* <SumAndAverage /> */}
+      <UserList />
     </>
   )
 }

@@ -1,0 +1,53 @@
+import User from "./User";
+import useFetchData from "../hooks/useFetchData";
+import LoadingMotion from "./LoadingMotion";
+import { useEffect, useState } from "react";
+
+export default function UserList() {
+  const url = "https://randomuser.me/api/?results=100";
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState(null);
+
+  console.log('★UserList_data1', data);
+  console.log('★UserList_isLoading1', isLoading);
+
+  useEffect(() => {
+    console.log('★useFetchData_data1', data);
+    console.log('★useFetchData_isLoading1', isLoading);
+    // Ajax 通信で、API からデータを取得する関数
+    const getData = async () => {
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        setData(data);
+        setIsLoading(false);
+        console.log('★useFetchData_data2', data);
+        console.log('★useFetchData_isLoading2', isLoading);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getData(); // 上記関数の実行
+  }, []);
+
+  // Reactの初回レンダリング → useEffect の実行 → ステートが変更されたら再レンダリングの流れ！
+  // なので、下のコンソール出力は、useEffect内のコンソール出力より先に実行される。
+  console.log('★UserList_data2', data);
+  console.log('★UserList_isLoading2', isLoading);
+
+  if (isLoading) {
+    return <LoadingMotion marginTop="80px" marginBottom="80px" />;
+  }
+
+  return (
+    <div className="row">
+      {data.results.map((user) => (
+        <div key={user.login.uuid} className="col col-md-6 col-xl-4 mb-3">
+          <User user={user} />
+        </div>
+      ))}
+    </div>
+  );
+}
