@@ -40,14 +40,14 @@ function App() {
       </p>
       {/* <GrammarComponent /> */}
       {/* <UseEffectNone /> */}
-      <UseEffectUseState />
+      {/* <UseEffectUseState /> */}
       {/* <UsestateUseRefUseEffect /> */}
       {/* <FetchDataComponent /> */}
       {/* <CounterComponent /> */}
-      <WindowResizeComponent />
-      <TimerComponent />
+      {/* <WindowResizeComponent /> */}
+      {/* <TimerComponent /> */}
       {/* <SumAndAverage /> */}
-      {/* <UserList /> */}
+      <UserList />
     </>
   )
 }

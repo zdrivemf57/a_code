@@ -9,12 +9,12 @@ export default function UserList() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
 
-  console.log('★UserList_data1', data);
   console.log('★UserList_isLoading1', isLoading);
+  console.log('★UserList_data1', data);
 
   useEffect(() => {
-    console.log('★useFetchData_data1', data);
     console.log('★useFetchData_isLoading1', isLoading);
+    console.log('★useFetchData_data1', data);
     // Ajax 通信で、API からデータを取得する関数
     const getData = async () => {
       try {
@@ -22,8 +22,8 @@ export default function UserList() {
         const data = await res.json();
         setData(data);
         setIsLoading(false);
-        console.log('★useFetchData_data2', data);
         console.log('★useFetchData_isLoading2', isLoading);
+        console.log('★useFetchData_data2', data);
       } catch (error) {
         console.log(error);
       }
@@ -34,8 +34,8 @@ export default function UserList() {
 
   // Reactの初回レンダリング → useEffect の実行 → ステートが変更されたら再レンダリングの流れ！
   // なので、下のコンソール出力は、useEffect内のコンソール出力より先に実行される。
-  console.log('★UserList_data2', data);
   console.log('★UserList_isLoading2', isLoading);
+  console.log('★UserList_data2', data);
 
   if (isLoading) {
     return <LoadingMotion marginTop="80px" marginBottom="80px" />;
