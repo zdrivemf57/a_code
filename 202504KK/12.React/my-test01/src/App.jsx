@@ -9,6 +9,9 @@ import TimerComponent from './components/TimerComponent'
 import GrammarComponent from './components/GrammarComponent'
 import UserList from './components/UserList'
 import SumAndAverage from './components/SumAndAverage'
+import UseEffectNone from './components/UseEffectNone'
+import UsestateUseRefUseEffect from './components/usestateUseRefUseEffect'
+import UseEffectUseState from './components/UseEffectUseState'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -36,12 +39,15 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       {/* <GrammarComponent /> */}
-      <FetchDataComponent />
-      <CounterComponent />
+      {/* <UseEffectNone /> */}
+      <UseEffectUseState />
+      {/* <UsestateUseRefUseEffect /> */}
+      {/* <FetchDataComponent /> */}
+      {/* <CounterComponent /> */}
       <WindowResizeComponent />
       <TimerComponent />
       {/* <SumAndAverage /> */}
-      <UserList />
+      {/* <UserList /> */}
     </>
   )
 }
