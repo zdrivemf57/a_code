@@ -3,12 +3,14 @@ import { getItemById } from "../../data/itemList";
 
 export default function Details() {
   const params = useParams();
+
   // パラメータが整数か確認
   const regex = /^\d+$/;
   if (!regex.test(params.id)) {
+    // ↓ URLが正しくない場合
+    // replaceを入れてリダイレクト前の不正なURLを履歴を残さないようにする
     return <Navigate to="/items" replace />;
   }
-  console.log('a')
 
   // 商品の取得
   const id = Number(params.id);

@@ -25,6 +25,7 @@ export default function InputHobbies({ choice, setChoice }) {
     const { name, checked } = e.target;
     setChoice((prev) => {
       return { ...prev, [name]: checked };
+      // ↑ チェックの変更をされたものだけが上書きされる。
     });
   };
 

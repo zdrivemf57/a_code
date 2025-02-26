@@ -10,6 +10,8 @@ export default function InputEmail({ email, setEmail, setIsEmail }) {
     // 正規表現によるメールアドレスの形式チェック
     const regex = /^[^@]+@[^@]+\.[^@]+$/;
     setIsEmail(regex.test(input));
+    // ↑ regex.test(email)とはできない。この時点ではsetEmailの更新後の値を確認できないので。
+    // 次にレンダリングされる時に更新される。
   };
 
   return (

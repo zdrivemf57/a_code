@@ -5,6 +5,7 @@ export default function Navigation() {
     <div className="container">
       <ul className="nav nav-pills">
         <li className="nav-item">
+          {/* URLとリンク先（to属性）のURLがマッチしていると、生成するaタグのclass造成にactiveを付与してくれる */}
           <NavLink to="/" className="nav-link">
             ホーム
           </NavLink>
