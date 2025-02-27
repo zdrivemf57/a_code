@@ -24,4 +24,6 @@ export function useUpdateTodo() {
     );
   };
   return updateTodoList;
+  // ↑ useUpdateTodoフック関数は、updateTodoList関数を返している
+  // 呼ばれた時は、updateTodoList関数を実行はしない
 }
