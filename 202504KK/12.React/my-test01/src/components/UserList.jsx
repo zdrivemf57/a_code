@@ -16,7 +16,8 @@ export default function UserList() {
     console.log('★useFetchData_isLoading1', isLoading);
     console.log('★useFetchData_data1', data);
     // Ajax 通信で、API からデータを取得する関数
-    const getData = async () => {
+    // 無名関数を即時実行関数（IIFE: Immediately Invoked Function Expression）として記述
+    (async () => {
       try {
         const res = await fetch(url);
         const data = await res.json();
@@ -27,9 +28,7 @@ export default function UserList() {
       } catch (error) {
         console.log(error);
       }
-    };
-
-    getData(); // 上記関数の実行
+    })();
   }, []);
 
   // Reactの初回レンダリング → useEffect の実行 → ステートが変更されたら再レンダリングの流れ！
