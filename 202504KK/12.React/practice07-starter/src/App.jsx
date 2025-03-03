@@ -15,15 +15,13 @@ export default function App() {
 
   let mainContents;
   if (isError) {
-    mainContents = (
+    mainContents = 
       <div className="alert alert-danger">データの取得に失敗しました</div>
-    );
   } else if (isLoading) {
     mainContents = <p>...Loading</p>;
   } else if (products.length === 0) {
-    mainContents = (
+    mainContents = 
       <div className="alert alert-warning">データが存在しません</div>
-    );
   } else {
     mainContents = <ProductTable products={products} />;
   }
