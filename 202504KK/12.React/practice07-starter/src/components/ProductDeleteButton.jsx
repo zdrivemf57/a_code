@@ -6,9 +6,10 @@ import { deleteProduct } from "../helpers/productsApi";
  */
 export default function ProductDeleteButton({ productId }) {
   const queryClient = useQueryClient(); 
+
   const mutation = useMutation({ 
-  mutationFn: () => deleteProduct(productId), 
-  onSuccess: () => queryClient.invalidateQueries({ queryKey: ["products"]})
+    mutationFn: () => deleteProduct(productId), 
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["products"]})
   });
 
   const handleClick = async () => {
