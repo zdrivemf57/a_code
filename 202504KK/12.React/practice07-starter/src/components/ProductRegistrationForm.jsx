@@ -38,6 +38,7 @@ export default function ProductRegistationForm() {
 
     /*try, catch, finally を削除*/
     // データの追加
+    // ↓ mutationはエラー時もリターンで返してくれるのでtry/catchは不要になる
     await mutation.mutateAsync({ name, maker, price });
     // フォームの初期化
     setIsError(false);
@@ -52,6 +53,7 @@ export default function ProductRegistationForm() {
         <div className="alert alert-danger">入力に不備があります</div>
       )}
 
+      {/* エラーがあったかどうかはisErrorで判断できる */}
       {mutation.isError && (
         <div className="alert alert-danger">データの登録に失敗しました</div>
       )}

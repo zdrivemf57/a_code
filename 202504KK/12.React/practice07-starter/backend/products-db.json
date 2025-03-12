@@ -47,18 +47,6 @@
       "name": "ディスプレイ",
       "maker": "acer",
       "price": 30000
-    },
-    {
-      "id": "b303",
-      "name": "マウス",
-      "maker": "io-data",
-      "price": 5000
-    },
-    {
-      "id": "00d6",
-      "name": "タブレット",
-      "maker": "acer",
-      "price": 20000
     }
   ]
 }

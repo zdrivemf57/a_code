@@ -14,8 +14,10 @@ export default function ProductDeleteButton({ productId }) {
 
   const handleClick = async () => {
     try {
-      await mutation.mutateAsync(); /*productId は削除*/
-      alert("削除しました");
+      if (confirm("本当に削除してよいですか？")) {
+        await mutation.mutateAsync(); /*productId は削除*/
+      }
+      // alert("削除しました");
     } catch (error) {
       console.log(error);
       alert("エラーが発生しました");
