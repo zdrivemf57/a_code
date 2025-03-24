@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import customAxios from "../helpers/customAxios"; 
 
 // Axios を使い、商品リストを取得する関数
+// queryFn: getItems の様に指定したいので、関数を分けている
 async function getItems () { 
  const res = await customAxios.get("/items"); 
  return res.data; 

@@ -15,11 +15,15 @@ export default function useLogin() {
   const [isError, setIsError] = useState(false);
   const setLoginUser = useSetAtom(loginUserAtom);
 
+  // isPending、isError、loginUser(atom)をセットする関数
   const login = async (loginId, loginPass) => {
     setIsPending(true);
 
     try {
       const loginUser = await sendConfidential(loginId, loginPass);
+      // 上の処理は、関数を分けず、下の様にも書けるが、API関数を敢えて分けている
+      // const res = await customAxios.post("/auth/login", { loginId, loginPass });
+      // const loginUser = res.data;
 
       if (loginUser) {
         setLoginUser(loginUser);
