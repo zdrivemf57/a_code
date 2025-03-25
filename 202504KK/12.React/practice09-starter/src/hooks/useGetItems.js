@@ -14,5 +14,8 @@ export default function useGetItems () {
  queryKey: ["items"], 
  queryFn: getItems 
  }); 
+ // ↓ items: data の様に、dataは:の後に指定する
+ // queryFnで指定した関数により取得されるデータを格納する
+ // データが取得されるまでは「undefined」
  return { items: data, isLoading, isError }; 
 }

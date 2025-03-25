@@ -15,5 +15,7 @@ export default function useRegisterItem () {
  // { queryKey: ["items"] }は、useQueryで設定したキーを指定
  onSuccess: () => queryClient.invalidateQueries({ queryKey: ["items"] })
  }); 
- return { registerItem: mutate, isError, isPending, isSuccess }; 
+  // ↓ registerItem: mutate の様に、mutateは:の後に指定する
+  // mutate は、ミューテーションを実行するための関数
+return { registerItem: mutate, isError, isPending, isSuccess }; 
 }
