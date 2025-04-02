@@ -15,6 +15,7 @@ export default function useAuthMemberOnly() {
       if (status !== "OK") {
         setFlashMessage("再度ログインしてください", 3000);
         navigate("/", false);
+        return;
       }
       setIsPending(false);
     };

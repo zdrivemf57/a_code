@@ -7,6 +7,7 @@ export default function AuthMemberOnly() {
   const isPending = useAuthMemberOnly();
 
   if (isPending) {
+    console.log('★isPending');
     return <div></div>;
   }
   
