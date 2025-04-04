@@ -27,7 +27,6 @@ export default function useLocationList() {
     },
     staleTime: Infinity
   });
-  console.log('★useLocationList_locationList',locationList)
   
   return {
     locationList,

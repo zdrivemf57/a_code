@@ -22,6 +22,7 @@ export default function useItemSave() {
     setIsPending(true);
     try {
       const { status, data } = await saveItem(item);
+      console.log('★use_save_done');
       if (status !== "OK") {
         throw new Error();
       }
@@ -35,6 +36,7 @@ export default function useItemSave() {
       
       // 詳細ページにリダイレクト
       setFlashMessage("備品情報を保存しました", 3000);
+      console.log('★before_navigate');
       navigate(`/item/detail/${data.item.id}`);
     } catch (error) {
       console.log(error);
@@ -43,9 +45,9 @@ export default function useItemSave() {
     
     setIsPending(false);
   };
-  console.log('★useItemSave_save',save);
-  console.log('★useItemSave_isPending',isPending);
-  console.log('★useItemSave_isError',isError);
+  console.log('★save',save);
+  console.log('★isPending',isPending);
+  console.log('★isError',isError);
 
   return { save, isPending, isError };
 }

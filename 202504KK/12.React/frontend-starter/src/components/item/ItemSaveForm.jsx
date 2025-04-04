@@ -20,9 +20,6 @@ export default function ItemSaveForm({ item = defaultItem }) {
   // 備品の配置場所リスト
   const { locationList, isLoadingLocation, isErrorLocation } =
     useLocationList();
-  console.log("★ItemSaveForm_locationList", locationList);
-  console.log("★ItemSaveForm_isLoadingLocation", isLoadingLocation);
-  console.log("★ItemSaveForm_isErrorLocation", isErrorLocation);
 
   let locationOptions = <option value="">-</option>;
   if (!isLoadingLocation && !isErrorLocation) {
@@ -39,19 +36,18 @@ export default function ItemSaveForm({ item = defaultItem }) {
     validate
   } = useItemForm();
   const [errors, setErrors] = useState(null);
-  console.log('★ItemSaveForm_nameRef', nameRef);
-  console.log('★ItemSaveForm_validate', validate);
+  console.log('★nameRef', nameRef);
   
   // 入力値の送信
   const { save, isPending, isError } = useItemSave();
-  console.log('★ItemSaveForm_save', save);
-  console.log('★ItemSaveForm_isPending', isPending);
-  console.log('★ItemSaveForm_isError', isError);
+  console.log('★isPending', isPending);
+  console.log('★isError', isError);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // 入力値の取得＆バリデーション
     const { itemToBeSaved, isValid, validationErrors } = validate();
+    console.log('★validate_done');
     if (!isValid) {
       setErrors(validationErrors);
       return;
@@ -61,7 +57,8 @@ export default function ItemSaveForm({ item = defaultItem }) {
     if (item.id) {
       itemToBeSaved.id = item.id;
     }
-    save(itemToBeSaved);
+    await save(itemToBeSaved);
+    console.log('★save_done');
   };
 
   return (

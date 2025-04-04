@@ -25,6 +25,7 @@ export default function useItemForm() {
       name,
       amount
     });
+    console.log('★validate_done');
     
     return {
       // itemToBeSaved: { name, amount, locationId, note }, PDFのコード
@@ -33,7 +34,7 @@ export default function useItemForm() {
       validationErrors
     };
   };
-  console.log('★useItemForm_validate', validate);
+  console.log('★validate', validate);
 
   return { refs: { nameRef, amountRef, locationRef, noteRef }, validate };
 }

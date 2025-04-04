@@ -7,15 +7,12 @@ import { loginMemberAtom } from "../../atoms/loginMemberAtom";
  --------------------------------------------------------------*/
  export default function useLoginMember() {
   const loginMemberInStorage = JSON.parse(localStorage.getItem("loginMember"));
-  console.log('★useLoginMember_loginMemberInStorage', loginMemberInStorage)
   const [loginMember, setLoginMember] = useAtom(loginMemberAtom);
-  console.log('★useLoginMember_loginMember1', loginMember)
   
   // アトムに認証情報が入っていない場合の対応
   if (!loginMember) {
     setLoginMember(loginMemberInStorage);
   }
-  console.log('★useLoginMember_loginMember2', loginMember)
   
   return loginMember;
 }
