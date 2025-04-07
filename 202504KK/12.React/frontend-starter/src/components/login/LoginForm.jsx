@@ -68,6 +68,12 @@ export default function LoginForm() {
           />
         </form>
 
+        {isPending && (
+          <div className="text-center my-2">
+            <span className="ms-2">ログイン中です...</span>
+          </div>
+        )}
+
         {errors?.loginId && (
           <div className="alert alert-danger my-2">{errors.loginId}</div>
         )}
@@ -75,10 +81,11 @@ export default function LoginForm() {
         {errors?.loginPass && (
           <div className="alert alert-danger my-2">{errors.loginPass}</div>
         )}
-        
+
         {isError && (
           <div className="alert alert-danger my-2">ログインに失敗しました</div>
         )}
+
       </Col>
     </Row>
   );
