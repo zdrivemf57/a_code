@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useLogin from "./../../hooks/auth/useLogin";
 import { validateLoginForm } from "../../helpers/formValidator";
 import { Col, Row } from "react-bootstrap";
+import { Navigate } from "react-router-dom";
 
 export default function LoginForm() {
   // フォーム連携
@@ -33,6 +34,13 @@ export default function LoginForm() {
       login({ loginId, loginPass });
     }
   };
+
+  useEffect(() => {
+    if (isError) {
+      loginIdRef.current.value = "";
+      loginPassRef.current.value = "";
+    }
+  }, [isError]);
 
   return (
     <Row>
