@@ -37,13 +37,14 @@ export default function ItemSaveForm({ item = defaultItem }) {
   } = useItemForm();
   const [errors, setErrors] = useState(null);
   console.log('★nameRef', nameRef);
-  
+
   // 入力値の送信
   const { save, isPending, isError } = useItemSave();
   console.log('★isPending', isPending);
   console.log('★isError', isError);
 
   const handleSubmit = async (e) => {
+    console.log("★① フォーム送信開始");
     e.preventDefault();
     // 入力値の取得＆バリデーション
     const { itemToBeSaved, isValid, validationErrors } = validate();
@@ -58,7 +59,7 @@ export default function ItemSaveForm({ item = defaultItem }) {
       itemToBeSaved.id = item.id;
     }
     await save(itemToBeSaved);
-    console.log('★save_done');
+    console.log("★② save完了");
   };
 
   return (
