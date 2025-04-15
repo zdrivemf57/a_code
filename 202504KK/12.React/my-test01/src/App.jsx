@@ -12,6 +12,7 @@ import SumAndAverage from './components/SumAndAverage'
 import UseEffectNone from './components/UseEffectNone'
 import UsestateUseRefUseEffect from './components/usestateUseRefUseEffect'
 import UseEffectUseState from './components/UseEffectUseState'
+import ApiDataComponent from './components/ApiDataComponent'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -47,7 +48,8 @@ function App() {
       {/* <WindowResizeComponent /> */}
       {/* <TimerComponent /> */}
       {/* <SumAndAverage /> */}
-      <UserList />
+      {/* <UserList /> */}
+      <ApiDataComponent />
     </>
   )
 }
