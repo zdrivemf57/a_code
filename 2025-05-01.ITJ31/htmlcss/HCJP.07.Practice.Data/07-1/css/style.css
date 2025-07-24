@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/*
+* ナビゲーション
+*/
+nav a {
+ color: #a10c0c;
+ text-decoration: none; /* 下線なし */
+}
+nav .current a {
+ font-weight: bold; /* 太字 */
+}
+/* ホバー時 */
+nav a:hover {
+ color: #ec4b4b;
+ text-decoration: underline; /* 下線あり */
+}
+/*
+* 各セクション
+*/
+section span {
+ font-weight: bold; /* 太字 */
+}
+.welcome h2,
+.welcome span {
+ color: #180a9e;
+}
+.pride h2,
+.pride span {
+ color: #07940e;
+}
+/*
+* フッター
+*/
+footer {
+ background: #333; /* 背景色 */
+}
+.copyright {
+ color: #fff;

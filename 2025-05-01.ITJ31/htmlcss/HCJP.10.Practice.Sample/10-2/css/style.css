@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+body {
+    background: #eef;
+}
+
+.wrap {
+    background: #eff;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: #0c3f79;
+    padding: 20px 0;
+    /* 文字の設定は子要素(h1)に引き継がれる */
+    color: #fff;
+    text-align: center;
+}
+
+main {
+    background: #d5e4e6;
+    padding: 20px 10px;
+    /* main自体を中央に配置 */
+    width: 70%;
+    margin: 0 auto;
+    /* mainの子要素を中央に配置 */
+    text-align: center;
+}
+
+.animal img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #0c3f79;
+    padding: 20px 0;
+    color: #fff;
+    /* small要素はinlineなので、以下のプロパティは footer または p に設定する必要がある */
+    text-align: center;
+}

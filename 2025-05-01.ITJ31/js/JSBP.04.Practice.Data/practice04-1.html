@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>練習04-1</title>
+  </head>
+  <body>
+    <button>ボタン</button>
+    <img src="images/cat.jpg" alt="猫" />
+    <script>
+      document.querySelector("button").addEventListener("click", () => {
+        console.log("こんにちは");
+      });
+    </script>
+    <script>
+      const element = document.querySelector("img");
+      console.log(element.getAttribute("alt")); // 猫
+      console.log(element.getAttribute("width")); // null
+    </script>
+    <script>
+      // 犬の画像に変更し、幅や高さを設定する
+      const element2 = document.querySelector("img");
+      element2.setAttribute("src", "images/flower.jpg");
+      element2.setAttribute("alt", "花");
+      element2.setAttribute("width", 300);
+      element2.setAttribute("height", 200);
+    </script>
+
+    <noscript>JavaScriptが無効です。</noscript>
+  </body>
+</html>

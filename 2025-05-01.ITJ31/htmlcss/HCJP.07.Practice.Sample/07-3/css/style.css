@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* 全称セレクタ */
+* {
+    /* 余白をリセット */
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* グループセレクタ */
+h1, h2 {
+    text-align: center;
+}
+
+/* class属性値が「title」のh2要素*/
+h2.title {
+    color: #10966e;
+}
+
+/* h1要素の次にあるp要素 */
+h1 + p {
+    background: #f5bea9;
+}
+
+/* p要素の次にあるsection要素 */
+p + section {
+    border: 2px solid #915a5a;
+    margin: 20px 0;
+}
+
+/* section要素内のp要素 */
+section p {
+    color: #972a88;
+}
+
+/* section要素の直接の子要素であるp要素 */
+section > p {
+    background: #ffc0f7;
+    margin-bottom: 10px;
+}
+
+/* 疑似クラス */
+/* input要素フォーカス時 */
+input:focus {
+    background: #9af0a6;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    background: #507ca0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* a要素ホバー時 */
+a:hover {
+    background: #83beee;
+}

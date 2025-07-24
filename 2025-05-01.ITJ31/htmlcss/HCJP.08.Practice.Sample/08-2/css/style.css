@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+body {
+    background: #555;
+    color: #ffd;
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    font-style: italic;
+    
+}
+
+.basic-shadow {
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* 複数の影を設定し、立体的な表現にする */
+.advanced-shadow {
+    text-shadow:
+        0 1px #bbb,
+        1px 2px #bbb,
+        2px 3px #bbb,
+        3px 4px #bbb,
+        4px 5px #bbb,
+        5px 10px 8px #000000;
+}
+
+ul {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 2;
+    list-style-type: decimal-leading-zero;
+}

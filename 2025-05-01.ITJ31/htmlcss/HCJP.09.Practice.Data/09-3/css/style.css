@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+:root {
+  --border-width: 5px; 
+  --padding-top: 80px; 
+}
+
+.box1 { 
+ text-align: center; 
+ border: var(--border-width) solid #333; 
+ padding-top: var(--padding-top); 
+ width: calc(300px - (var(--border-width) * 2)); 
+ height: calc(200px - (var(--border-width) * 2) - var(--padding-top)); 
+ /* box2 の margin-top よりも大きいので優先される */ 
+ margin-bottom: 100px; 
+} 
+
+.box2 { 
+ box-sizing: border-box; 
+ text-align: center; 
+ border: var(--border-width) solid #333; 
+ padding-top: var(--padding-top); 
+ width: 300px; 
+ height: 200px; 
+ margin-top: 50px; 
+}

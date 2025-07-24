@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+section {
+    border: 1px dotted #888;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+a, p, h4, h5 { 
+ /* 領域の可視化 */ 
+ border: 1px solid #0e1b66; 
+ background: #c6c6fd; 
+ /* 幅や高さの設定 */ 
+ width: 200px; 
+ height: 50px; 
+} 
+
+/* display プロパティの変更 */ 
+a { 
+ display: block;
+}
+
+p { 
+ display: inline; 
+} 
+
+h4 { 
+ display: inline-block; 
+}
+
+/* 非表示設定 */ 
+.hide1 { 
+ visibility: hidden; 
+} 
+
+.hide2 { 
+ opacity: 0.3; /* 0 で完全に不可視になる */ 
+}
+
+.hide3 { 
+ display: none; 
+}

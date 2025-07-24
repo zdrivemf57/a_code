@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+html {
+    font-size: 62.5%; /* 62.5% = 10px ⇒ 文字サイズが計算しやすくなる */
+    font-family: '游明朝', serif;
+}
+
+body {
+    text-align: center;
+}
+
+h2 {
+    font-size: 3rem; /* 30px */
+    font-weight: normal;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 1.8rem; /* 18px */
+}
+
+/*
+* ナビゲーション
+*/
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0 1em;
+    color: #a10c0c;
+    text-decoration: none;
+    font-size: 2rem; /* 20px */
+}
+
+nav .current a {
+    background: #d83d3d;
+    color: #fff;
+}
+
+/* ホバー時 */
+nav a:hover {
+    font-weight: bold;
+    background: #d83d3d;
+    color: #fff;
+}
+
+
+/*
+* 各セクション
+*/
+section span {
+    font-weight: bold;
+}
+
+.welcome h2,
+.welcome span {
+    color: #180a9e;
+}
+
+.pride h2,
+.pride span {
+    color: #07940e;
+}
+
+
+/*
+* バナー
+*/
+aside ul {
+    list-style-type:none;
+    padding: 0;
+}
+
+
+/*
+* フッター
+*/
+footer {
+    background: #333;
+}
+
+.copyright {
+    color: #fff;
+}

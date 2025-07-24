@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>練習05-3</title>
+    <style>
+      .intro {
+        border-bottom: 1px dotted #333;
+        padding-bottom: 20px;
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="intro">
+      <h1>駅前の恐竜</h1>
+      <div class="buttons">
+        <button>表示 / 非表示</button>
+      </div>
+      <div class="hide">
+        <p>福井駅ではリアルな恐竜が出迎えてくれます</p>
+        <img src="images/fukui1.jpg" width="400" />
+      </div>
+    </div>
+    <!-- /.intro -->
+
+    <div class="intro">
+      <h1>越前の街並み</h1>
+      <div class="buttons">
+        <button>表示 / 非表示</button>
+      </div>
+      <div class="hide">
+        <p>城下町の面影が残る素敵な雰囲気です</p>
+        <img src="images/fukui2.jpg" width="400" />
+      </div>
+    </div>
+    <!-- /.intro -->
+
+    <div class="intro">
+      <h1>恐竜博物館</h1>
+      <div class="buttons">
+        <button>表示 / 非表示</button>
+      </div>
+      <div class="hide">
+        <p>子どもから大人まで楽しめる巨大な博物館です</p>
+        <img src="images/fukui3.jpg" width="400" />
+      </div>
+    </div>
+    <!-- /.intro -->
+
+    <script>
+      document.querySelectorAll(".buttons button").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          // クリックされたボタンの親(div.buttons)の次の要素を操作
+          const div = event.target.parentNode.nextElementSibling;
+          div.classList.toggle("hide");
+        });
+      });
+    </script>
+  </body>
+</html>

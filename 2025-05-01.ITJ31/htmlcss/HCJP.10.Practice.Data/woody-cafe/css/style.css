@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+/* ボックスの視覚化 */ 
+* { 
+ /* outline: 1px solid aqua;  */
+}
+
+/* 初期化 */ 
+ul { 
+ list-style-type: none; 
+} 
+a { 
+ text-decoration: none; 
+ color: #000; 
+}
+
+/* 汎用クラス */ 
+.center-container { 
+ min-width: 700px; 
+ max-width: 980px; 
+ margin: 0 auto; 
+} 
+
+.flex-container { 
+ display: flex; 
+ flex-wrap: wrap; 
+}
+
+/* ヘッダーとフッター */ 
+header, footer { 
+ background-color: #160101; 
+ color: #fff; 
+}
+
+header { 
+ padding: 20px 0 30px; 
+}
+
+header a { 
+ color: #fff; 
+} 
+
+header .flex-container { 
+ justify-content: space-between; 
+ align-items: baseline; 
+}
+
+nav ul { 
+ justify-content: space-between; 
+ width: 400px; 
+}
+
+nav li { 
+ text-align: center; 
+}
+
+.hero { 
+ font-size: 2rem; 
+ background-image: url(../images/titleimage01.jpg); 
+ background-size: cover; 
+ height: 200px; 
+ padding-top: 120px; 
+ padding-left: 30px; 
+ margin-top: 20px; 
+} 
+
+footer { 
+ text-align: center; 
+ padding: 20px 0; 
+ margin-top: 30px;
+}
+
+/* メインコンテンツ */ 
+/* メインコンテンツ */ 
+main { 
+ margin-top: 30px; 
+}
+
+main > .flex-container { 
+ justify-content: space-between; 
+}
+
+aside { 
+ order: 2; 
+ width: 200px;
+} 
+
+aside li a { 
+ display: block; 
+ border: 1px solid #888; 
+ text-align: center; 
+ line-height: 3.5; 
+ margin-bottom: 10px; 
+}
+
+aside li a:hover { 
+ background-color: #ccc; 
+}
+
+.section-group { 
+ order: 1; 
+ max-width: 780px; 
+ /* calc 関数で計算をすることができる */ 
+ width: calc(100% - 200px); 
+} 
+
+.menu { 
+ margin-top: 30px; 
+}
+
+/* :first-child で最初の要素のみ選択できる */ 
+.menu:first-child { 
+ margin-top: 0; 
+} 
+
+.menu li { 
+ /* この場合、差し引きがない方が計算しやすい */ 
+ box-sizing: content-box; 
+ width: 30%; 
+ padding-right: 3.33%; 
+ margin-top: 20px; 
+}
