@@ -1,6 +1,8 @@
 // 非同期関数
 // Promiseを返す関数は非同期関数と呼ばれる
 // 非同期関数は同期的に実行できる ⇒ then()を使用する
+// setTimeout を含む関数
+// 引数 1: 表示するメッセージ, 引数 2: 表示までにかかるミリ秒数
 function printMessage(message, delay) {
   return new Promise((a) => {
     setTimeout(() => {
